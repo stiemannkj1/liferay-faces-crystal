@@ -11,11 +11,11 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.outputlabel.internal;
+package com.liferay.faces.crystal.component.outputlabel.internal;
 
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.outputlabel.OutputLabel;
+import com.liferay.faces.crystal.component.outputlabel.OutputLabel;
 
 
 /**

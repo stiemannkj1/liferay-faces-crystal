@@ -27,7 +27,7 @@ import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
-import com.liferay.faces.alloy.component.inputtime.InputTime;
+import com.liferay.faces.crystal.component.inputtime.InputTime;
 
 
 /**
@@ -61,7 +61,7 @@ public class WorkHoursValidator implements Validator {
 				}
 				catch (ParseException e) {
 
-					String message = AlloyValidatorHelper.getMessage(facesContext, inputTime, "invalid-selection");
+					String message = CrystalValidatorHelper.getMessage(facesContext, inputTime, "invalid-selection");
 					FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_ERROR, message, message);
 					throw new ValidatorException(facesMessage, e);
 				}
@@ -75,7 +75,7 @@ public class WorkHoursValidator implements Validator {
 
 			if ((hourOfDay == 12) || ((hourOfDay == 13) && (minOfHour == 0))) {
 
-				String message = AlloyValidatorHelper.getMessage(facesContext, inputTime, "lunchtime-is-not-valid");
+				String message = CrystalValidatorHelper.getMessage(facesContext, inputTime, "lunchtime-is-not-valid");
 				FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_WARN, message, message);
 				throw new ValidatorException(facesMessage);
 			}

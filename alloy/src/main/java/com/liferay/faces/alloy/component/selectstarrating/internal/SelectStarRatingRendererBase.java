@@ -11,19 +11,19 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.selectstarrating.internal;
+package com.liferay.faces.crystal.component.selectstarrating.internal;
 //J-
 
 import javax.annotation.Generated;
 
-import com.liferay.faces.alloy.component.selectrating.internal.SelectRatingRenderer;
+import com.liferay.faces.crystal.component.selectrating.internal.SelectRatingRenderer;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class SelectStarRatingRendererBase extends SelectRatingRenderer {
 }
 //J+

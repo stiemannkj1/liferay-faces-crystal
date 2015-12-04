@@ -11,21 +11,21 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.button.internal;
+package com.liferay.faces.crystal.component.button.internal;
 //J-
 
 import javax.annotation.Generated;
 
-import com.liferay.faces.alloy.component.button.internal.ButtonRendererCompat;
+import com.liferay.faces.crystal.component.button.internal.ButtonRendererCompat;
 
-import com.liferay.faces.alloy.component.button.Button;
+import com.liferay.faces.crystal.component.button.Button;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class ButtonRendererBase extends ButtonRendererCompat {
 
 	// Protected Constants

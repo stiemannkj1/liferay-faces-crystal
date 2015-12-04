@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.video.internal;
+package com.liferay.faces.crystal.component.video.internal;
 
 import java.io.IOException;
 import java.net.URLEncoder;
@@ -23,8 +23,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.media.Media;
-import com.liferay.faces.alloy.component.video.Video;
+import com.liferay.faces.crystal.component.media.Media;
+import com.liferay.faces.crystal.component.video.Video;
 
 
 /**

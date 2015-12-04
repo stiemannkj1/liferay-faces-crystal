@@ -1,12 +1,12 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:showcase="http://liferay.com/faces/showcase" template="/WEB-INF/templates/component-1col-60.xhtml">
 
 	<ui:define name="col1">
-		<alloy:form>
+		<crystal:form>
 			<showcase:example renderedCheckbox="true" requiredCheckbox="true">
-				<alloy:field label="#{i18n['favorite-liferay-benefit']}">
-					<alloy:selectManyMenu id="selectManyMenu" rendered="#{showcaseModelBean.selectedComponent.rendered}"
+				<crystal:field label="#{i18n['favorite-liferay-benefit']}">
+					<crystal:selectManyMenu id="selectManyMenu" rendered="#{showcaseModelBean.selectedComponent.rendered}"
 						required="#{showcaseModelBean.selectedComponent.required}"
 						value="#{selectManyModelBean.favoriteIds}">
 						<f:selectItem itemLabel="Compatible" itemValue="1" />
@@ -14,23 +14,23 @@
 						<f:selectItem itemLabel="Powerful Integration" itemValue="3" />
 						<f:selectItem itemLabel="Lightweight" itemValue="4" />
 						<f:selectItem itemLabel="Open Source" itemValue="5" />
-					</alloy:selectManyMenu>
-					<alloy:message for="selectManyMenu" />
-				</alloy:field>
+					</crystal:selectManyMenu>
+					<crystal:message for="selectManyMenu" />
+				</crystal:field>
 				<showcase:note smallIcon="true">
-					<alloy:outputText escape="false" value="#{i18n['note-chromium-issue-4579']}" />
+					<crystal:outputText escape="false" value="#{i18n['note-chromium-issue-4579']}" />
 				</showcase:note>
 				<hr />
-				<alloy:commandButton action="#{selectManyBackingBean.submit}" render="@form"
+				<crystal:commandButton action="#{selectManyBackingBean.submit}" render="@form"
 					value="#{i18n['submit']}" />
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
 				<ui:repeat id="modelValue" value="#{selectManyModelBean.favoriteIds}" var="favoriteId">
-					<alloy:outputText value="#{favoriteId}" />
+					<crystal:outputText value="#{favoriteId}" />
 					<br />
 				</ui:repeat>
 			</showcase:results>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 </ui:composition>

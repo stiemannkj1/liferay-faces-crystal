@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.select.internal;
+package com.liferay.faces.crystal.component.select.internal;
 
 import java.io.IOException;
 
@@ -24,11 +24,11 @@ import com.liferay.faces.util.render.internal.DelegationResponseWriter;
 
 
 /**
- * In order to render alloy:selectManyCheckbox and alloy:selectOneRadio using CSS classes and elements consistent with
- * Liferay Portal's (and AlloyUI's) style, SelectDelegatingRendererBase replaces the default ResponseWriter with {@link
+ * In order to render crystal:selectManyCheckbox and crystal:selectOneRadio using CSS classes and elements consistent with
+ * Liferay Portal's (and CrystalUI's) style, SelectDelegatingRendererBase replaces the default ResponseWriter with {@link
  * TableSuppressingResponseWriter} and {@link LabelSurroundingResponseWriter}. This class is designed to be extended by
- * {@link com.liferay.faces.alloy.component.selectmanycheckbox.internal.SelectManyCheckboxRenderer} and {@link
- * com.liferay.faces.alloy.component.selectoneradio.internal.SelectOneRadioRenderer}.
+ * {@link com.liferay.faces.crystal.component.selectmanycheckbox.internal.SelectManyCheckboxRenderer} and {@link
+ * com.liferay.faces.crystal.component.selectoneradio.internal.SelectOneRadioRenderer}.
  *
  * @author  Kyle Stiemann
  */

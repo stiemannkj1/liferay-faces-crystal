@@ -1,24 +1,24 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:showcase="http://liferay.com/faces/showcase" template="/WEB-INF/templates/component-1col-60.xhtml">
 
 	<ui:define name="col1">
-		<alloy:form>
+		<crystal:form>
 			<showcase:example description="#{i18n['valid-time-range']}: 09:00:00 - 17:00:00">
-				<alloy:field>
-					<alloy:inputTime id="time" value="#{inputTimeModelBean.time}" showOn="button" maxTime="17:00:00"
+				<crystal:field>
+					<crystal:inputTime id="time" value="#{inputTimeModelBean.time}" showOn="button" maxTime="17:00:00"
 						minTime="09:00:00" pattern="hh:mm a" />
-					<alloy:message for="time" />
-				</alloy:field>
+					<crystal:message for="time" />
+				</crystal:field>
 				<hr />
-				<alloy:commandButton render="@form" value="#{i18n['submit']}" />
+				<crystal:commandButton render="@form" value="#{i18n['submit']}" />
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
-				<alloy:outputText id="modelValue" value="#{inputTimeModelBean.time}">
+				<crystal:outputText id="modelValue" value="#{inputTimeModelBean.time}">
 					<f:convertDateTime pattern="hh:mm a" />
-				</alloy:outputText>
+				</crystal:outputText>
 			</showcase:results>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 </ui:composition>

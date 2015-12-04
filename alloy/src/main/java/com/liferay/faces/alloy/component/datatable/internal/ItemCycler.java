@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.datatable.internal;
+package com.liferay.faces.crystal.component.datatable.internal;
 
 /**
  * This class provides a simple mechanism for cycling through a comma-delimited list of strings (such as the rowClasses

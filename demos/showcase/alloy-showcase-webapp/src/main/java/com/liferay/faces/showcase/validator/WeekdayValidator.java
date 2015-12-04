@@ -27,7 +27,7 @@ import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
-import com.liferay.faces.alloy.component.inputdate.InputDate;
+import com.liferay.faces.crystal.component.inputdate.InputDate;
 
 
 /**
@@ -61,7 +61,7 @@ public class WeekdayValidator implements Validator {
 				}
 				catch (ParseException e) {
 
-					String message = AlloyValidatorHelper.getMessage(facesContext, inputDate, "invalid-selection");
+					String message = CrystalValidatorHelper.getMessage(facesContext, inputDate, "invalid-selection");
 					FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_ERROR, message, message);
 					throw new ValidatorException(facesMessage, e);
 				}
@@ -74,7 +74,7 @@ public class WeekdayValidator implements Validator {
 
 			if ((dayOfWeek == Calendar.SATURDAY) || (dayOfWeek == Calendar.SUNDAY)) {
 
-				String message = AlloyValidatorHelper.getMessage(facesContext, inputDate, "sat-and-sun-are-not-valid");
+				String message = CrystalValidatorHelper.getMessage(facesContext, inputDate, "sat-and-sun-are-not-valid");
 				FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_WARN, message, message);
 				throw new ValidatorException(facesMessage);
 			}

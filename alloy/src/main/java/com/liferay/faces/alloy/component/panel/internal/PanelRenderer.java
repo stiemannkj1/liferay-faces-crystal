@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.panel.internal;
+package com.liferay.faces.crystal.component.panel.internal;
 
 import java.io.IOException;
 
@@ -20,7 +20,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.panel.Panel;
+import com.liferay.faces.crystal.component.panel.Panel;
 
 
 /**
@@ -46,14 +46,14 @@ public class PanelRenderer extends PanelRendererBase {
 
 		if ((headerFacet != null) || (headerText != null)) {
 			responseWriter.startElement("div", uiComponent);
-			responseWriter.writeAttribute("class", "alloy-panel-heading", null);
+			responseWriter.writeAttribute("class", "crystal-panel-heading", null);
 
 			if (headerFacet != null) {
 				headerFacet.encodeAll(facesContext);
 			}
 			else {
 				responseWriter.startElement("span", null);
-				responseWriter.writeAttribute("class", "alloy-panel-title", null);
+				responseWriter.writeAttribute("class", "crystal-panel-title", null);
 				responseWriter.writeText(headerText, null);
 				responseWriter.endElement("span");
 			}
@@ -63,7 +63,7 @@ public class PanelRenderer extends PanelRendererBase {
 
 		// Encode a starting <div> for the panel body.
 		responseWriter.startElement("div", uiComponent);
-		responseWriter.writeAttribute("class", "alloy-panel-body", null);
+		responseWriter.writeAttribute("class", "crystal-panel-body", null);
 	}
 
 	@Override
@@ -80,7 +80,7 @@ public class PanelRenderer extends PanelRendererBase {
 
 		if ((footerFacet != null) || (footerText != null)) {
 			responseWriter.startElement("div", uiComponent);
-			responseWriter.writeAttribute("class", "alloy-panel-footer", null);
+			responseWriter.writeAttribute("class", "crystal-panel-footer", null);
 
 			if (footerFacet != null) {
 				footerFacet.encodeAll(facesContext);

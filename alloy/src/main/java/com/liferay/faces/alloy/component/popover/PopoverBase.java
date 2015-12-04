@@ -11,11 +11,11 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.popover;
+package com.liferay.faces.crystal.component.popover;
 //J-
 
 import javax.annotation.Generated;
-import com.liferay.faces.alloy.component.panelgroup.PanelGroupBlockLayout;
+import com.liferay.faces.crystal.component.panelgroup.PanelGroupBlockLayout;
 
 import com.liferay.faces.util.component.ClientComponent;
 import com.liferay.faces.util.component.Styleable;
@@ -25,12 +25,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class PopoverBase extends PanelGroupBlockLayout implements Styleable, ClientComponent {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.popover.Popover";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.popover.PopoverRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.popover.Popover";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.popover.PopoverRenderer";
 
 	// Protected Enumerations
 	protected enum PopoverPropertyKeys {
@@ -209,7 +209,7 @@ public abstract class PopoverBase extends PanelGroupBlockLayout implements Style
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(PropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-popover");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-popover");
 	}
 
 	/**

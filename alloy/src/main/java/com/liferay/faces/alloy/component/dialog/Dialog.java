@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.dialog;
+package com.liferay.faces.crystal.component.dialog;
 
 import javax.faces.component.FacesComponent;
 
@@ -27,7 +27,7 @@ public class Dialog extends DialogBase {
 		String style = super.getStyle();
 
 		// Initially style the outermost <div> (which is the contentBox) with "display:none;" in order to prevent
-		// blinking when Alloy's JavaScript attempts to hide the contentBox.
+		// blinking when Crystal's JavaScript attempts to hide the contentBox.
 		if (style == null) {
 			style = "display:none;";
 		}

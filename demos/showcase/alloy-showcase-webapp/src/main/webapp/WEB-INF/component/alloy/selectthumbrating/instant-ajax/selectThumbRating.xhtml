@@ -1,20 +1,20 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:showcase="http://liferay.com/faces/showcase" template="/WEB-INF/templates/component-1col-60.xhtml">
 
 	<ui:define name="col1">
-		<alloy:form>
+		<crystal:form>
 			<showcase:example>
-				<alloy:outputLabel for="thumbRating" value="#{i18n['rating']}" />
-				<alloy:selectThumbRating id="thumbRating" value="#{selectThumbRatingModelBean.like}">
+				<crystal:outputLabel for="thumbRating" value="#{i18n['rating']}" />
+				<crystal:selectThumbRating id="thumbRating" value="#{selectThumbRatingModelBean.like}">
 					<f:selectItem itemLabel="#{i18n['like']}" itemValue="true" />
 					<f:selectItem itemLabel="#{i18n['dislike']}" itemValue="false" />
 					<f:ajax render="@form" />
-				</alloy:selectThumbRating>
+				</crystal:selectThumbRating>
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
-				<alloy:outputText id="modelValue" value="#{selectThumbRatingModelBean.like}" />
+				<crystal:outputText id="modelValue" value="#{selectThumbRatingModelBean.like}" />
 			</showcase:results>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 </ui:composition>

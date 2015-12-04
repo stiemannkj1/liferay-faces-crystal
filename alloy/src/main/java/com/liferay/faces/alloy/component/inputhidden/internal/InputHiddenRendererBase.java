@@ -11,21 +11,21 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputhidden.internal;
+package com.liferay.faces.crystal.component.inputhidden.internal;
 //J-
 
 import javax.annotation.Generated;
 
 import com.liferay.faces.util.render.DelegatingRendererBase;
 
-import com.liferay.faces.alloy.component.inputhidden.InputHidden;
+import com.liferay.faces.crystal.component.inputhidden.InputHidden;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class InputHiddenRendererBase extends DelegatingRendererBase {
 
 	@Override

@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.paginator.internal;
+package com.liferay.faces.crystal.component.paginator.internal;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,10 +38,10 @@ import javax.faces.event.ListenerFor;
 import javax.faces.event.PostAddToViewEvent;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.commandlink.CommandLink;
-import com.liferay.faces.alloy.component.outputtext.OutputText;
-import com.liferay.faces.alloy.component.paginator.Paginator;
-import com.liferay.faces.alloy.render.internal.AlloyRendererUtil;
+import com.liferay.faces.crystal.component.commandlink.CommandLink;
+import com.liferay.faces.crystal.component.outputtext.OutputText;
+import com.liferay.faces.crystal.component.paginator.Paginator;
+import com.liferay.faces.crystal.render.internal.CrystalRendererUtil;
 import com.liferay.faces.util.component.Styleable;
 import com.liferay.faces.util.context.MessageContext;
 import com.liferay.faces.util.context.MessageContextFactory;
@@ -60,7 +60,7 @@ import com.liferay.faces.util.render.RendererUtil;
 @ResourceDependencies(
 	{
 		@ResourceDependency(library = "javax.faces", name = "jsf.js"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui-css/css/bootstrap.min.css")
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui-css/css/bootstrap.min.css")
 	}
 )
 //J+
@@ -167,14 +167,14 @@ public class PaginatorRenderer extends PaginatorRendererBase implements Componen
 		}
 		else {
 			logger.error(
-				"The alloy:paginator must have it's for attribute set or it must be inside of an f:facet of an alloy:dataTable or alloy:dataList");
+				"The crystal:paginator must have it's for attribute set or it must be inside of an f:facet of an crystal:dataTable or crystal:dataList");
 		}
 	}
 
 	@Override
 	public void encodeBegin(FacesContext facesContext, UIComponent uiComponent) throws IOException {
 
-		// Encode the starting <div> element that represents the alloy:paginator.
+		// Encode the starting <div> element that represents the crystal:paginator.
 		Paginator paginator = (Paginator) uiComponent;
 		String clientId = paginator.getClientId(facesContext);
 		ResponseWriter responseWriter = facesContext.getResponseWriter();
@@ -298,7 +298,7 @@ public class PaginatorRenderer extends PaginatorRendererBase implements Componen
 	@Override
 	public void encodeEnd(FacesContext facesContext, UIComponent uiComponent) throws IOException {
 
-		// Encode the closing </div> element that represents the alloy:paginator.
+		// Encode the closing </div> element that represents the crystal:paginator.
 		ResponseWriter responseWriter = facesContext.getResponseWriter();
 		responseWriter.endElement("div");
 	}
@@ -309,7 +309,7 @@ public class PaginatorRenderer extends PaginatorRendererBase implements Componen
 		Paginator paginator = (Paginator) componentSystemEvent.getComponent();
 
 		if (paginator.isAjax()) {
-			AlloyRendererUtil.addDefaultAjaxBehavior(paginator, paginator.getExecute(), paginator.getProcess(), "@this",
+			CrystalRendererUtil.addDefaultAjaxBehavior(paginator, paginator.getExecute(), paginator.getProcess(), "@this",
 				paginator.getRender(), paginator.getUpdate(), "@this @for");
 		}
 	}
@@ -434,7 +434,7 @@ public class PaginatorRenderer extends PaginatorRendererBase implements Componen
 		// If the pagination control is enabled, then
 		if (enabled) {
 
-			// If the alloy:paginator has a nested f:ajax tag, then encode a hyperlink that contains the client
+			// If the crystal:paginator has a nested f:ajax tag, then encode a hyperlink that contains the client
 			// behavior script in the onclick attribute.
 			String clientBehaviorScript = getClientBehaviorScript(facesContext, paginator, clientId, paginatorAction);
 
@@ -446,7 +446,7 @@ public class PaginatorRenderer extends PaginatorRendererBase implements Componen
 				responseWriter.endElement("a");
 			}
 
-			// Otherwise, encode an alloy:commandLink that can submit the form via full-page postback.
+			// Otherwise, encode an crystal:commandLink that can submit the form via full-page postback.
 			else {
 
 				Application application = facesContext.getApplication();

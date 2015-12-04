@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.datatable.internal;
+package com.liferay.faces.crystal.component.datatable.internal;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,15 +38,15 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.column.Column;
-import com.liferay.faces.alloy.component.commandlink.CommandLink;
-import com.liferay.faces.alloy.component.datatable.DataTable;
-import com.liferay.faces.alloy.component.datatable.RowDeselectEvent;
-import com.liferay.faces.alloy.component.datatable.RowDeselectRangeEvent;
-import com.liferay.faces.alloy.component.datatable.RowSelectEvent;
-import com.liferay.faces.alloy.component.datatable.RowSelectRangeEvent;
-import com.liferay.faces.alloy.component.outputtext.OutputText;
-import com.liferay.faces.alloy.render.internal.JavaScriptFragment;
+import com.liferay.faces.crystal.component.column.Column;
+import com.liferay.faces.crystal.component.commandlink.CommandLink;
+import com.liferay.faces.crystal.component.datatable.DataTable;
+import com.liferay.faces.crystal.component.datatable.RowDeselectEvent;
+import com.liferay.faces.crystal.component.datatable.RowDeselectRangeEvent;
+import com.liferay.faces.crystal.component.datatable.RowSelectEvent;
+import com.liferay.faces.crystal.component.datatable.RowSelectRangeEvent;
+import com.liferay.faces.crystal.component.outputtext.OutputText;
+import com.liferay.faces.crystal.render.internal.JavaScriptFragment;
 import com.liferay.faces.util.helper.BooleanHelper;
 import com.liferay.faces.util.helper.StringHelper;
 import com.liferay.faces.util.logging.Logger;
@@ -63,9 +63,9 @@ import com.liferay.faces.util.render.RendererUtil;
 @FacesRenderer(componentFamily = DataTable.COMPONENT_FAMILY, rendererType = DataTable.RENDERER_TYPE)
 @ResourceDependencies(
 	{
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui-css/css/bootstrap.min.css"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui/aui-min.js"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "liferay.js")
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui-css/css/bootstrap.min.css"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui/aui-min.js"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "liferay.js")
 	}
 )
 //J+
@@ -259,7 +259,7 @@ public class DataTableRenderer extends DataTableRendererBase {
 			dataTable.setFirst(0);
 		}
 
-		// Encode the starting <table> element that represents the alloy:table.
+		// Encode the starting <table> element that represents the crystal:table.
 		DataTableInfo dataTableInfo = new DataTableInfo(dataTable);
 		ResponseWriter responseWriter = facesContext.getResponseWriter();
 		responseWriter.startElement("table", dataTable);
@@ -282,7 +282,7 @@ public class DataTableRenderer extends DataTableRendererBase {
 	@Override
 	public void encodeMarkupEnd(FacesContext facesContext, UIComponent uiComponent) throws IOException {
 
-		// Encode the closing <table> element that represents the alloy:table.
+		// Encode the closing <table> element that represents the crystal:table.
 		ResponseWriter responseWriter = facesContext.getResponseWriter();
 		responseWriter.endElement("table");
 	}
@@ -310,7 +310,7 @@ public class DataTableRenderer extends DataTableRendererBase {
 
 			if (sortColumnClientId != null) {
 
-				List<Column> alloySortColumns = new ArrayList<Column>();
+				List<Column> crystalSortColumns = new ArrayList<Column>();
 				String eventMetaKeyParamName = dataTableClientId.concat("_eventMetaKey");
 				boolean eventMetaKey = BooleanHelper.toBoolean(requestParameterMap.get(eventMetaKeyParamName));
 				boolean multiColumnSort = dataTable.isMultiColumnSort();
@@ -321,19 +321,19 @@ public class DataTableRenderer extends DataTableRendererBase {
 
 					if (child instanceof Column) {
 
-						Column alloyColumn = (Column) child;
-						String alloyColumndId = alloyColumn.getClientId(facesContext);
+						Column crystalColumn = (Column) child;
+						String crystalColumndId = crystalColumn.getClientId(facesContext);
 
-						String alloyColumnSortOrder = alloyColumn.getSortOrder();
+						String crystalColumnSortOrder = crystalColumn.getSortOrder();
 
-						Map<String, Object> alloyColumnAttributes = alloyColumn.getAttributes();
+						Map<String, Object> crystalColumnAttributes = crystalColumn.getAttributes();
 
-						if (alloyColumndId.equals(sortColumnClientId)) {
+						if (crystalColumndId.equals(sortColumnClientId)) {
 
 							// Toggle the value from ascending->descending or from descending->ascending.
 							SortCriterion.Order sortCriterionOrder;
 
-							if ("ASCENDING".equals(alloyColumnSortOrder)) {
+							if ("ASCENDING".equals(crystalColumnSortOrder)) {
 								sortCriterionOrder = SortCriterion.Order.DESCENDING;
 							}
 							else {
@@ -341,46 +341,46 @@ public class DataTableRenderer extends DataTableRendererBase {
 							}
 
 							// Set the state of the column so that the sort indicator will appear correctly.
-							alloyColumn.setSortOrder(sortCriterionOrder.toString());
-							alloyColumnAttributes.put("sortTime", System.currentTimeMillis());
+							crystalColumn.setSortOrder(sortCriterionOrder.toString());
+							crystalColumnAttributes.put("sortTime", System.currentTimeMillis());
 
 							// Add the sort criterion to the list of sort criteria.
-							alloySortColumns.add(alloyColumn);
+							crystalSortColumns.add(crystalColumn);
 						}
 						else {
 
 							if (multiColumnSort && eventMetaKey) {
 
-								if (alloyColumnSortOrder != null) {
-									alloySortColumns.add(alloyColumn);
+								if (crystalColumnSortOrder != null) {
+									crystalSortColumns.add(crystalColumn);
 								}
 							}
 							else {
-								alloyColumn.setSortOrder(null);
-								alloyColumnAttributes.remove("sortTime");
+								crystalColumn.setSortOrder(null);
+								crystalColumnAttributes.remove("sortTime");
 							}
 						}
 					}
 				}
 
-				Collections.sort(alloySortColumns, new ColumnSortTimeComparator());
+				Collections.sort(crystalSortColumns, new ColumnSortTimeComparator());
 
 				List<SortCriterion> sortCriteria = new ArrayList<SortCriterion>();
 
-				for (Column alloyColumn : alloySortColumns) {
+				for (Column crystalColumn : crystalSortColumns) {
 
-					String alloyColumnFieldName = getAlloyColumnFieldName(alloyColumn);
-					String alloyColumnSortOrder = alloyColumn.getSortOrder();
+					String crystalColumnFieldName = getCrystalColumnFieldName(crystalColumn);
+					String crystalColumnSortOrder = crystalColumn.getSortOrder();
 					SortCriterion.Order sortCriterionOrder;
 
-					if ("ASCENDING".equals(alloyColumnSortOrder)) {
+					if ("ASCENDING".equals(crystalColumnSortOrder)) {
 						sortCriterionOrder = SortCriterion.Order.ASCENDING;
 					}
 					else {
 						sortCriterionOrder = SortCriterion.Order.DESCENDING;
 					}
 
-					SortCriterion sortCriterion = new SortCriterion(alloyColumnFieldName, sortCriterionOrder);
+					SortCriterion sortCriterion = new SortCriterion(crystalColumnFieldName, sortCriterionOrder);
 					sortCriteria.add(sortCriterion);
 				}
 
@@ -609,13 +609,13 @@ public class DataTableRenderer extends DataTableRendererBase {
 							String columnHeaderClass = htmlColumn.getHeaderClass();
 
 							String sortClass = null;
-							Column alloyColumn = null;
+							Column crystalColumn = null;
 
 							if (child instanceof Column) {
 
-								alloyColumn = (Column) htmlColumn;
+								crystalColumn = (Column) htmlColumn;
 
-								String sortOrder = alloyColumn.getSortOrder();
+								String sortOrder = crystalColumn.getSortOrder();
 
 								if ("ASCENDING".equals(sortOrder)) {
 									sortClass = " table-sortable-column table-sorted";
@@ -647,12 +647,12 @@ public class DataTableRenderer extends DataTableRendererBase {
 
 							responseWriter.writeAttribute("scope", "col", null);
 
-							if (alloyColumn != null) {
+							if (crystalColumn != null) {
 
-								String headerText = alloyColumn.getHeaderText();
+								String headerText = crystalColumn.getHeaderText();
 
 								if (headerText != null) {
-									encodeHeaderText(facesContext, responseWriter, dataTable, alloyColumn, headerText);
+									encodeHeaderText(facesContext, responseWriter, dataTable, crystalColumn, headerText);
 								}
 							}
 
@@ -689,7 +689,7 @@ public class DataTableRenderer extends DataTableRendererBase {
 			responseWriter.startElement("div", dataTable);
 			responseWriter.writeAttribute("class", "table-sort-liner", null);
 
-			// If the alloy:column has a nested f:ajax tag, then encode a hyperlink that contains the client
+			// If the crystal:column has a nested f:ajax tag, then encode a hyperlink that contains the client
 			// behavior script in the onclick attribute.
 			String dataTableClientId = dataTable.getClientId(facesContext);
 			String clientBehaviorScript = getColumnClientBehaviorScript(facesContext, dataTable, column,
@@ -709,7 +709,7 @@ public class DataTableRenderer extends DataTableRendererBase {
 				responseWriter.endElement("a");
 			}
 
-			// Otherwise, encode an alloy:commandLink that can submit the form via full-page postback.
+			// Otherwise, encode an crystal:commandLink that can submit the form via full-page postback.
 			else {
 				Application application = facesContext.getApplication();
 				CommandLink commandLink = (CommandLink) application.createComponent(facesContext,
@@ -856,7 +856,7 @@ public class DataTableRenderer extends DataTableRendererBase {
 		responseWriter.endElement("tr");
 	}
 
-	protected String getAlloyColumnFieldName(Column column) {
+	protected String getCrystalColumnFieldName(Column column) {
 
 		String columnFieldName = column.getId();
 

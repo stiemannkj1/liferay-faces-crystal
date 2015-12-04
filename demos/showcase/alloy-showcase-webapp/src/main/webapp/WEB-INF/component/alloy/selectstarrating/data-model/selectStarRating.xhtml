@@ -1,24 +1,24 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:showcase="http://liferay.com/faces/showcase" template="/WEB-INF/templates/component-1col-60.xhtml">
 
 	<ui:define name="col1">
-		<alloy:form>
+		<crystal:form>
 			<showcase:example>
-				<alloy:outputLabel for="starRating" value="#{i18n['rating']}" />
-				<alloy:selectStarRating value="#{selectStarRatingModelBean.favoriteId}" label="#{i18n['rating']}:">
+				<crystal:outputLabel for="starRating" value="#{i18n['rating']}" />
+				<crystal:selectStarRating value="#{selectStarRatingModelBean.favoriteId}" label="#{i18n['rating']}:">
 					<f:selectItems value="#{selectStarRatingModelBean.liferayBenefits}" var="benefit"
 						itemValue="#{benefit.id}"
 						itemLabel="#{benefit.label}" />
-				</alloy:selectStarRating>
+				</crystal:selectStarRating>
 				<hr />
-				<alloy:commandButton action="#{selectStarRatingBackingBean.submit}" render="@form"
+				<crystal:commandButton action="#{selectStarRatingBackingBean.submit}" render="@form"
 					value="#{i18n['submit']}" />
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
-				<alloy:outputText id="modelValue" value="#{selectStarRatingModelBean.favoriteId}" />
+				<crystal:outputText id="modelValue" value="#{selectStarRatingModelBean.favoriteId}" />
 			</showcase:results>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 </ui:composition>

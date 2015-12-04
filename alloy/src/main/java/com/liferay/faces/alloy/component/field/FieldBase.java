@@ -11,11 +11,11 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.field;
+package com.liferay.faces.crystal.component.field;
 //J-
 
 import javax.annotation.Generated;
-import com.liferay.faces.alloy.component.panelgroup.PanelGroupBlockLayout;
+import com.liferay.faces.crystal.component.panelgroup.PanelGroupBlockLayout;
 
 import com.liferay.faces.util.component.Styleable;
 
@@ -24,12 +24,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class FieldBase extends PanelGroupBlockLayout implements Styleable {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.field.Field";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.field.FieldRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.field.Field";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.field.FieldRenderer";
 
 	// Protected Enumerations
 	protected enum FieldPropertyKeys {
@@ -90,7 +90,7 @@ public abstract class FieldBase extends PanelGroupBlockLayout implements Styleab
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(PropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-field");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-field");
 	}
 }
 //J+

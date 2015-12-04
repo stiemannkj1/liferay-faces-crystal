@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.commandlink.internal;
+package com.liferay.faces.crystal.component.commandlink.internal;
 
 import java.io.IOException;
 
@@ -26,8 +26,8 @@ import javax.faces.event.ListenerFor;
 import javax.faces.event.PostAddToViewEvent;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.commandlink.CommandLink;
-import com.liferay.faces.alloy.render.internal.AlloyRendererUtil;
+import com.liferay.faces.crystal.component.commandlink.CommandLink;
+import com.liferay.faces.crystal.render.internal.CrystalRendererUtil;
 import com.liferay.faces.util.render.internal.DelegationResponseWriter;
 
 
@@ -54,7 +54,7 @@ public class CommandLinkRenderer extends CommandLinkRendererBase implements Comp
 		CommandLink commandLink = (CommandLink) componentSystemEvent.getComponent();
 
 		if (commandLink.isAjax()) {
-			AlloyRendererUtil.addDefaultAjaxBehavior(commandLink, commandLink.getExecute(), commandLink.getProcess(),
+			CrystalRendererUtil.addDefaultAjaxBehavior(commandLink, commandLink.getExecute(), commandLink.getProcess(),
 				"@all", commandLink.getRender(), commandLink.getUpdate(), "@none");
 		}
 	}

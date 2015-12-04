@@ -1,7 +1,7 @@
-# Liferay Faces Alloy
+# Liferay Faces Crystal
 
-[Liferay Faces Alloy](http://www.liferay.com/community/liferay-projects/liferay-faces/overview) is a JavaServer&trade;
-Faces (JSF) component suite based on [AlloyUI](http://alloyui.com/). Visit the
+[Liferay Faces Crystal](http://www.liferay.com/community/liferay-projects/liferay-faces/overview) is a JavaServer&trade;
+Faces (JSF) component suite based on [CrystalUI](http://crystalui.com/). Visit the
 [Showcase](http://www.liferayfaces.org/web/guest/showcase) to try an online demo of the components.
 
 ## License

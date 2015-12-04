@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.tab;
+package com.liferay.faces.crystal.component.tab;
 
 import javax.faces.component.UIComponent;
 import javax.faces.component.behavior.Behavior;

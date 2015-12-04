@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.context.internal;
+package com.liferay.faces.crystal.context.internal;
 
 import com.liferay.faces.util.context.MessageContext;
 import com.liferay.faces.util.context.MessageContextFactory;
@@ -20,15 +20,15 @@ import com.liferay.faces.util.context.MessageContextFactory;
 /**
  * @author  Neil Griffin
  */
-public class MessageContextFactoryAlloyImpl extends MessageContextFactory {
+public class MessageContextFactoryCrystalImpl extends MessageContextFactory {
 
 	// Private Data Members
 	private MessageContext messageContext;
 	private MessageContextFactory wrappedMessageContextFactory;
 
-	public MessageContextFactoryAlloyImpl(MessageContextFactory messageContextFactory) {
+	public MessageContextFactoryCrystalImpl(MessageContextFactory messageContextFactory) {
 		MessageContext wrappedMessageContext = messageContextFactory.getMessageContext();
-		this.messageContext = new MessageContextAlloyImpl(wrappedMessageContext);
+		this.messageContext = new MessageContextCrystalImpl(wrappedMessageContext);
 		this.wrappedMessageContextFactory = messageContextFactory;
 	}
 

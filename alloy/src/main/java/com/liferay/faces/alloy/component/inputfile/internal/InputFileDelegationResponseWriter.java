@@ -11,14 +11,14 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputfile.internal;
+package com.liferay.faces.crystal.component.inputfile.internal;
 
 import java.io.IOException;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.ResponseWriter;
 
-import com.liferay.faces.alloy.component.inputfile.InputFile;
+import com.liferay.faces.crystal.component.inputfile.InputFile;
 import com.liferay.faces.util.render.internal.DelegationResponseWriter;
 
 

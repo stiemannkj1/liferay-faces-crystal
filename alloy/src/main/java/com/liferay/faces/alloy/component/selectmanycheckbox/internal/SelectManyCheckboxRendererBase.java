@@ -11,21 +11,21 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.selectmanycheckbox.internal;
+package com.liferay.faces.crystal.component.selectmanycheckbox.internal;
 //J-
 
 import javax.annotation.Generated;
 
-import com.liferay.faces.alloy.component.select.internal.SelectDelegatingRendererBase;
+import com.liferay.faces.crystal.component.select.internal.SelectDelegatingRendererBase;
 
-import com.liferay.faces.alloy.component.selectmanycheckbox.SelectManyCheckbox;
+import com.liferay.faces.crystal.component.selectmanycheckbox.SelectManyCheckbox;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class SelectManyCheckboxRendererBase extends SelectDelegatingRendererBase {
 
 	@Override

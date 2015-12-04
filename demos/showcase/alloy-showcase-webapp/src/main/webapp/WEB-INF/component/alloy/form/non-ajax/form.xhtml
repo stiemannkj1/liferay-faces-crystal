@@ -1,15 +1,15 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:showcase="http://liferay.com/faces/showcase"
 	template="/WEB-INF/templates/component-1col-60.xhtml">
 
 	<ui:define name="col1">
-		<alloy:form>
+		<crystal:form>
 			<showcase:example>
-				<alloy:messages globalOnly="true" layout="table" />
-				<alloy:commandButton action="#{formBackingBean.submit}" ajax="false"
+				<crystal:messages globalOnly="true" layout="table" />
+				<crystal:commandButton action="#{formBackingBean.submit}" ajax="false"
 					value="#{i18n['submit-and-re-render-form']}" />
 			</showcase:example>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 </ui:composition>

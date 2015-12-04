@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputsourcecode.internal;
+package com.liferay.faces.crystal.component.inputsourcecode.internal;
 //J-
 
 import java.io.IOException;
@@ -21,17 +21,17 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
-import com.liferay.faces.alloy.render.internal.DelegatingAlloyRendererBase;
+import com.liferay.faces.crystal.render.internal.DelegatingCrystalRendererBase;
 
-import com.liferay.faces.alloy.component.inputsourcecode.InputSourceCode;
+import com.liferay.faces.crystal.component.inputsourcecode.InputSourceCode;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
-public abstract class InputSourceCodeRendererBase extends DelegatingAlloyRendererBase {
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
+public abstract class InputSourceCodeRendererBase extends DelegatingCrystalRendererBase {
 
 	// Protected Constants
 	protected static final String CLIENT_KEY = "clientKey";
@@ -53,7 +53,7 @@ public abstract class InputSourceCodeRendererBase extends DelegatingAlloyRendere
 	protected static final String[] MODULES = { "aui-ace-editor" };
 
 	@Override
-	public void encodeAlloyAttributes(FacesContext facesContext, ResponseWriter responseWriter, UIComponent uiComponent) throws IOException {
+	public void encodeCrystalAttributes(FacesContext facesContext, ResponseWriter responseWriter, UIComponent uiComponent) throws IOException {
 
 		InputSourceCode inputSourceCode = (InputSourceCode) uiComponent;
 		boolean first = true;
@@ -150,7 +150,7 @@ public abstract class InputSourceCodeRendererBase extends DelegatingAlloyRendere
 	}
 
 	@Override
-	public String getAlloyClassName(FacesContext facesContext, UIComponent uiComponent) {
+	public String getCrystalClassName(FacesContext facesContext, UIComponent uiComponent) {
 		return "AceEditor";
 	}
 

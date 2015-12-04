@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.nodemenunav.internal;
+package com.liferay.faces.crystal.component.nodemenunav.internal;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,8 +21,8 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
-import com.liferay.faces.alloy.component.menu.Menu;
-import com.liferay.faces.alloy.render.internal.DelegatingAlloyRendererBase;
+import com.liferay.faces.crystal.component.menu.Menu;
+import com.liferay.faces.crystal.render.internal.DelegatingCrystalRendererBase;
 import com.liferay.faces.util.component.Styleable;
 import com.liferay.faces.util.render.internal.DelegationResponseWriter;
 
@@ -30,7 +30,7 @@ import com.liferay.faces.util.render.internal.DelegationResponseWriter;
 /**
  * @author  Vernon Singleton
  */
-public abstract class NodeMenuNavRendererBase extends DelegatingAlloyRendererBase {
+public abstract class NodeMenuNavRendererBase extends DelegatingCrystalRendererBase {
 
 	// Private constants
 	private static final String COLON_OPTIONS = ":options";
@@ -41,7 +41,7 @@ public abstract class NodeMenuNavRendererBase extends DelegatingAlloyRendererBas
 
 	// Needed when yui="false"
 	@Override
-	public void encodeAlloyAttributes(FacesContext facesContext, ResponseWriter respoonseWriter,
+	public void encodeCrystalAttributes(FacesContext facesContext, ResponseWriter respoonseWriter,
 		UIComponent uiComponent) throws IOException {
 		// no-op
 	}
@@ -49,7 +49,7 @@ public abstract class NodeMenuNavRendererBase extends DelegatingAlloyRendererBas
 	@Override
 	public void encodeChildren(FacesContext facesContext, UIComponent uiComponent) throws IOException {
 
-		// Encode all children except for <alloy:menu> since menus get rendered after the anchor tag is closed in
+		// Encode all children except for <crystal:menu> since menus get rendered after the anchor tag is closed in
 		// encodeEnd.
 		List<UIComponent> children = uiComponent.getChildren();
 
@@ -73,7 +73,7 @@ public abstract class NodeMenuNavRendererBase extends DelegatingAlloyRendererBas
 
 			String escapedOptionsDivId = escapeClientId(getDefaultOptionsId(facesContext, uiComponent) + ":0");
 
-			// AlloyRendererUtil.LIFERAY_Z_INDEX_OVERLAY
+			// CrystalRendererUtil.LIFERAY_Z_INDEX_OVERLAY
 			responseWriter.write("A.one('#");
 			responseWriter.write(escapedOptionsDivId);
 			responseWriter.write("')._node['style'].zIndex=" + LIFERAY_Z_INDEX_OVERLAY + ";");
@@ -297,7 +297,7 @@ public abstract class NodeMenuNavRendererBase extends DelegatingAlloyRendererBas
 	}
 
 	@Override
-	public String getAlloyClassName(FacesContext facesContext, UIComponent uiComponent) {
+	public String getCrystalClassName(FacesContext facesContext, UIComponent uiComponent) {
 		return null;
 	}
 

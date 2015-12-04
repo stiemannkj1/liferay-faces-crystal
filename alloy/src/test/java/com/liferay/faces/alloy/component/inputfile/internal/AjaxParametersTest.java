@@ -11,11 +11,11 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputfile.internal;
+package com.liferay.faces.crystal.component.inputfile.internal;
 
 import org.junit.Test;
 
-import com.liferay.faces.alloy.component.inputfile.InputFile;
+import com.liferay.faces.crystal.component.inputfile.InputFile;
 
 import junit.framework.Assert;
 

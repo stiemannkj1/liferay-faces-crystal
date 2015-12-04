@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputfile;
+package com.liferay.faces.crystal.component.inputfile;
 
 import javax.faces.component.UIComponent;
 import javax.faces.event.FacesEvent;

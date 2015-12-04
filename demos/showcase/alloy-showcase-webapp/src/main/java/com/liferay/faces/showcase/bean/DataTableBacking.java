@@ -31,11 +31,11 @@ import javax.faces.event.FacesEvent;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.DataModel;
 
-import com.liferay.faces.alloy.component.datatable.DataTable;
-import com.liferay.faces.alloy.component.datatable.RowDeselectEvent;
-import com.liferay.faces.alloy.component.datatable.RowDeselectRangeEvent;
-import com.liferay.faces.alloy.component.datatable.RowSelectEvent;
-import com.liferay.faces.alloy.component.datatable.RowSelectRangeEvent;
+import com.liferay.faces.crystal.component.datatable.DataTable;
+import com.liferay.faces.crystal.component.datatable.RowDeselectEvent;
+import com.liferay.faces.crystal.component.datatable.RowDeselectRangeEvent;
+import com.liferay.faces.crystal.component.datatable.RowSelectEvent;
+import com.liferay.faces.crystal.component.datatable.RowSelectRangeEvent;
 import com.liferay.faces.showcase.dto.Customer;
 import com.liferay.faces.showcase.model.CustomerOnDemandDataModel;
 import com.liferay.faces.showcase.service.CustomerService;

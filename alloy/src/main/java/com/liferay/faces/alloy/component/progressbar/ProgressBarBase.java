@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.progressbar;
+package com.liferay.faces.crystal.component.progressbar;
 //J-
 
 import javax.annotation.Generated;
@@ -25,13 +25,13 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class ProgressBarBase extends UIComponentBase implements Styleable, ClientComponent {
 
 	// Public Constants
-	public static final String COMPONENT_FAMILY = "com.liferay.faces.alloy.component.progressbar";
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.progressbar.ProgressBar";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.progressbar.ProgressBarRenderer";
+	public static final String COMPONENT_FAMILY = "com.liferay.faces.crystal.component.progressbar";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.progressbar.ProgressBar";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.progressbar.ProgressBarRenderer";
 
 	// Protected Enumerations
 	protected enum ProgressBarPropertyKeys {
@@ -237,7 +237,7 @@ public abstract class ProgressBarBase extends UIComponentBase implements Styleab
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(ProgressBarPropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-progress-bar");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-progress-bar");
 	}
 
 	/**

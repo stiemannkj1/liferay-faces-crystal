@@ -1,20 +1,20 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:showcase="http://liferay.com/faces/showcase" template="/WEB-INF/templates/component-1col-80.xhtml">
 
 	<ui:define name="col1">
-		<alloy:form id="exampleForm">
+		<crystal:form id="exampleForm">
 			<showcase:example>
-				<alloy:messages id="feedback" layout="table" globalOnly="true" />
-				<alloy:field label="#{i18n['selection-mode']}">
-					<alloy:selectOneMenu value="#{dataTableBacking.selectionMode}"
+				<crystal:messages id="feedback" layout="table" globalOnly="true" />
+				<crystal:field label="#{i18n['selection-mode']}">
+					<crystal:selectOneMenu value="#{dataTableBacking.selectionMode}"
 						valueChangeListener="#{dataTableBacking.modeSwitch}">
 						<f:selectItem itemLabel="checkbox" itemValue="checkbox" />
 						<f:selectItem itemLabel="radio" itemValue="radio" />
 						<f:ajax render="customers :exampleForm:example:feedback" />
-					</alloy:selectOneMenu>
-				</alloy:field>
-				<alloy:dataTable id="customers" rendered="#{showcaseModelBean.selectedComponent.rendered}" rows="10"
+					</crystal:selectOneMenu>
+				</crystal:field>
+				<crystal:dataTable id="customers" rendered="#{showcaseModelBean.selectedComponent.rendered}" rows="10"
 					selectionMode="#{dataTableBacking.selectionMode}" value="#{dataTableBacking.customerDataModel}"
 					var="customer">
 					<f:ajax event="rowDeselect" listener="#{dataTableBacking.rowDeselectListener}"
@@ -26,55 +26,55 @@
 					<f:ajax event="rowSelectRange" listener="#{dataTableBacking.rowSelectRangeListener}"
 						render=":exampleForm:feedback" />
 					<f:facet name="header">
-						<alloy:outputText value="#{i18n['customers']}" />
-						<alloy:paginator />
+						<crystal:outputText value="#{i18n['customers']}" />
+						<crystal:paginator />
 					</f:facet>
-					<alloy:column headerText="#{i18n['first-name']}">
-						<alloy:outputText value="#{customer.firstName}" />
-					</alloy:column>
-					<alloy:column headerText="#{i18n['last-name']}">
-						<alloy:outputText value="#{customer.lastName}" />
-					</alloy:column>
-					<alloy:column headerText="#{i18n['date-of-birth']}">
-						<alloy:outputText value="#{customer.dateOfBirth}">
+					<crystal:column headerText="#{i18n['first-name']}">
+						<crystal:outputText value="#{customer.firstName}" />
+					</crystal:column>
+					<crystal:column headerText="#{i18n['last-name']}">
+						<crystal:outputText value="#{customer.lastName}" />
+					</crystal:column>
+					<crystal:column headerText="#{i18n['date-of-birth']}">
+						<crystal:outputText value="#{customer.dateOfBirth}">
 							<f:convertDateTime pattern="MMM dd, yyyy" />
-						</alloy:outputText>
-					</alloy:column>
-					<alloy:column headerText="#{i18n['country']}">
-						<alloy:outputText value="#{customer.country.countryName}"/>
-					</alloy:column>
+						</crystal:outputText>
+					</crystal:column>
+					<crystal:column headerText="#{i18n['country']}">
+						<crystal:outputText value="#{customer.country.countryName}"/>
+					</crystal:column>
 					<f:facet name="footer">
-						<alloy:commandButton actionListener="#{dataTableBacking.determineSelectedCustomers}">
-							<alloy:outputText value="#{i18n['show-selected-customers-as-feedback']}" />
+						<crystal:commandButton actionListener="#{dataTableBacking.determineSelectedCustomers}">
+							<crystal:outputText value="#{i18n['show-selected-customers-as-feedback']}" />
 							<f:ajax execute="customers @this" render=":exampleForm:feedback" />
-						</alloy:commandButton>
-						<alloy:commandButton actionListener="#{dataTableBacking.determineSelectedCustomers}">
-							<alloy:outputText value="#{i18n['show-selected-customers-in-modal-dialog']}" />
+						</crystal:commandButton>
+						<crystal:commandButton actionListener="#{dataTableBacking.determineSelectedCustomers}">
+							<crystal:outputText value="#{i18n['show-selected-customers-in-modal-dialog']}" />
 							<f:ajax execute="customers @this" onevent="showSelectedCustomers"
 								render=":exampleForm:selectedCustomers" />
-						</alloy:commandButton>
+						</crystal:commandButton>
 					</f:facet>
-				</alloy:dataTable>
-				<alloy:outputScript>
+				</crystal:dataTable>
+				<crystal:outputScript>
 					function showSelectedCustomers(data) {
 						if (data.status == "success") {
 							Liferay.component('selectedCustomers').show();
 						}
 					}
-				</alloy:outputScript>
+				</crystal:outputScript>
 			</showcase:example>
-			<alloy:dialog id="selectedCustomers" clientKey="selectedCustomers"
+			<crystal:dialog id="selectedCustomers" clientKey="selectedCustomers"
 				headerText="#{i18n['selected-customers']}" modal="true">
-				<alloy:outputText value="#{i18n['no-customers-selected']}"
+				<crystal:outputText value="#{i18n['no-customers-selected']}"
 					rendered="#{empty dataTableBacking.selectedCustomers}" />
-				<alloy:dataList type="description" value="#{dataTableBacking.selectedCustomers}" var="selectedCustomer">
-					<alloy:dataItem>
-						<alloy:outputText value="#{selectedCustomer.firstName} #{selectedCustomer.lastName}" />
-					</alloy:dataItem>
-				</alloy:dataList>
-				<alloy:button onclick="Liferay.component('selectedCustomers').hide();" value="#{i18n['cancel']}" />
-			</alloy:dialog>
-		</alloy:form>
+				<crystal:dataList type="description" value="#{dataTableBacking.selectedCustomers}" var="selectedCustomer">
+					<crystal:dataItem>
+						<crystal:outputText value="#{selectedCustomer.firstName} #{selectedCustomer.lastName}" />
+					</crystal:dataItem>
+				</crystal:dataList>
+				<crystal:button onclick="Liferay.component('selectedCustomers').hide();" value="#{i18n['cancel']}" />
+			</crystal:dialog>
+		</crystal:form>
 	</ui:define>
 
 </ui:composition>

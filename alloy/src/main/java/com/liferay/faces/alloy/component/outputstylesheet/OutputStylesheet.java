@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.outputstylesheet;
+package com.liferay.faces.crystal.component.outputstylesheet;
 
 import javax.faces.component.FacesComponent;
 

@@ -1,16 +1,16 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:showcase="http://liferay.com/faces/showcase" template="/WEB-INF/templates/component-1col-60.xhtml">
 
 	<ui:define name="col1">
-		<alloy:form>
+		<crystal:form>
 			<showcase:example renderedCheckbox="true">
-				<alloy:outputFormat rendered="#{showcaseModelBean.selectedComponent.rendered}" value="First: {1}, Last: {0}">
+				<crystal:outputFormat rendered="#{showcaseModelBean.selectedComponent.rendered}" value="First: {1}, Last: {0}">
 					<f:param value="Omega" />
 					<f:param value="Alpha" />
-				</alloy:outputFormat>
+				</crystal:outputFormat>
 			</showcase:example>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 </ui:composition>

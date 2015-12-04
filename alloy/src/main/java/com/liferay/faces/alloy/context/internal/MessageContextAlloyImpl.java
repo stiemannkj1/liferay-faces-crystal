@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.context.internal;
+package com.liferay.faces.crystal.context.internal;
 
 import java.text.MessageFormat;
 import java.util.Locale;
@@ -29,17 +29,17 @@ import com.liferay.faces.util.logging.LoggerFactory;
 /**
  * @author  Neil Griffin
  */
-public class MessageContextAlloyImpl extends MessageContextWrapper {
+public class MessageContextCrystalImpl extends MessageContextWrapper {
 
 	// Logger
-	private static final Logger logger = LoggerFactory.getLogger(MessageContextAlloyImpl.class);
+	private static final Logger logger = LoggerFactory.getLogger(MessageContextCrystalImpl.class);
 
 	// Private Data Members
 	private boolean initialized;
 	private MessageContext wrappedMessageContext;
 	private Map<String, String> messageMap;
 
-	public MessageContextAlloyImpl(MessageContext messageContext) {
+	public MessageContextCrystalImpl(MessageContext messageContext) {
 		this.wrappedMessageContext = messageContext;
 		this.messageMap = new ConcurrentHashMap<String, String>();
 	}

@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.overlay.internal;
+package com.liferay.faces.crystal.component.overlay.internal;
 
 import java.io.IOException;
 import java.util.Map;
@@ -21,8 +21,8 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
-import com.liferay.faces.alloy.render.internal.DelegatingAlloyRendererBase;
-import com.liferay.faces.alloy.render.internal.JavaScriptFragment;
+import com.liferay.faces.crystal.render.internal.DelegatingCrystalRendererBase;
+import com.liferay.faces.crystal.render.internal.JavaScriptFragment;
 import com.liferay.faces.util.render.internal.DelegationResponseWriter;
 import com.liferay.faces.util.render.internal.IdDelegationResponseWriter;
 
@@ -30,7 +30,7 @@ import com.liferay.faces.util.render.internal.IdDelegationResponseWriter;
 /**
  * @author  Vernon Singleton
  */
-public abstract class OverlayRendererBase extends DelegatingAlloyRendererBase implements NamingContainer {
+public abstract class OverlayRendererBase extends DelegatingCrystalRendererBase implements NamingContainer {
 
 	// Protected Constants
 	protected static final String Z_INDEX = "zIndex";
@@ -47,7 +47,7 @@ public abstract class OverlayRendererBase extends DelegatingAlloyRendererBase im
 	protected void encodeOverlayHiddenAttributes(FacesContext facesContext, ResponseWriter responseWriter,
 		UIComponent overlay, boolean first) throws IOException {
 
-		// Encode the "contentBox" Alloy hidden attribute.
+		// Encode the "contentBox" Crystal hidden attribute.
 		String clientId = overlay.getClientId(facesContext);
 		encodeClientId(responseWriter, BOUNDING_BOX, clientId, first);
 
@@ -56,18 +56,18 @@ public abstract class OverlayRendererBase extends DelegatingAlloyRendererBase im
 
 		first = false;
 
-		// Encode the "headerContent" Alloy hidden attribute.
+		// Encode the "headerContent" Crystal hidden attribute.
 		Map<String, Object> attributes = overlay.getAttributes();
 		String headerText = (String) attributes.get("headerText");
 
 		if (headerText != null) {
-			headerText = "<span class=\"alloy-overlay-title\">" + headerText + "</span>";
+			headerText = "<span class=\"crystal-overlay-title\">" + headerText + "</span>";
 			encodeString(responseWriter, "headerContent", headerText, first);
 		}
 
 		encodeString(responseWriter, "bodyContent", "", first);
 
-		// Encode the "render: true" Alloy hidden attribute.
+		// Encode the "render: true" Crystal hidden attribute.
 		encodeWidgetRender(responseWriter, first);
 
 		encodeBoolean(responseWriter, "visible", false, first);
@@ -77,8 +77,8 @@ public abstract class OverlayRendererBase extends DelegatingAlloyRendererBase im
 		UIComponent overlay, String clientKey) throws IOException {
 
 		// The outermost <div> (which is the boundingBox) was initially styled with "display:none;" in order to prevent
-		// blinking when Alloy's JavaScript attempts to hide the boundingBox. At this point in JavaScript execution,
-		// Alloy is done manipulating the DOM and it is necessary to remove the "display:none;" so that the
+		// blinking when Crystal's JavaScript attempts to hide the boundingBox. At this point in JavaScript execution,
+		// Crystal is done manipulating the DOM and it is necessary to remove the "display:none;" so that the
 		// dialog will popup correctly.
 		responseWriter.write("A.one('#");
 
@@ -108,7 +108,7 @@ public abstract class OverlayRendererBase extends DelegatingAlloyRendererBase im
 		// NOTE: This is currently only used by Dialog and Popover.
 
 		// Encode the opening boundingBox <div> tag via delegation. Ensure that the "id" attribute is always written so
-		// that Alloy's JavaScript will be able to locate the boundingBox in the DOM.
+		// that Crystal's JavaScript will be able to locate the boundingBox in the DOM.
 		ResponseWriter responseWriter = facesContext.getResponseWriter();
 		String clientId = uiComponent.getClientId(facesContext);
 		DelegationResponseWriter idDelegationResponseWriter = new IdDelegationResponseWriter(responseWriter, "div",

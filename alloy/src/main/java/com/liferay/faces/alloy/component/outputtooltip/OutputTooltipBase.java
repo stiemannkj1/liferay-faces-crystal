@@ -11,11 +11,11 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.outputtooltip;
+package com.liferay.faces.crystal.component.outputtooltip;
 //J-
 
 import javax.annotation.Generated;
-import com.liferay.faces.alloy.component.outputtext.OutputTextBase;
+import com.liferay.faces.crystal.component.outputtext.OutputTextBase;
 
 import com.liferay.faces.util.component.ClientComponent;
 import com.liferay.faces.util.component.Styleable;
@@ -25,12 +25,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class OutputTooltipBase extends OutputTextBase implements Styleable, ClientComponent {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.outputtooltip.OutputTooltip";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.outputtooltip.OutputTooltipRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.outputtooltip.OutputTooltip";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.outputtooltip.OutputTooltipRenderer";
 
 	// Protected Enumerations
 	protected enum OutputTooltipPropertyKeys {
@@ -170,7 +170,7 @@ public abstract class OutputTooltipBase extends OutputTextBase implements Stylea
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(PropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-output-tooltip");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-output-tooltip");
 	}
 
 	/**

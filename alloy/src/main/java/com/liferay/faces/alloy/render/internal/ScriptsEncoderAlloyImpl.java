@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.render.internal;
+package com.liferay.faces.crystal.render.internal;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ import com.liferay.faces.util.factory.FactoryExtensionFinder;
 /**
  * @author  Kyle Stiemann
  */
-public class ScriptsEncoderAlloyImpl implements ScriptsEncoder {
+public class ScriptsEncoderCrystalImpl implements ScriptsEncoder {
 
 	@Override
 	public void encodeBodyScripts(FacesContext facesContext, List<Script> scripts) throws IOException {
@@ -55,7 +55,7 @@ public class ScriptsEncoderAlloyImpl implements ScriptsEncoder {
 		throws IOException {
 
 		Set<String> sortedModules = new TreeSet<String>();
-		List<Script> alloyScripts = new ArrayList<Script>();
+		List<Script> crystalScripts = new ArrayList<Script>();
 		List<Script> basicScripts = new ArrayList<Script>();
 
 		for (Script script : scripts) {
@@ -73,7 +73,7 @@ public class ScriptsEncoderAlloyImpl implements ScriptsEncoder {
 					}
 				}
 
-				alloyScripts.add(script);
+				crystalScripts.add(script);
 			}
 			else {
 				basicScripts.add(script);
@@ -84,18 +84,18 @@ public class ScriptsEncoderAlloyImpl implements ScriptsEncoder {
 			responseWriter.write(script.getSourceCode());
 		}
 
-		if (!alloyScripts.isEmpty()) {
+		if (!crystalScripts.isEmpty()) {
 
 			BrowserSnifferFactory browserSnifferFactory = (BrowserSnifferFactory) FactoryExtensionFinder.getFactory(
 					BrowserSnifferFactory.class);
 			BrowserSniffer browserSniffer = browserSnifferFactory.getBrowserSniffer(facesContext.getExternalContext());
-			String alloyBeginScript = AlloyRendererUtil.getAlloyBeginScript(sortedModules, null, browserSniffer);
-			responseWriter.write(alloyBeginScript);
+			String crystalBeginScript = CrystalRendererUtil.getCrystalBeginScript(sortedModules, null, browserSniffer);
+			responseWriter.write(crystalBeginScript);
 
-			for (Script alloyScript : alloyScripts) {
+			for (Script crystalScript : crystalScripts) {
 
 				responseWriter.write("(function(){");
-				responseWriter.write(alloyScript.getSourceCode());
+				responseWriter.write(crystalScript.getSourceCode());
 				responseWriter.write("})();");
 			}
 

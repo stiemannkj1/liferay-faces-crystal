@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.row.internal;
+package com.liferay.faces.crystal.component.row.internal;
 
 import java.io.IOException;
 
@@ -21,7 +21,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.row.Row;
+import com.liferay.faces.crystal.component.row.Row;
 import com.liferay.faces.util.render.RendererUtil;
 
 
@@ -30,7 +30,7 @@ import com.liferay.faces.util.render.RendererUtil;
  */
 //J-
 @FacesRenderer(componentFamily = Row.COMPONENT_FAMILY, rendererType = Row.RENDERER_TYPE)
-@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui-css/css/bootstrap.min.css")
+@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui-css/css/bootstrap.min.css")
 //J+
 public class RowRenderer extends RowRendererBase {
 

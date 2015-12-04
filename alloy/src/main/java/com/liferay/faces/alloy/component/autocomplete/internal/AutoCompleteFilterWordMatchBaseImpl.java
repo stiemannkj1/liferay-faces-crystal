@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.autocomplete.internal;
+package com.liferay.faces.crystal.component.autocomplete.internal;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ abstract class AutoCompleteFilterWordMatchBaseImpl implements AutoCompleteFilter
 
 	static {
 
-		String path = "META-INF/resources/liferay-faces-alloy/yui/autocomplete/text-data-wordbreak.js";
+		String path = "META-INF/resources/liferay-faces-crystal/yui/autocomplete/text-data-wordbreak.js";
 		InputStream inputStream = AutoCompleteFilterWordMatchBaseImpl.class.getClassLoader().getResourceAsStream(path);
 		Scanner scanner = new Scanner(inputStream);
 		Pattern beginLinePattern = Pattern.compile("^\\s*[a-z][a-z]*\\s*:\\s[\"']");

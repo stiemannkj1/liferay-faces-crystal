@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputtime.internal;
+package com.liferay.faces.crystal.component.inputtime.internal;
 //J-
 
 import java.io.IOException;
@@ -21,16 +21,16 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
-import com.liferay.faces.alloy.component.inputdatetime.internal.InputDateTimeRenderer;
+import com.liferay.faces.crystal.component.inputdatetime.internal.InputDateTimeRenderer;
 
-import com.liferay.faces.alloy.component.inputtime.InputTime;
+import com.liferay.faces.crystal.component.inputtime.InputTime;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class InputTimeRendererBase extends InputDateTimeRenderer {
 
 	// Protected Constants
@@ -52,7 +52,7 @@ public abstract class InputTimeRendererBase extends InputDateTimeRenderer {
 	protected static final String[] MODULES = { "aui-timepicker" };
 
 	@Override
-	public void encodeAlloyAttributes(FacesContext facesContext, ResponseWriter responseWriter, UIComponent uiComponent) throws IOException {
+	public void encodeCrystalAttributes(FacesContext facesContext, ResponseWriter responseWriter, UIComponent uiComponent) throws IOException {
 
 		InputTime inputTime = (InputTime) uiComponent;
 		boolean first = true;
@@ -69,7 +69,7 @@ public abstract class InputTimeRendererBase extends InputDateTimeRenderer {
 	}
 
 	@Override
-	public String getAlloyClassName(FacesContext facesContext, UIComponent uiComponent) {
+	public String getCrystalClassName(FacesContext facesContext, UIComponent uiComponent) {
 		return "TimePicker";
 	}
 

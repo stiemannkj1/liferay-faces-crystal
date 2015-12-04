@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputtime.internal;
+package com.liferay.faces.crystal.component.inputtime.internal;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -32,9 +32,9 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.inputdatetime.internal.InputDateTimeResponseWriter;
-import com.liferay.faces.alloy.component.inputtime.InputTime;
-import com.liferay.faces.alloy.render.internal.JavaScriptFragment;
+import com.liferay.faces.crystal.component.inputdatetime.internal.InputDateTimeResponseWriter;
+import com.liferay.faces.crystal.component.inputtime.InputTime;
+import com.liferay.faces.crystal.render.internal.JavaScriptFragment;
 import com.liferay.faces.util.client.BrowserSniffer;
 import com.liferay.faces.util.client.BrowserSnifferFactory;
 import com.liferay.faces.util.factory.FactoryExtensionFinder;
@@ -48,11 +48,11 @@ import com.liferay.faces.util.helper.StringHelper;
 @FacesRenderer(componentFamily = InputTime.COMPONENT_FAMILY, rendererType = InputTime.RENDERER_TYPE)
 @ResourceDependencies(
 	{
-		@ResourceDependency(library = "liferay-faces-alloy", name = "alloy.css"),
-		@ResourceDependency(library = "liferay-faces-alloy", name = "alloy.js"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui-css/css/bootstrap.min.css"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui/aui-min.js"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "liferay.js")
+		@ResourceDependency(library = "liferay-faces-crystal", name = "crystal.css"),
+		@ResourceDependency(library = "liferay-faces-crystal", name = "crystal.js"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui-css/css/bootstrap.min.css"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui/aui-min.js"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "liferay.js")
 	}
 )
 //J+
@@ -78,16 +78,16 @@ public class InputTimeRenderer extends InputTimeRendererBase {
 		mask = mask.replaceAll("hh", "%I");
 		mask = mask.replaceAll("h", "%l");
 		mask = mask.replaceAll("mm", "%M");
-		mask = mask.replaceAll("m", "%M"); // Not directly supported by AlloyUI
+		mask = mask.replaceAll("m", "%M"); // Not directly supported by CrystalUI
 		mask = mask.replaceAll("ss", "%S");
-		mask = mask.replaceAll("s", "%S"); // Not directly supported by AlloyUI
+		mask = mask.replaceAll("s", "%S"); // Not directly supported by CrystalUI
 		mask = mask.replaceAll("aaa", "%p");
 		mask = mask.replaceAll("aa", "%p");
 		mask = mask.replaceAll("a", "%p");
 		mask = mask.replaceAll("Z", TOKEN_REGEX);
-		mask = mask.replaceAll("zzzz", "%Z"); // Not directly supported by AlloyUI
-		mask = mask.replaceAll("zzz", "%Z"); // Not directly supported by AlloyUI
-		mask = mask.replaceAll("zz", "%Z"); // Not directly supported by AlloyUI
+		mask = mask.replaceAll("zzzz", "%Z"); // Not directly supported by CrystalUI
+		mask = mask.replaceAll("zzz", "%Z"); // Not directly supported by CrystalUI
+		mask = mask.replaceAll("zz", "%Z"); // Not directly supported by CrystalUI
 		mask = mask.replaceAll("z", "%Z");
 		mask = mask.replaceAll(TOKEN_REGEX, "%z");
 
@@ -157,7 +157,7 @@ public class InputTimeRenderer extends InputTimeRendererBase {
 
 			encodeLiferayComponentVar(responseWriter, clientVarName, clientKey);
 
-			// Replace the default TimePicker._setValues() method with setValues() (defined in alloy.js) which simply
+			// Replace the default TimePicker._setValues() method with setValues() (defined in crystal.js) which simply
 			// passes values through to the autocomplete without processing them.
 			responseWriter.write(clientVarName);
 			responseWriter.write("._setValues=LFAI.timePickerSetValues;");
@@ -344,19 +344,19 @@ public class InputTimeRenderer extends InputTimeRendererBase {
 	}
 
 	@Override
-	public String getAlloyClassName(FacesContext facesContext, UIComponent uiComponent) {
+	public String getCrystalClassName(FacesContext facesContext, UIComponent uiComponent) {
 
-		String alloyClassName = super.getAlloyClassName(facesContext, uiComponent);
+		String crystalClassName = super.getCrystalClassName(facesContext, uiComponent);
 		BrowserSnifferFactory browserSnifferFactory = (BrowserSnifferFactory) FactoryExtensionFinder.getFactory(
 				BrowserSnifferFactory.class);
 		BrowserSniffer browserSniffer = browserSnifferFactory.getBrowserSniffer(facesContext.getExternalContext());
 		InputTime inputTime = (InputTime) uiComponent;
 
 		if (isNative(browserSniffer, inputTime)) {
-			alloyClassName = alloyClassName.concat("Native");
+			crystalClassName = crystalClassName.concat("Native");
 		}
 
-		return alloyClassName;
+		return crystalClassName;
 	}
 
 	@Override

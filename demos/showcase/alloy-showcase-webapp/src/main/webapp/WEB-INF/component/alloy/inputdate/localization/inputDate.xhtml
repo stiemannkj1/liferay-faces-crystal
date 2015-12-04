@@ -1,40 +1,40 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:showcase="http://liferay.com/faces/showcase" template="/WEB-INF/templates/component-2col.xhtml">
 
 	<ui:define name="col1">
 		<!-- Example 1: Hard coded Brazilian Portuguese locale -->
-		<alloy:form>
-			<showcase:example description="#{i18n['alloy-inputdate-localization-example-1']}" number="1">
-				<alloy:inputDate id="portugueseInputDate" binding="#{portugueseInputDate}" locale="pt-BR"
+		<crystal:form>
+			<showcase:example description="#{i18n['crystal-inputdate-localization-example-1']}" number="1">
+				<crystal:inputDate id="portugueseInputDate" binding="#{portugueseInputDate}" locale="pt-BR"
 					value="#{inputDateModelBean.birthday}" />
 				<hr />
-				<alloy:commandButton render="@form" value="#{i18n['submit']}" />
+				<crystal:commandButton render="@form" value="#{i18n['submit']}" />
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
-				<alloy:outputText id="portugueseSelection" value="#{inputDateModelBean.birthday}">
+				<crystal:outputText id="portugueseSelection" value="#{inputDateModelBean.birthday}">
 					<f:convertDateTime pattern="#{portugueseInputDate.pattern}" locale="pt-BR" />
-				</alloy:outputText>
+				</crystal:outputText>
 			</showcase:results>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 	<ui:define name="col2">
 		<!-- Example 2: Japanese Locale obtained from a bean via EL -->
-		<alloy:form>
-			<showcase:example description="#{i18n['alloy-inputdate-localization-example-2']}" number="2">
-				<alloy:inputDate id="japaneseInputDate" binding="#{japaneseInputDate}"
+		<crystal:form>
+			<showcase:example description="#{i18n['crystal-inputdate-localization-example-2']}" number="2">
+				<crystal:inputDate id="japaneseInputDate" binding="#{japaneseInputDate}"
 					locale="#{inputDateModelBean.locale}"
 					value="#{inputDateModelBean.birthday}" />
 				<hr />
-				<alloy:commandButton render="@form" value="#{i18n['submit']}" />
+				<crystal:commandButton render="@form" value="#{i18n['submit']}" />
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
-				<alloy:outputText id="japaneseSelection" value="#{inputDateModelBean.birthday}">
+				<crystal:outputText id="japaneseSelection" value="#{inputDateModelBean.birthday}">
 					<f:convertDateTime pattern="#{japaneseInputDate.pattern}" locale="#{inputDateModelBean.locale}" />
-				</alloy:outputText>
+				</crystal:outputText>
 			</showcase:results>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 </ui:composition>

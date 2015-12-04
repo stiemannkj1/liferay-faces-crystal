@@ -11,21 +11,21 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.selectmanylistbox.internal;
+package com.liferay.faces.crystal.component.selectmanylistbox.internal;
 //J-
 
 import javax.annotation.Generated;
 
 import com.liferay.faces.util.render.DelegatingRendererBase;
 
-import com.liferay.faces.alloy.component.selectmanylistbox.SelectManyListbox;
+import com.liferay.faces.crystal.component.selectmanylistbox.SelectManyListbox;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class SelectManyListboxRendererBase extends DelegatingRendererBase {
 
 	@Override

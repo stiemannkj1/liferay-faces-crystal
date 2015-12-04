@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.tabview;
+package com.liferay.faces.crystal.component.tabview;
 //J-
 
 import javax.annotation.Generated;
@@ -25,12 +25,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class TabViewBase extends UIData implements Styleable, ClientComponent {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.tabview.TabView";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.tabview.TabViewRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.tabview.TabView";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.tabview.TabViewRenderer";
 
 	// Protected Enumerations
 	protected enum TabViewPropertyKeys {
@@ -154,7 +154,7 @@ public abstract class TabViewBase extends UIData implements Styleable, ClientCom
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(TabViewPropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-tab-view");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-tab-view");
 	}
 
 	/**

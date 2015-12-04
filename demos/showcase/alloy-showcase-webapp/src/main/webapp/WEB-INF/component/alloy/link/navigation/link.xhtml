@@ -1,17 +1,17 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:showcase="http://liferay.com/faces/showcase"
 	template="/WEB-INF/templates/component-1col-60.xhtml">
 
 	<ui:define name="col1">
 		<showcase:example>
 			<!-- Navigation based on outcome of navigation-case defined in navigation-rule.xml -->
-			<alloy:link outcome="toParam">
-				<alloy:outputText value="#{i18n['to-param-page']} " />
-				<alloy:icon name="arrow-right" />
-			</alloy:link>
+			<crystal:link outcome="toParam">
+				<crystal:outputText value="#{i18n['to-param-page']} " />
+				<crystal:icon name="arrow-right" />
+			</crystal:link>
 		</showcase:example>
 		<showcase:results label="#{i18n['parameter-value']}">
-			<alloy:outputText id="parameterValue" value="foo=#{facesContext.externalContext.requestParameterMap['foo']}" />
+			<crystal:outputText id="parameterValue" value="foo=#{facesContext.externalContext.requestParameterMap['foo']}" />
 		</showcase:results>
 	</ui:define>
 

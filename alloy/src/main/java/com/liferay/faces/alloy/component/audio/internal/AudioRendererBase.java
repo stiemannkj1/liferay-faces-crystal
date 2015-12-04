@@ -11,19 +11,19 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.audio.internal;
+package com.liferay.faces.crystal.component.audio.internal;
 //J-
 
 import javax.annotation.Generated;
 
-import com.liferay.faces.alloy.component.media.internal.MediaRenderer;
+import com.liferay.faces.crystal.component.media.internal.MediaRenderer;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class AudioRendererBase extends MediaRenderer {
 
 	// Protected Constants

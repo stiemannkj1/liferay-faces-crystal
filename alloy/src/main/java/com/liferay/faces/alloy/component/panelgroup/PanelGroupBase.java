@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.panelgroup;
+package com.liferay.faces.crystal.component.panelgroup;
 //J-
 
 import javax.annotation.Generated;
@@ -24,12 +24,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class PanelGroupBase extends HtmlPanelGroup implements Styleable {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.panelgroup.PanelGroup";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.panelgroup.PanelGroupRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.panelgroup.PanelGroup";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.panelgroup.PanelGroupRenderer";
 
 	public PanelGroupBase() {
 		super();
@@ -48,7 +48,7 @@ public abstract class PanelGroupBase extends HtmlPanelGroup implements Styleable
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(PropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-panel-group");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-panel-group");
 	}
 }
 //J+

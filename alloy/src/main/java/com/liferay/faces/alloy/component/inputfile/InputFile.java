@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputfile;
+package com.liferay.faces.crystal.component.inputfile;
 
 import java.io.IOException;
 import java.util.List;

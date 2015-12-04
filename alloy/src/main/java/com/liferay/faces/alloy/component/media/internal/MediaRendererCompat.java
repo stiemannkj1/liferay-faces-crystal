@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.media.internal;
+package com.liferay.faces.crystal.component.media.internal;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -21,7 +21,7 @@ import java.util.Set;
 import javax.faces.application.ResourceHandler;
 import javax.faces.context.ResponseWriter;
 
-import com.liferay.faces.alloy.component.media.Media;
+import com.liferay.faces.crystal.component.media.Media;
 import com.liferay.faces.util.logging.Logger;
 import com.liferay.faces.util.logging.LoggerFactory;
 import com.liferay.faces.util.product.Product;

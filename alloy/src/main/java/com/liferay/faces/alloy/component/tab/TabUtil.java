@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.tab;
+package com.liferay.faces.crystal.component.tab;
 
 import java.util.ArrayList;
 import java.util.List;

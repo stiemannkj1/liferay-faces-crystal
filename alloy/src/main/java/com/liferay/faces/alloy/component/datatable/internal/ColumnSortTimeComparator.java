@@ -11,11 +11,11 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.datatable.internal;
+package com.liferay.faces.crystal.component.datatable.internal;
 
 import java.util.Comparator;
 
-import com.liferay.faces.alloy.component.column.Column;
+import com.liferay.faces.crystal.component.column.Column;
 
 
 /**

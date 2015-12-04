@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputfile;
+package com.liferay.faces.crystal.component.inputfile;
 //J-
 
 import javax.annotation.Generated;
@@ -24,12 +24,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class InputFileBase extends com.liferay.faces.util.component.InputFileBase implements Styleable, ClientComponent {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.inputfile.InputFile";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.inputfile.InputFileRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.inputfile.InputFile";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.inputfile.InputFileRenderer";
 
 	// Protected Enumerations
 	protected enum InputFilePropertyKeys {
@@ -266,7 +266,7 @@ public abstract class InputFileBase extends com.liferay.faces.util.component.Inp
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(PropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-input-file");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-input-file");
 	}
 }
 //J+

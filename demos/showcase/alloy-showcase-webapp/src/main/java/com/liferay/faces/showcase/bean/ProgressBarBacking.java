@@ -22,7 +22,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.event.PhaseId;
 
-import com.liferay.faces.alloy.component.progressbar.ProgressCompleteEvent;
+import com.liferay.faces.crystal.component.progressbar.ProgressCompleteEvent;
 import com.liferay.faces.util.logging.Logger;
 import com.liferay.faces.util.logging.LoggerFactory;
 

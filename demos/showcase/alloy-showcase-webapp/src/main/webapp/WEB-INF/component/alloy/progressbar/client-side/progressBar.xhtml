@@ -1,11 +1,11 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:showcase="http://liferay.com/faces/showcase" xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="/WEB-INF/templates/component-2col.xhtml">
 
 	<ui:define name="col1">
-		<alloy:form>
+		<crystal:form>
 			<showcase:example>
-				<alloy:outputScript>
+				<crystal:outputScript>
 					var progressInterval;
 
 					function startProgress() {
@@ -24,15 +24,15 @@
 							clearInterval(progressInterval);
 						}
 					};
-				</alloy:outputScript>
-				<alloy:progressBar clientKey="progressBar" label="{0}%"
+				</crystal:outputScript>
+				<crystal:progressBar clientKey="progressBar" label="{0}%"
 					oncomplete="stopProgress(); Liferay.component('progressBar').set('label', '#{i18n['complete']}!');" />
-				<alloy:button value="#{i18n['start-progress']}" onclick="startProgress(); return false;" />
-				<alloy:button value="#{i18n['stop-progress']}" onclick="stopProgress(); return false;" />
-				<alloy:button value="#{i18n['reset-progress']}"
+				<crystal:button value="#{i18n['start-progress']}" onclick="startProgress(); return false;" />
+				<crystal:button value="#{i18n['stop-progress']}" onclick="stopProgress(); return false;" />
+				<crystal:button value="#{i18n['reset-progress']}"
 					onclick="stopProgress(); Liferay.component('progressBar').set('value', 0); return false;" />
 			</showcase:example>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 </ui:composition>

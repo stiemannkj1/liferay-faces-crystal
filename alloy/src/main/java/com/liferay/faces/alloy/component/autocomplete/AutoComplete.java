@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.autocomplete;
+package com.liferay.faces.crystal.component.autocomplete;
 
 import java.lang.reflect.Array;
 import java.text.MessageFormat;

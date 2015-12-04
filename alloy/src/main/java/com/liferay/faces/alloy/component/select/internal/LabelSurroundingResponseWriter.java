@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.select.internal;
+package com.liferay.faces.crystal.component.select.internal;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -25,9 +25,9 @@ import com.liferay.faces.util.render.internal.DelegationResponseWriterBase;
 
 /**
  * This class is designed to move &lt;input&gt;s rendered by {@link
- * com.liferay.faces.alloy.component.selectmanycheckbox.internal.SelectManyCheckboxRenderer} and {@link
- * com.liferay.faces.alloy.component.selectoneradio.internal.SelectOneRadioRenderer} inside their &lt;label&gt; tags.
- * This is done in order to be more consistent with Liferay Portal's (and AlloyUI's) style.
+ * com.liferay.faces.crystal.component.selectmanycheckbox.internal.SelectManyCheckboxRenderer} and {@link
+ * com.liferay.faces.crystal.component.selectoneradio.internal.SelectOneRadioRenderer} inside their &lt;label&gt; tags.
+ * This is done in order to be more consistent with Liferay Portal's (and CrystalUI's) style.
  *
  * @author  Kyle Stiemann
  */

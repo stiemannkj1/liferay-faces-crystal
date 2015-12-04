@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.selectthumbrating.internal;
+package com.liferay.faces.crystal.component.selectthumbrating.internal;
 
 import javax.faces.application.ResourceDependencies;
 import javax.faces.application.ResourceDependency;
@@ -19,8 +19,8 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.selectstarrating.internal.SelectStarRatingRenderer;
-import com.liferay.faces.alloy.component.selectthumbrating.SelectThumbRating;
+import com.liferay.faces.crystal.component.selectstarrating.internal.SelectStarRatingRenderer;
+import com.liferay.faces.crystal.component.selectthumbrating.SelectThumbRating;
 
 
 /**
@@ -30,9 +30,9 @@ import com.liferay.faces.alloy.component.selectthumbrating.SelectThumbRating;
 @FacesRenderer(componentFamily = SelectThumbRating.COMPONENT_FAMILY, rendererType = SelectThumbRating.RENDERER_TYPE)
 @ResourceDependencies(
 	{
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui-css/css/bootstrap.min.css"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui/aui-min.js"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "liferay.js")
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui-css/css/bootstrap.min.css"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui/aui-min.js"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "liferay.js")
 	}
 )
 //J+
@@ -42,7 +42,7 @@ public class SelectThumbRatingRenderer extends SelectStarRatingRenderer {
 	private static final String THUMBRATING_CLASS_NAME = "ThumbRating";
 
 	@Override
-	public String getAlloyClassName(FacesContext facesContext, UIComponent uiCompnent) {
+	public String getCrystalClassName(FacesContext facesContext, UIComponent uiCompnent) {
 		return THUMBRATING_CLASS_NAME;
 	}
 }

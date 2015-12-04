@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.config.internal;
+package com.liferay.faces.crystal.config.internal;
 
 import javax.faces.context.ExternalContext;
 
@@ -21,15 +21,15 @@ import com.liferay.faces.util.config.WebConfigParamUtil;
 /**
  * @author  Kyle Stiemann
  */
-public enum AlloyWebConfigParam {
+public enum CrystalWebConfigParam {
 
-	AlloyTagDecoratorEnabled("com.liferay.faces.util.AlloyTagDecoratorEnabled", true);
+	CrystalTagDecoratorEnabled("com.liferay.faces.util.CrystalTagDecoratorEnabled", true);
 
 	// Private Data Members
 	private boolean defaultBooleanValue;
 	private String name;
 
-	private AlloyWebConfigParam(String name, boolean defaultBooleanValue) {
+	private CrystalWebConfigParam(String name, boolean defaultBooleanValue) {
 		this.name = name;
 		this.defaultBooleanValue = defaultBooleanValue;
 	}

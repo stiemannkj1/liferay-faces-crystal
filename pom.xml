@@ -8,12 +8,12 @@
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.liferay.faces.alloy</groupId>
-	<artifactId>liferay-faces-alloy-parent</artifactId>
+	<groupId>com.liferay.faces.crystal</groupId>
+	<artifactId>liferay-faces-crystal-parent</artifactId>
 	<version>3.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>Liferay Faces Alloy Parent</name>
-	<description>Parent POM for all Liferay Faces Alloy modules</description>
+	<name>Liferay Faces Crystal Parent</name>
+	<description>Parent POM for all Liferay Faces Crystal modules</description>
 
 	<organization>
 		<name>Liferay, Inc.</name>
@@ -68,21 +68,21 @@
 	</developers>
 
 	<scm>
-		<connection>scm:git:https://github.com/liferay/liferay-faces-alloy</connection>
-		<developerConnection>scm:git:https://github.com/liferay/liferay-faces-alloy</developerConnection>
-		<url>scm:git:https://github.com/liferay/liferay-faces-alloy</url>
+		<connection>scm:git:https://github.com/liferay/liferay-faces-crystal</connection>
+		<developerConnection>scm:git:https://github.com/liferay/liferay-faces-crystal</developerConnection>
+		<url>scm:git:https://github.com/liferay/liferay-faces-crystal</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<modules>
 		<module>reslib</module>
-		<module>alloy</module>
+		<module>crystal</module>
 		<module>demos</module>
 	</modules>
 
 	<properties>
-		<alloyui.version>3.0.1</alloyui.version>
-		<alloyui.zip.version>${alloyui.version}</alloyui.zip.version>
+		<crystalui.version>3.0.1</crystalui.version>
+		<crystalui.zip.version>${crystalui.version}</crystalui.zip.version>
 		<component.namespace>none</component.namespace>
 		<faces.group.id>com.sun.faces</faces.group.id>
 		<faces.api.artifact.id>jsf-api</faces.api.artifact.id>
@@ -395,8 +395,8 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>com.liferay.faces.alloy</groupId>
-				<artifactId>liferay-faces-alloy</artifactId>
+				<groupId>com.liferay.faces.crystal</groupId>
+				<artifactId>liferay-faces-crystal</artifactId>
 				<version>${project.version}</version>
 				<scope>runtime</scope>
 			</dependency>

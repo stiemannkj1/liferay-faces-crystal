@@ -21,8 +21,8 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
 
-import com.liferay.faces.alloy.component.tab.TabSelectEvent;
-import com.liferay.faces.alloy.component.tabview.TabView;
+import com.liferay.faces.crystal.component.tab.TabSelectEvent;
+import com.liferay.faces.crystal.component.tabview.TabView;
 
 
 /**
@@ -80,7 +80,7 @@ public class TabViewBackingBean {
 
 	public void setTabView(TabView tabView) {
 
-		// Injected via alloy:tabView binding attribute
+		// Injected via crystal:tabView binding attribute
 		this.tabView = tabView;
 	}
 }

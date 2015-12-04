@@ -11,11 +11,11 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputtime;
+package com.liferay.faces.crystal.component.inputtime;
 //J-
 
 import javax.annotation.Generated;
-import com.liferay.faces.alloy.component.inputdatetime.InputDateTime;
+import com.liferay.faces.crystal.component.inputdatetime.InputDateTime;
 
 import com.liferay.faces.util.component.Styleable;
 
@@ -24,12 +24,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class InputTimeBase extends InputDateTime implements Styleable {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.inputtime.InputTime";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.inputtime.InputTimeRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.inputtime.InputTime";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.inputtime.InputTimeRenderer";
 
 	// Protected Enumerations
 	protected enum InputTimePropertyKeys {
@@ -299,7 +299,7 @@ public abstract class InputTimeBase extends InputDateTime implements Styleable {
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(PropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-input-time", "form-inline");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-input-time", "form-inline");
 	}
 }
 //J+

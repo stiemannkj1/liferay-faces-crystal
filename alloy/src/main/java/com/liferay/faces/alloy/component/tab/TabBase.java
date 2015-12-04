@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.tab;
+package com.liferay.faces.crystal.component.tab;
 //J-
 
 import javax.annotation.Generated;
@@ -24,12 +24,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class TabBase extends UIColumn implements Styleable {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.tab.Tab";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.tab.TabRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.tab.Tab";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.tab.TabRenderer";
 
 	// Protected Enumerations
 	protected enum TabPropertyKeys {
@@ -49,7 +49,7 @@ public abstract class TabBase extends UIColumn implements Styleable {
 	/**
 	 * <code>contentClass</code> attribute description:
 	 * <br /><br />
-	 * When alloy:tab is a child of alloy:accordion, this is the name of the CSS class that is to be rendered within the class attribute of the content &lt;div&gt;
+	 * When crystal:tab is a child of crystal:accordion, this is the name of the CSS class that is to be rendered within the class attribute of the content &lt;div&gt;
 	 */
 	public String getContentClass() {
 		return (String) getStateHelper().eval(TabPropertyKeys.contentClass, null);
@@ -58,7 +58,7 @@ public abstract class TabBase extends UIColumn implements Styleable {
 	/**
 	 * <code>contentClass</code> attribute description:
 	 * <br /><br />
-	 * When alloy:tab is a child of alloy:accordion, this is the name of the CSS class that is to be rendered within the class attribute of the content &lt;div&gt;
+	 * When crystal:tab is a child of crystal:accordion, this is the name of the CSS class that is to be rendered within the class attribute of the content &lt;div&gt;
 	 */
 	public void setContentClass(String contentClass) {
 		getStateHelper().put(TabPropertyKeys.contentClass, contentClass);
@@ -85,7 +85,7 @@ public abstract class TabBase extends UIColumn implements Styleable {
 	/**
 	 * <code>headerClass</code> attribute description:
 	 * <br /><br />
-	 * When alloy:tab is a child of alloy:accordion, this is the name of the CSS class that is to be rendered within the class attribute of the header &lt;div&gt;
+	 * When crystal:tab is a child of crystal:accordion, this is the name of the CSS class that is to be rendered within the class attribute of the header &lt;div&gt;
 	 */
 	public String getHeaderClass() {
 		return (String) getStateHelper().eval(TabPropertyKeys.headerClass, null);
@@ -94,7 +94,7 @@ public abstract class TabBase extends UIColumn implements Styleable {
 	/**
 	 * <code>headerClass</code> attribute description:
 	 * <br /><br />
-	 * When alloy:tab is a child of alloy:accordion, this is the name of the CSS class that is to be rendered within the class attribute of the header &lt;div&gt;
+	 * When crystal:tab is a child of crystal:accordion, this is the name of the CSS class that is to be rendered within the class attribute of the header &lt;div&gt;
 	 */
 	public void setHeaderClass(String headerClass) {
 		getStateHelper().put(TabPropertyKeys.headerClass, headerClass);
@@ -150,7 +150,7 @@ public abstract class TabBase extends UIColumn implements Styleable {
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(TabPropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-tab");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-tab");
 	}
 
 	/**

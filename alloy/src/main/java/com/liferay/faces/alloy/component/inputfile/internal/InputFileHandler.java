@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputfile.internal;
+package com.liferay.faces.crystal.component.inputfile.internal;
 
 import java.lang.reflect.Method;
 
@@ -23,8 +23,8 @@ import javax.faces.view.facelets.Metadata;
 import javax.faces.view.facelets.MetadataTarget;
 import javax.faces.view.facelets.TagAttribute;
 
-import com.liferay.faces.alloy.component.inputfile.FileUploadEvent;
-import com.liferay.faces.alloy.component.inputfile.InputFile;
+import com.liferay.faces.crystal.component.inputfile.FileUploadEvent;
+import com.liferay.faces.crystal.component.inputfile.InputFile;
 import com.liferay.faces.util.view.facelets.MethodMetadata;
 
 

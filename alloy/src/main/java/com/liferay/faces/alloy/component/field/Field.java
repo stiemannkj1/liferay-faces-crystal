@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.field;
+package com.liferay.faces.crystal.component.field;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -29,7 +29,7 @@ import javax.faces.component.UIMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.context.PartialViewContext;
 
-import com.liferay.faces.alloy.component.selectbooleancheckbox.SelectBooleanCheckbox;
+import com.liferay.faces.crystal.component.selectbooleancheckbox.SelectBooleanCheckbox;
 import com.liferay.faces.util.component.ComponentUtil;
 
 
@@ -264,6 +264,6 @@ public class Field extends FieldBase {
 		// STYLE_CLASS_NAME of the super class.
 		String styleClass = (String) getStateHelper().eval(PropertyKeys.styleClass, null);
 
-		return ComponentUtil.concatCssClasses(styleClass, "alloy-field", controlGroupCssClass);
+		return ComponentUtil.concatCssClasses(styleClass, "crystal-field", controlGroupCssClass);
 	}
 }

@@ -11,20 +11,20 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputdatetime.internal;
+package com.liferay.faces.crystal.component.inputdatetime.internal;
 //J-
 
 import javax.annotation.Generated;
 
-import com.liferay.faces.alloy.render.internal.DelegatingAlloyRendererBase;
+import com.liferay.faces.crystal.render.internal.DelegatingCrystalRendererBase;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
-public abstract class InputDateTimeRendererBase extends DelegatingAlloyRendererBase {
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
+public abstract class InputDateTimeRendererBase extends DelegatingCrystalRendererBase {
 
 	// Protected Constants
 	protected static final String AUTO_HIDE = "autoHide";

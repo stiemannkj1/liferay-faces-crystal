@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.outputscript.internal;
+package com.liferay.faces.crystal.component.outputscript.internal;
 
 import java.io.IOException;
 
@@ -22,8 +22,8 @@ import javax.faces.event.ListenerFor;
 import javax.faces.event.PostAddToViewEvent;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.outputscript.OutputScript;
-import com.liferay.faces.alloy.render.internal.AlloyRendererUtil;
+import com.liferay.faces.crystal.component.outputscript.OutputScript;
+import com.liferay.faces.crystal.render.internal.CrystalRendererUtil;
 import com.liferay.faces.util.client.BrowserSniffer;
 import com.liferay.faces.util.client.BrowserSnifferFactory;
 import com.liferay.faces.util.client.Script;
@@ -87,7 +87,7 @@ public class OutputScriptRenderer extends OutputScriptRendererBase {
 				facesRequestContext.addScript(script);
 			}
 
-			// Otherwise if the script uses YUI or AlloyUI modules then create a YUI sandbox which specifies the
+			// Otherwise if the script uses YUI or CrystalUI modules then create a YUI sandbox which specifies the
 			// correct modules around the script.
 			else if ((use != null) && (use.length() > 0)) {
 
@@ -96,15 +96,15 @@ public class OutputScriptRenderer extends OutputScriptRendererBase {
 				ResponseWriter responseWriter = facesContext.getResponseWriter();
 
 				// In order to determine the exact YUI sandbox string to write, the modules and browser information
-				// must be passed to RendererUtil.getAlloyBeginScript().
+				// must be passed to RendererUtil.getCrystalBeginScript().
 				String[] modules = use.split(",");
 				BrowserSnifferFactory browserSnifferFactory = (BrowserSnifferFactory) FactoryExtensionFinder.getFactory(
 						BrowserSnifferFactory.class);
 				BrowserSniffer browserSniffer = browserSnifferFactory.getBrowserSniffer(
 						facesContext.getExternalContext());
-				String alloyBeginScript = AlloyRendererUtil.getAlloyBeginScript(modules, null, browserSniffer);
+				String crystalBeginScript = CrystalRendererUtil.getCrystalBeginScript(modules, null, browserSniffer);
 				OutputScriptResponseWriter outputScriptResponseWriter = new OutputScriptResponseWriter(responseWriter,
-						alloyBeginScript);
+						crystalBeginScript);
 				super.encodeChildren(facesContext, uiComponent, outputScriptResponseWriter);
 			}
 

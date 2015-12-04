@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.selectmanylistbox;
+package com.liferay.faces.crystal.component.selectmanylistbox;
 //J-
 
 import javax.annotation.Generated;
@@ -24,12 +24,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class SelectManyListboxBase extends HtmlSelectManyListbox implements Styleable {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.selectmanylistbox.SelectManyListbox";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.selectmanylistbox.SelectManyListboxRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.selectmanylistbox.SelectManyListbox";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.selectmanylistbox.SelectManyListboxRenderer";
 
 	public SelectManyListboxBase() {
 		super();
@@ -70,7 +70,7 @@ public abstract class SelectManyListboxBase extends HtmlSelectManyListbox implem
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(PropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-select-many-listbox");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-select-many-listbox");
 	}
 }
 //J+

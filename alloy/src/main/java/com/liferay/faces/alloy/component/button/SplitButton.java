@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.button;
+package com.liferay.faces.crystal.component.button;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -45,7 +45,7 @@ import com.liferay.faces.util.component.ComponentUtil;
 public class SplitButton extends SplitButtonCompat {
 
 	// Public Constants
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.button.internal.SplitButtonRenderer";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.button.internal.SplitButtonRenderer";
 
 	// Private Members
 	private String rendererType;

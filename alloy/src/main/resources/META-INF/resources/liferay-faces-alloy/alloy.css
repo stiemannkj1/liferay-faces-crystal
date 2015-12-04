@@ -1,92 +1,92 @@
-/* alloy-accordion */
-.alloy-accordion .toggler-content {
+/* crystal-accordion */
+.crystal-accordion .toggler-content {
 	padding: 0px 4px;
 }
 
-.alloy-accordion .toggler-header {
+.crystal-accordion .toggler-header {
 	cursor: pointer;
 	font-weight: bold;
 	padding: 4px;
 }
 
-/* alloy-button-row */
-div.alloy-button-row {
+/* crystal-button-row */
+div.crystal-button-row {
 	overflow: visible;
 }
 
-div.alloy-button-row:after {
+div.crystal-button-row:after {
 	clear: both;
 	content: " ";
 	display: block;
 	overflow: hidden;
 }
 
-div.alloy-button-row button.alloy-button, div.alloy-button-row button.alloy-command-button {
+div.crystal-button-row button.crystal-button, div.crystal-button-row button.crystal-command-button {
 	margin-right: 4px;
 }
 
-/* alloy-datatable */
-table.alloy-datatable thead th.facet, table.alloy-datatable tfoot td.facet {
+/* crystal-datatable */
+table.crystal-datatable thead th.facet, table.crystal-datatable tfoot td.facet {
     padding: 2px;
     text-align: center;
 }
 
-/* alloy-dialog */
-div.alloy-dialog {
+/* crystal-dialog */
+div.crystal-dialog {
 	padding: 6px;
 }
 
-div.alloy-dialog div.modal-header {
+div.crystal-dialog div.modal-header {
 	color: #333;
 	background-color: #f5f5f5;
 }
 
-div.alloy-dialog div.modal-header span.alloy-overlay-title {
+div.crystal-dialog div.modal-header span.crystal-overlay-title {
 	font-size: 16px;
 	font-weight: bold;
 }
 
-/* alloy-input-file */
-.alloy-input-file .select-files-box,.alloy-input-file .upload-files-box {
+/* crystal-input-file */
+.crystal-input-file .select-files-box,.crystal-input-file .upload-files-box {
 	display: inline-block;
 }
 
-.alloy-input-file-button-hidden {
+.crystal-input-file-button-hidden {
 	display: none;
 }
 
-/* alloy-output-tooltip */
-div.alloy-output-tooltip {
+/* crystal-output-tooltip */
+div.crystal-output-tooltip {
 	text-align: center;
 }
 
-/* alloy-messages */
-.alloy-messages {
+/* crystal-messages */
+.crystal-messages {
 	border: 1px solid #ddd;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
 
-table.alloy-messages {
+table.crystal-messages {
 	border-collapse: separate;
 	border-spacing: 4px;
 	width: 100%;
 }
 
-ul.alloy-messages {
+ul.crystal-messages {
 	list-style-position: inside;
 	margin: 0px;
 	padding: 4px;
 }
 
-/* alloy-paginator */
-div.alloy-paginator div.pagination {
+/* crystal-paginator */
+div.crystal-paginator div.pagination {
     margin: 0px;
 }
 
-/* alloy-panel: bootstrap 3 backport */
-div.alloy-panel {
+/* crystal-panel: bootstrap 3 backport */
+div.crystal-panel {
 	margin-bottom: 20px;
 	background-color: #fff;
 	border: 1px solid transparent;
@@ -95,22 +95,22 @@ div.alloy-panel {
 	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
 
-div.alloy-panel div.alloy-panel-body {
+div.crystal-panel div.crystal-panel-body {
 	padding: 15px;
 }
 
-div.alloy-panel div.alloy-panel-heading {
+div.crystal-panel div.crystal-panel-heading {
 	padding: 10px 15px;
 	border-bottom: 1px solid transparent;
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
 }
 
-div.alloy-panel div.alloy-panel-heading>.dropdown .dropdown-toggle {
+div.crystal-panel div.crystal-panel-heading>.dropdown .dropdown-toggle {
 	color: inherit;
 }
 
-div.alloy-panel .alloy-panel-title {
+div.crystal-panel .crystal-panel-title {
 	color: inherit;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -118,11 +118,11 @@ div.alloy-panel .alloy-panel-title {
 	font-weight: bold;
 }
 
-div.alloy-panel .alloy-panel-title>a {
+div.crystal-panel .crystal-panel-title>a {
 	color: inherit;
 }
 
-div.alloy-panel div.alloy-panel-footer {
+div.crystal-panel div.crystal-panel-footer {
 	padding: 10px 15px;
 	background-color: #f5f5f5;
 	border-top: 1px solid #ddd;
@@ -130,59 +130,59 @@ div.alloy-panel div.alloy-panel-footer {
 	border-bottom-left-radius: 3px;
 }
 
-div.alloy-panel-default {
+div.crystal-panel-default {
 	border-color: #ddd;
 }
 
-div.alloy-panel-default>div.alloy-panel-heading {
+div.crystal-panel-default>div.crystal-panel-heading {
 	color: #333;
 	background-color: #f5f5f5;
 	border-color: #ddd;
 }
 
-div.alloy-panel-default>div.alloy-panel-heading+.alloy-panel-collapse>div.alloy-panel-body {
+div.crystal-panel-default>div.crystal-panel-heading+.crystal-panel-collapse>div.crystal-panel-body {
 	border-top-color: #ddd;
 }
 
-div.alloy-panel-default>div.alloy-panel-heading .alloy-panel-badge {
+div.crystal-panel-default>div.crystal-panel-heading .crystal-panel-badge {
 	color: #f5f5f5;
 	background-color: #333;
 }
 
-div.alloy-panel-default>div.panel-footer+div.panel-collapse>div.panel-body {
+div.crystal-panel-default>div.panel-footer+div.panel-collapse>div.panel-body {
 	border-bottom-color: #ddd;
 }
 
-/* alloy-popover */
-div.alloy-popover {
+/* crystal-popover */
+div.crystal-popover {
 	padding: 6px;
 	text-align: center;
 }
 
-/* alloy-select-boolean-checkbox */
-.alloy-select-boolean-checkbox {
+/* crystal-select-boolean-checkbox */
+.crystal-select-boolean-checkbox {
 	vertical-align: baseline;
 }
 
-/* alloy-select-one-radio */
-table.alloy-select-one-radio {
+/* crystal-select-one-radio */
+table.crystal-select-one-radio {
 	border-collapse: separate;
 }
 
-/* alloy-select-many-checkbox */
-table.alloy-select-many-checkbox td,table.alloy-select-one-radio td {
+/* crystal-select-many-checkbox */
+table.crystal-select-many-checkbox td,table.crystal-select-one-radio td {
 	padding-right: 30px;
 }
 
-table.alloy-select-many-checkbox td input[type='checkbox'] {
+table.crystal-select-many-checkbox td input[type='checkbox'] {
 	vertical-align: baseline;
 }
 
-table.alloy-select-many-checkbox td label {
+table.crystal-select-many-checkbox td label {
 	display: inline;
 }
 
-table.alloy-select-many-checkbox td label,table.alloy-select-one-radio td label {
+table.crystal-select-many-checkbox td label,table.crystal-select-one-radio td label {
 	white-space: nowrap;
 }
 
@@ -191,7 +191,7 @@ li.yui3-menuitem hr {
 	margin: 2px 0px;
 }
 
-a.yui3-menu-label .alloy-icon,li.yui3-menuitem .alloy-icon {
+a.yui3-menu-label .crystal-icon,li.yui3-menuitem .crystal-icon {
 	margin-right: 4px;
 }
 
@@ -347,8 +347,8 @@ div.yui3-splitbuttonnav .yui3-menu-label span.btn-disabled {
 	opacity: .65;
 }
 
-/* vertical alloy-progress-bar */
-.alloy-progress-bar .vertical {
+/* vertical crystal-progress-bar */
+.crystal-progress-bar .vertical {
 	-o-transform: scaleY(-1);
 	-ms-transform: scaleY(-1);
 	-moz-transform: scaleY(-1);
@@ -359,11 +359,11 @@ div.yui3-splitbuttonnav .yui3-menu-label span.btn-disabled {
 	transform-style: preserve-3d;
 }
 
-.alloy-progress-bar .vertical .progress-content {
+.crystal-progress-bar .vertical .progress-content {
 	transition: height 0.6s ease 0s;
 }
 
-.alloy-progress-bar .vertical p {
+.crystal-progress-bar .vertical p {
 	position: relative;
 	top: 50%;
 	-o-transform: translateY(-50%) scaleY(-1);
@@ -376,12 +376,12 @@ div.yui3-splitbuttonnav .yui3-menu-label span.btn-disabled {
 /* Flip the vertical progressBar for IE8. The reason that the rule below must only target IE8 is because the rule */
 /* above works in IE9, and the rule below would break it if applied in IE9. */
 @media \0screen {
-	.alloy-progress-bar .vertical {
+	.crystal-progress-bar .vertical {
 		-ms-filter:"progid:DXImageTransform.Microsoft.BasicImage(Rotation=2)";
 	}
 }
 
-/* alloy-tabview */
+/* crystal-tabview */
 .tab-content > .active {
 	overflow: auto;
 }

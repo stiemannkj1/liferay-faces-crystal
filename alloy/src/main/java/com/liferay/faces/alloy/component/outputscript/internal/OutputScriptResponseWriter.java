@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.outputscript.internal;
+package com.liferay.faces.crystal.component.outputscript.internal;
 
 import java.io.IOException;
 
@@ -26,13 +26,13 @@ import com.liferay.faces.util.render.internal.DelegationResponseWriterBase;
 public class OutputScriptResponseWriter extends DelegationResponseWriterBase {
 
 	// Private Data Members
-	private String alloyBeginScript;
+	private String crystalBeginScript;
 	private boolean firstWriteText;
 
-	public OutputScriptResponseWriter(ResponseWriter responseWriter, String alloyBeginScript) {
+	public OutputScriptResponseWriter(ResponseWriter responseWriter, String crystalBeginScript) {
 
 		super(responseWriter);
-		this.alloyBeginScript = alloyBeginScript;
+		this.crystalBeginScript = crystalBeginScript;
 		this.firstWriteText = true;
 	}
 
@@ -47,7 +47,7 @@ public class OutputScriptResponseWriter extends DelegationResponseWriterBase {
 
 		if (firstWriteText) {
 			firstWriteText = false;
-			writeText(alloyBeginScript, null);
+			writeText(crystalBeginScript, null);
 		}
 
 		super.writeText(text, property);

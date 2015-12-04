@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.popover;
+package com.liferay.faces.crystal.component.popover;
 
 import javax.faces.component.FacesComponent;
 
@@ -32,7 +32,7 @@ public class Popover extends PopoverBase {
 		String style = super.getStyle();
 
 		// Initially style the outermost <div> (which is the contentBox) with "display:none;" in order to prevent
-		// blinking when Alloy's JavaScript attempts to hide the contentBox.
+		// blinking when Crystal's JavaScript attempts to hide the contentBox.
 		if (style == null) {
 			style = "display:none;";
 		}

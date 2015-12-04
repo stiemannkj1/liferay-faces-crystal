@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.messages.internal;
+package com.liferay.faces.crystal.component.messages.internal;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -23,14 +23,14 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.messages.Messages;
+import com.liferay.faces.crystal.component.messages.Messages;
 
 
 /**
  * @author  Neil Griffin
  */
 @FacesRenderer(componentFamily = Messages.COMPONENT_FAMILY, rendererType = Messages.RENDERER_TYPE)
-@ResourceDependency(library = "liferay-faces-alloy", name = "alloy.css")
+@ResourceDependency(library = "liferay-faces-crystal", name = "crystal.css")
 public class MessagesRenderer extends MessagesRendererBase {
 
 	// Private Constants

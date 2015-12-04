@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.fieldset;
+package com.liferay.faces.crystal.component.fieldset;
 //J-
 
 import javax.annotation.Generated;
@@ -24,12 +24,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class FieldsetBase extends UIPanel implements Styleable {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.fieldset.Fieldset";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.fieldset.FieldsetRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.fieldset.Fieldset";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.fieldset.FieldsetRenderer";
 
 	// Protected Enumerations
 	protected enum FieldsetPropertyKeys {
@@ -302,7 +302,7 @@ public abstract class FieldsetBase extends UIPanel implements Styleable {
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(FieldsetPropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-fieldset", "fieldset");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-fieldset", "fieldset");
 	}
 
 	/**

@@ -11,19 +11,19 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.media.internal;
+package com.liferay.faces.crystal.component.media.internal;
 //J-
 
 import javax.annotation.Generated;
 
-import com.liferay.faces.alloy.render.internal.PassThroughRenderer;
+import com.liferay.faces.crystal.render.internal.PassThroughRenderer;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class MediaRendererBase extends PassThroughRenderer {
 
 	// Protected Constants

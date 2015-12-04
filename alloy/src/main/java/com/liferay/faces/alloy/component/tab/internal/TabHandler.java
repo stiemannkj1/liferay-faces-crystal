@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.tab.internal;
+package com.liferay.faces.crystal.component.tab.internal;
 
 import java.util.Iterator;
 import java.util.List;
@@ -29,7 +29,7 @@ import javax.faces.view.facelets.FaceletContext;
 
 
 /**
- * This class provides alloy:tab with the ability to implicitly wrap the tab's children inside of a {@link UIPanel}
+ * This class provides crystal:tab with the ability to implicitly wrap the tab's children inside of a {@link UIPanel}
  * facet. This is necessary because {@link UIData#visitTree(javax.faces.component.visit.VisitContext,
  * javax.faces.component.visit.VisitCallback)} will visit facets but not children when it is not iterating over data
  * (i.e. when the value and var attributes are unused).

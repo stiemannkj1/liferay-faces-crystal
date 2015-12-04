@@ -1,22 +1,22 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:showcase="http://liferay.com/faces/showcase" template="/WEB-INF/templates/component-2col.xhtml">
 
 	<ui:define name="col1">
-		<alloy:form>
+		<crystal:form>
 			<showcase:example>
-				<alloy:field label="#{i18n['time']}">
-					<alloy:inputTime id="time" pattern="hh:mm a" value="#{inputTimeModelBean.time}">
+				<crystal:field label="#{i18n['time']}">
+					<crystal:inputTime id="time" pattern="hh:mm a" value="#{inputTimeModelBean.time}">
 						<f:ajax render="modelValue" />
-					</alloy:inputTime>
-				</alloy:field>
+					</crystal:inputTime>
+				</crystal:field>
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
-				<alloy:outputText id="modelValue" value="#{inputTimeModelBean.time}">
+				<crystal:outputText id="modelValue" value="#{inputTimeModelBean.time}">
 					<f:convertDateTime pattern="hh:mm a" />
-				</alloy:outputText>
+				</crystal:outputText>
 			</showcase:results>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 </ui:composition>

@@ -11,15 +11,15 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.datatable.internal;
+package com.liferay.faces.crystal.component.datatable.internal;
 
 import java.util.List;
 
 import javax.faces.component.UIColumn;
 import javax.faces.component.UIComponent;
 
-import com.liferay.faces.alloy.component.column.Column;
-import com.liferay.faces.alloy.component.datatable.DataTable;
+import com.liferay.faces.crystal.component.column.Column;
+import com.liferay.faces.crystal.component.datatable.DataTable;
 
 
 /**

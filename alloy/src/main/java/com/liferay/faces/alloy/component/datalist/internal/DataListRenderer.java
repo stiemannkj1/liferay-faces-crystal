@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.datalist.internal;
+package com.liferay.faces.crystal.component.datalist.internal;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,8 +23,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.dataitem.DataItem;
-import com.liferay.faces.alloy.component.datalist.DataList;
+import com.liferay.faces.crystal.component.dataitem.DataItem;
+import com.liferay.faces.crystal.component.datalist.DataList;
 import com.liferay.faces.util.component.Styleable;
 import com.liferay.faces.util.logging.Logger;
 import com.liferay.faces.util.logging.LoggerFactory;
@@ -97,7 +97,7 @@ public class DataListRenderer extends DataListRendererBase {
 			DataItem prototypeChildDataItem = getFirstChildDataItem(dataList);
 
 			if (prototypeChildDataItem == null) {
-				logger.warn("Unable to iterate because alloy:dataList does not have an alloy:dataItem child element.");
+				logger.warn("Unable to iterate because crystal:dataList does not have an crystal:dataItem child element.");
 			}
 			else {
 
@@ -151,7 +151,7 @@ public class DataListRenderer extends DataListRendererBase {
 					responseWriter.endElement(itemTag);
 				}
 				else {
-					logger.warn("Unable to render child element of alloy:dataList since it is not alloy:dataItem");
+					logger.warn("Unable to render child element of crystal:dataList since it is not crystal:dataItem");
 				}
 			}
 		}

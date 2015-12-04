@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.render.internal;
+package com.liferay.faces.crystal.render.internal;
 
 import java.io.IOException;
 
@@ -25,7 +25,7 @@ import com.liferay.faces.util.component.ClientComponent;
 /**
  * @author  Kyle Stiemann
  */
-public interface AlloyRenderer extends ClientComponentRenderer {
+public interface CrystalRenderer extends ClientComponentRenderer {
 
 	// Public Constants
 	public static final String A_DOT_ONE = "A.one";
@@ -37,7 +37,7 @@ public interface AlloyRenderer extends ClientComponentRenderer {
 
 	public void decodeClientBehaviors(FacesContext facesContext, UIComponent uiComponent);
 
-	public void encodeAlloyAttributes(FacesContext facesContext, ResponseWriter respoonseWriter,
+	public void encodeCrystalAttributes(FacesContext facesContext, ResponseWriter respoonseWriter,
 		UIComponent uiComponent) throws IOException;
 
 	public void encodeBoolean(ResponseWriter responseWriter, String attributeName, Boolean attributeValue,
@@ -73,7 +73,7 @@ public interface AlloyRenderer extends ClientComponentRenderer {
 
 	public String escapeJavaScript(String javaScript);
 
-	public String getAlloyClassName(FacesContext facesContext, UIComponent uiComponent);
+	public String getCrystalClassName(FacesContext facesContext, UIComponent uiComponent);
 
 	public String getClientVarName(FacesContext facesContext, ClientComponent clientComponent);
 

@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.outputremainingchars;
+package com.liferay.faces.crystal.component.outputremainingchars;
 
 import javax.faces.component.FacesComponent;
 import javax.faces.component.UIComponent;

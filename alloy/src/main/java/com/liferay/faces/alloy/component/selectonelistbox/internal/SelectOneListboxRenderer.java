@@ -11,11 +11,11 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.selectonelistbox.internal;
+package com.liferay.faces.crystal.component.selectonelistbox.internal;
 
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.selectonelistbox.SelectOneListbox;
+import com.liferay.faces.crystal.component.selectonelistbox.SelectOneListbox;
 
 
 /**

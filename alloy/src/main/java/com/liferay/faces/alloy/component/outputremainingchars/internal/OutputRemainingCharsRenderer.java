@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.outputremainingchars.internal;
+package com.liferay.faces.crystal.component.outputremainingchars.internal;
 
 import java.io.IOException;
 
@@ -24,7 +24,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.outputremainingchars.OutputRemainingChars;
+import com.liferay.faces.crystal.component.outputremainingchars.OutputRemainingChars;
 
 
 /**
@@ -36,9 +36,9 @@ import com.liferay.faces.alloy.component.outputremainingchars.OutputRemainingCha
 )
 @ResourceDependencies(
 	{
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui-css/css/bootstrap.min.css"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui/aui-min.js"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "liferay.js")
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui-css/css/bootstrap.min.css"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui/aui-min.js"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "liferay.js")
 	}
 )
 //J+

@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.media.internal;
+package com.liferay.faces.crystal.component.media.internal;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -27,7 +27,7 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
-import com.liferay.faces.alloy.component.media.Media;
+import com.liferay.faces.crystal.component.media.Media;
 import com.liferay.faces.util.application.FacesResource;
 import com.liferay.faces.util.client.BrowserSniffer;
 import com.liferay.faces.util.client.BrowserSnifferFactory;
@@ -245,11 +245,11 @@ public abstract class MediaRenderer extends MediaRendererCompat {
 
 		for (UIComponent child : children) {
 
-			if (child instanceof com.liferay.faces.alloy.component.resource.Resource) {
+			if (child instanceof com.liferay.faces.crystal.component.resource.Resource) {
 
 				String mediaResourceURL;
-				com.liferay.faces.alloy.component.resource.Resource resource =
-					(com.liferay.faces.alloy.component.resource.Resource) child;
+				com.liferay.faces.crystal.component.resource.Resource resource =
+					(com.liferay.faces.crystal.component.resource.Resource) child;
 				String contentType = resource.getContentType();
 				String resourceName = resource.getName();
 				String resourceLibrary = resource.getLibrary();
@@ -283,7 +283,7 @@ public abstract class MediaRenderer extends MediaRendererCompat {
 
 		// If no media has been specified, then warn the developer.
 		if (firstMediaResourceURL == null) {
-			logger.warn("No {0} has been specified for <alloy:{0} id=[{1}] />.", getMediaType(), media.getClientId());
+			logger.warn("No {0} has been specified for <crystal:{0} id=[{1}] />.", getMediaType(), media.getClientId());
 		}
 
 		// Otherwise, if degredation is enabled, encode the flash player as a fallback for HTML4 browsers using the
@@ -328,11 +328,11 @@ public abstract class MediaRenderer extends MediaRendererCompat {
 			flashPlayerURL = getEncodedResourceURL(facesContext, resourceHandler, application, flashPlayer);
 		}
 
-		// Otherwise, get the default Alloy Flash player.
+		// Otherwise, get the default Crystal Flash player.
 		else {
 
 			Resource defaultFlashPlayerResource = resourceHandler.createResource(getDefaultFlashPlayerName(),
-					"liferay-faces-alloy");
+					"liferay-faces-crystal");
 			String defaultFlashPlayerRequestPath = defaultFlashPlayerResource.getRequestPath();
 			ExternalContext externalContext = facesContext.getExternalContext();
 			flashPlayerURL = externalContext.encodeResourceURL(defaultFlashPlayerRequestPath);

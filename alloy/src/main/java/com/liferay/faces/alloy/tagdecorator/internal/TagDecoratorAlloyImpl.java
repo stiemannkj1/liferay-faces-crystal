@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.tagdecorator.internal;
+package com.liferay.faces.crystal.tagdecorator.internal;
 
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
@@ -20,13 +20,13 @@ import javax.faces.view.facelets.TagAttribute;
 import javax.faces.view.facelets.TagAttributes;
 import javax.faces.view.facelets.TagDecorator;
 
-import com.liferay.faces.alloy.config.internal.AlloyWebConfigParam;
+import com.liferay.faces.crystal.config.internal.CrystalWebConfigParam;
 
 
 /**
  * @author  Kyle Stiemann
  */
-public class TagDecoratorAlloyImpl implements TagDecorator {
+public class TagDecoratorCrystalImpl implements TagDecorator {
 
 	// Private Constants
 	private static final String ELEMENT_NAME = "elementName"; // JSF 2.2+ Renderer.PASSTHROUGH_RENDERER_LOCALNAME_KEY
@@ -37,10 +37,10 @@ public class TagDecoratorAlloyImpl implements TagDecorator {
 		Tag decoratedTag = null;
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		ExternalContext externalContext = facesContext.getExternalContext();
-		boolean alloyTagDecoratorEnabled = AlloyWebConfigParam.AlloyTagDecoratorEnabled.getBooleanValue(
+		boolean crystalTagDecoratorEnabled = CrystalWebConfigParam.CrystalTagDecoratorEnabled.getBooleanValue(
 				externalContext);
 
-		if (alloyTagDecoratorEnabled) {
+		if (crystalTagDecoratorEnabled) {
 
 			String elementName = tag.getLocalName();
 			TagAttributes attributes = tag.getAttributes();
@@ -54,18 +54,18 @@ public class TagDecoratorAlloyImpl implements TagDecorator {
 				if (elementNameAttribute != null) {
 
 					elementName = elementNameAttribute.getValue();
-					attributes = new TagAttributesAlloyImpl(attributes);
+					attributes = new TagAttributesCrystalImpl(attributes);
 				}
 			}
 
 			String namespace = tag.getNamespace();
 
-			if ("video".equals(elementName) && !"http://liferay.com/faces/alloy".equals(namespace)) {
-				decoratedTag = new Tag(tag.getLocation(), "http://liferay.com/faces/alloy", "video", "alloy:video",
+			if ("video".equals(elementName) && !"http://liferay.com/faces/crystal".equals(namespace)) {
+				decoratedTag = new Tag(tag.getLocation(), "http://liferay.com/faces/crystal", "video", "crystal:video",
 						attributes);
 			}
-			else if ("audio".equals(elementName) && !"http://liferay.com/faces/alloy".equals(namespace)) {
-				decoratedTag = new Tag(tag.getLocation(), "http://liferay.com/faces/alloy", "audio", "alloy:audio",
+			else if ("audio".equals(elementName) && !"http://liferay.com/faces/crystal".equals(namespace)) {
+				decoratedTag = new Tag(tag.getLocation(), "http://liferay.com/faces/crystal", "audio", "crystal:audio",
 						attributes);
 			}
 		}

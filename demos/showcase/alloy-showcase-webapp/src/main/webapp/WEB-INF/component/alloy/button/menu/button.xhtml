@@ -1,4 +1,4 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:showcase="http://liferay.com/faces/showcase" template="/WEB-INF/templates/component-3col.xhtml">
 
@@ -7,88 +7,88 @@
 			<f:viewParam name="menuItem" value="#{buttonBean.menuItem}" />
 		</f:metadata>
 
-		<!-- Example 1: Creating menus via the alloy:menu tag -->
-		<alloy:form>
-			<showcase:example description="#{i18n['alloy-button-menu-example-1']}" number="1">
-				<alloy:buttonRow>
-					<alloy:button includeViewParams="true">
-						<alloy:icon name="user" />
-						<alloy:outputText value="#{i18n['user']}" />
+		<!-- Example 1: Creating menus via the crystal:menu tag -->
+		<crystal:form>
+			<showcase:example description="#{i18n['crystal-button-menu-example-1']}" number="1">
+				<crystal:buttonRow>
+					<crystal:button includeViewParams="true">
+						<crystal:icon name="user" />
+						<crystal:outputText value="#{i18n['user']}" />
 						<f:param name="menuItem" value="view" />
-						<alloy:menu>
-							<alloy:link includeViewParams="true">
-								<alloy:icon name="pencil" />
-								<alloy:outputText value="#{i18n['edit']}" />
+						<crystal:menu>
+							<crystal:link includeViewParams="true">
+								<crystal:icon name="pencil" />
+								<crystal:outputText value="#{i18n['edit']}" />
 								<f:param name="menuItem" value="edit" />
-							</alloy:link>
+							</crystal:link>
 							<hr />
-							<alloy:link includeViewParams="true">
-								<alloy:icon name="ok-sign" />
-								<alloy:outputText value="#{i18n['enable']}" />
+							<crystal:link includeViewParams="true">
+								<crystal:icon name="ok-sign" />
+								<crystal:outputText value="#{i18n['enable']}" />
 								<f:param name="menuItem" value="enable" />
-							</alloy:link>
-							<alloy:link includeViewParams="true">
-								<alloy:icon name="minus-sign" />
-								<alloy:outputText value="#{i18n['disable']}" />
+							</crystal:link>
+							<crystal:link includeViewParams="true">
+								<crystal:icon name="minus-sign" />
+								<crystal:outputText value="#{i18n['disable']}" />
 								<f:param name="menuItem" value="disable" />
-							</alloy:link>
+							</crystal:link>
 							<hr />
-							<alloy:link includeViewParams="true">
-								<alloy:icon name="trash" />
-								<alloy:outputText value="#{i18n['delete']}" />
+							<crystal:link includeViewParams="true">
+								<crystal:icon name="trash" />
+								<crystal:outputText value="#{i18n['delete']}" />
 								<f:param name="menuItem" value="delete" />
-							</alloy:link>
-						</alloy:menu>
-					</alloy:button>
-				</alloy:buttonRow>
+							</crystal:link>
+						</crystal:menu>
+					</crystal:button>
+				</crystal:buttonRow>
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
-				<alloy:outputText value="#{buttonBean.menuItem}" />
+				<crystal:outputText value="#{buttonBean.menuItem}" />
 			</showcase:results>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 	<ui:define name="col2">
 		<!-- Example 2: Styling the button with f:facet -->
-		<alloy:form>
-			<showcase:example description="#{i18n['alloy-button-menu-example-2']}" number="2">
-				<alloy:buttonRow>
-					<alloy:button includeViewParams="true">
-						<alloy:icon name="user" />
-						<alloy:outputText value="#{i18n['user']}" />
+		<crystal:form>
+			<showcase:example description="#{i18n['crystal-button-menu-example-2']}" number="2">
+				<crystal:buttonRow>
+					<crystal:button includeViewParams="true">
+						<crystal:icon name="user" />
+						<crystal:outputText value="#{i18n['user']}" />
 						<f:param name="menuItem" value="view" />
-						<alloy:menu>
+						<crystal:menu>
 							<f:facet name="label">
-								<alloy:icon name="chevron-down" />
-								<alloy:outputText value="#{i18n['drop-down']}" />
+								<crystal:icon name="chevron-down" />
+								<crystal:outputText value="#{i18n['drop-down']}" />
 							</f:facet>
-							<alloy:link includeViewParams="true">
-								<alloy:icon name="pencil" />
-								<alloy:outputText value="#{i18n['edit']}" />
+							<crystal:link includeViewParams="true">
+								<crystal:icon name="pencil" />
+								<crystal:outputText value="#{i18n['edit']}" />
 								<f:param name="menuItem" value="edit" />
-							</alloy:link>
+							</crystal:link>
 							<hr />
-							<alloy:link includeViewParams="true">
-								<alloy:icon name="ok-sign" />
-								<alloy:outputText value="#{i18n['enable']}" />
+							<crystal:link includeViewParams="true">
+								<crystal:icon name="ok-sign" />
+								<crystal:outputText value="#{i18n['enable']}" />
 								<f:param name="menuItem" value="enable" />
-							</alloy:link>
-							<alloy:link includeViewParams="true">
-								<alloy:icon name="minus-sign" />
-								<alloy:outputText value="#{i18n['disable']}" />
+							</crystal:link>
+							<crystal:link includeViewParams="true">
+								<crystal:icon name="minus-sign" />
+								<crystal:outputText value="#{i18n['disable']}" />
 								<f:param name="menuItem" value="disable" />
-							</alloy:link>
+							</crystal:link>
 							<hr />
-							<alloy:link includeViewParams="true">
-								<alloy:icon name="trash" />
-								<alloy:outputText value="#{i18n['delete']}" />
+							<crystal:link includeViewParams="true">
+								<crystal:icon name="trash" />
+								<crystal:outputText value="#{i18n['delete']}" />
 								<f:param name="menuItem" value="delete" />
-							</alloy:link>
-						</alloy:menu>
-					</alloy:button>
-				</alloy:buttonRow>
+							</crystal:link>
+						</crystal:menu>
+					</crystal:button>
+				</crystal:buttonRow>
 			</showcase:example>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 </ui:composition>

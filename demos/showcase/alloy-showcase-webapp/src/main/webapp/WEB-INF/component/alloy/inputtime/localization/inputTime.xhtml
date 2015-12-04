@@ -1,40 +1,40 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:showcase="http://liferay.com/faces/showcase" template="/WEB-INF/templates/component-2col.xhtml">
 
 	<ui:define name="col1">
 		<!-- Example 1: Hard coded Brazilian Portuguese locale -->
-		<alloy:form>
-			<showcase:example description="#{i18n['alloy-inputtime-localization-example-1']}" number="1">
-				<alloy:inputTime id="portugueseDateInput" binding="#{portugueseInputTime}" value="#{inputTimeModelBean.time}"
+		<crystal:form>
+			<showcase:example description="#{i18n['crystal-inputtime-localization-example-1']}" number="1">
+				<crystal:inputTime id="portugueseDateInput" binding="#{portugueseInputTime}" value="#{inputTimeModelBean.time}"
 					locale="pt-BR" />
 				<hr />
-				<alloy:commandButton render="@form" value="#{i18n['submit']}" />
+				<crystal:commandButton render="@form" value="#{i18n['submit']}" />
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
-				<alloy:outputText id="portugueseSelection" value="#{inputTimeModelBean.time}">
+				<crystal:outputText id="portugueseSelection" value="#{inputTimeModelBean.time}">
 					<f:convertDateTime pattern="#{portugueseInputTime.pattern}" locale="pt-BR" />
-				</alloy:outputText>
+				</crystal:outputText>
 			</showcase:results>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 	<ui:define name="col2">
 		<!-- Example 2: Japanese Locale obtained from a bean via EL -->
-		<alloy:form>
-			<showcase:example description="#{i18n['alloy-inputtime-localization-example-2']}" number="2">
-				<alloy:messages />
-				<alloy:inputTime id="japaneseDateInput" binding="#{japaneseInputTime}" value="#{inputTimeModelBean.time}"
+		<crystal:form>
+			<showcase:example description="#{i18n['crystal-inputtime-localization-example-2']}" number="2">
+				<crystal:messages />
+				<crystal:inputTime id="japaneseDateInput" binding="#{japaneseInputTime}" value="#{inputTimeModelBean.time}"
 					locale="#{inputTimeModelBean.locale}" />
 				<hr />
-				<alloy:commandButton render="@form" value="#{i18n['submit']}" />
+				<crystal:commandButton render="@form" value="#{i18n['submit']}" />
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
-				<alloy:outputText id="japaneseSelection" value="#{inputTimeModelBean.time}">
+				<crystal:outputText id="japaneseSelection" value="#{inputTimeModelBean.time}">
 					<f:convertDateTime pattern="#{japaneseInputTime.pattern}" locale="#{inputTimeModelBean.locale}" />
-				</alloy:outputText>
+				</crystal:outputText>
 			</showcase:results>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 </ui:composition>

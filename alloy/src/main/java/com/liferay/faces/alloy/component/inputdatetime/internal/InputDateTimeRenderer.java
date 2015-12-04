@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputdatetime.internal;
+package com.liferay.faces.crystal.component.inputdatetime.internal;
 
 import java.io.IOException;
 import java.util.List;
@@ -27,9 +27,9 @@ import javax.faces.component.behavior.ClientBehavior;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
-import com.liferay.faces.alloy.component.button.Button;
-import com.liferay.faces.alloy.component.icon.Icon;
-import com.liferay.faces.alloy.component.inputdatetime.InputDateTime;
+import com.liferay.faces.crystal.component.button.Button;
+import com.liferay.faces.crystal.component.icon.Icon;
+import com.liferay.faces.crystal.component.inputdatetime.InputDateTime;
 import com.liferay.faces.util.client.BrowserSniffer;
 import com.liferay.faces.util.client.BrowserSnifferFactory;
 import com.liferay.faces.util.component.ClientComponent;

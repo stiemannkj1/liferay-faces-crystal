@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.media;
+package com.liferay.faces.crystal.component.media;
 //J-
 
 import javax.annotation.Generated;
@@ -22,13 +22,13 @@ import javax.faces.component.UIComponentBase;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class MediaBase extends UIComponentBase {
 
 	// Public Constants
-	public static final String COMPONENT_FAMILY = "com.liferay.faces.alloy.component.media";
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.media.Media";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.media.MediaRenderer";
+	public static final String COMPONENT_FAMILY = "com.liferay.faces.crystal.component.media";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.media.Media";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.media.MediaRenderer";
 
 	// Protected Enumerations
 	protected enum MediaPropertyKeys {
@@ -166,7 +166,7 @@ public abstract class MediaBase extends UIComponentBase {
 	/**
 	 * <code>flashPlayer</code> attribute description:
 	 * <br /><br />
-	 * A context-relative path, resource URL, or FacesResource that can be used to retrieve the Adobe&reg; Flash&reg; player. The default flash player is the flash player bundled with AlloyUI. <strong>Note:</strong> The AlloyUI player does not support <code>.ogv</code> or <code>.webm</code> formats.
+	 * A context-relative path, resource URL, or FacesResource that can be used to retrieve the Adobe&reg; Flash&reg; player. The default flash player is the flash player bundled with CrystalUI. <strong>Note:</strong> The CrystalUI player does not support <code>.ogv</code> or <code>.webm</code> formats.
 	 */
 	public Object getFlashPlayer() {
 		return (Object) getStateHelper().eval(MediaPropertyKeys.flashPlayer, null);
@@ -175,7 +175,7 @@ public abstract class MediaBase extends UIComponentBase {
 	/**
 	 * <code>flashPlayer</code> attribute description:
 	 * <br /><br />
-	 * A context-relative path, resource URL, or FacesResource that can be used to retrieve the Adobe&reg; Flash&reg; player. The default flash player is the flash player bundled with AlloyUI. <strong>Note:</strong> The AlloyUI player does not support <code>.ogv</code> or <code>.webm</code> formats.
+	 * A context-relative path, resource URL, or FacesResource that can be used to retrieve the Adobe&reg; Flash&reg; player. The default flash player is the flash player bundled with CrystalUI. <strong>Note:</strong> The CrystalUI player does not support <code>.ogv</code> or <code>.webm</code> formats.
 	 */
 	public void setFlashPlayer(Object flashPlayer) {
 		getStateHelper().put(MediaPropertyKeys.flashPlayer, flashPlayer);

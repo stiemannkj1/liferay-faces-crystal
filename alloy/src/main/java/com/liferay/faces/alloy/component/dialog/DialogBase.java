@@ -11,11 +11,11 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.dialog;
+package com.liferay.faces.crystal.component.dialog;
 //J-
 
 import javax.annotation.Generated;
-import com.liferay.faces.alloy.component.panelgroup.PanelGroupBlockLayout;
+import com.liferay.faces.crystal.component.panelgroup.PanelGroupBlockLayout;
 
 import com.liferay.faces.util.component.ClientComponent;
 import com.liferay.faces.util.component.Styleable;
@@ -25,12 +25,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class DialogBase extends PanelGroupBlockLayout implements Styleable, ClientComponent {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.dialog.Dialog";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.dialog.DialogRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.dialog.Dialog";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.dialog.DialogRenderer";
 
 	// Protected Enumerations
 	protected enum DialogPropertyKeys {
@@ -190,7 +190,7 @@ public abstract class DialogBase extends PanelGroupBlockLayout implements Stylea
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(PropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-dialog");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-dialog");
 	}
 
 	/**

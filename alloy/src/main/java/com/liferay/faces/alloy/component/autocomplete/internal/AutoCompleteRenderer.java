@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.autocomplete.internal;
+package com.liferay.faces.crystal.component.autocomplete.internal;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,8 +32,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.autocomplete.AutoComplete;
-import com.liferay.faces.alloy.render.internal.JavaScriptFragment;
+import com.liferay.faces.crystal.component.autocomplete.AutoComplete;
+import com.liferay.faces.crystal.render.internal.JavaScriptFragment;
 import com.liferay.faces.util.component.ClientComponent;
 import com.liferay.faces.util.component.Styleable;
 import com.liferay.faces.util.helper.StringHelper;
@@ -49,10 +49,10 @@ import com.liferay.faces.util.render.internal.BufferedScriptResponseWriter;
 @ResourceDependencies(
 	{
 		@ResourceDependency(library = "javax.faces", name = "jsf.js"),
-		@ResourceDependency(library = "liferay-faces-alloy", name = "alloy.js"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui-css/css/bootstrap.min.css"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui/aui-min.js"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "liferay.js")
+		@ResourceDependency(library = "liferay-faces-crystal", name = "crystal.js"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui-css/css/bootstrap.min.css"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui/aui-min.js"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "liferay.js")
 	}
 )
 //J+

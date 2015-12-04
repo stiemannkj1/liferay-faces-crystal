@@ -11,11 +11,11 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.selectrating;
+package com.liferay.faces.crystal.component.selectrating;
 //J-
 
 import javax.annotation.Generated;
-import com.liferay.faces.alloy.component.selectoneradio.SelectOneRadioBase;
+import com.liferay.faces.crystal.component.selectoneradio.SelectOneRadioBase;
 
 import com.liferay.faces.util.component.ClientComponent;
 
@@ -24,12 +24,12 @@ import com.liferay.faces.util.component.ClientComponent;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class SelectRatingBase extends SelectOneRadioBase implements ClientComponent {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.selectrating.SelectRating";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.selectrating.SelectRatingRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.selectrating.SelectRating";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.selectrating.SelectRatingRenderer";
 
 	// Protected Enumerations
 	protected enum SelectRatingPropertyKeys {

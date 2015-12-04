@@ -11,12 +11,12 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.button.internal;
+package com.liferay.faces.crystal.component.button.internal;
 
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.button.SplitButton;
-import com.liferay.faces.alloy.component.nodemenunav.internal.NodeMenuNavRendererBase;
+import com.liferay.faces.crystal.component.button.SplitButton;
+import com.liferay.faces.crystal.component.nodemenunav.internal.NodeMenuNavRendererBase;
 
 
 /**

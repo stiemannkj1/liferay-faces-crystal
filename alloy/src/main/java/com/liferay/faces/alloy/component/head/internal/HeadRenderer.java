@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.head.internal;
+package com.liferay.faces.crystal.component.head.internal;
 
 import java.io.IOException;
 
@@ -22,7 +22,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.head.Head;
+import com.liferay.faces.crystal.component.head.Head;
 import com.liferay.faces.util.product.ProductConstants;
 import com.liferay.faces.util.product.ProductMap;
 
@@ -34,11 +34,11 @@ import com.liferay.faces.util.product.ProductMap;
 @FacesRenderer(componentFamily = Head.COMPONENT_FAMILY, rendererType = Head.RENDERER_TYPE)
 @ResourceDependencies(
 		{
-			@ResourceDependency(library = "liferay-faces-alloy", name = "alloy.css"),
-			@ResourceDependency(library = "liferay-faces-alloy", name = "alloy.js"),
-			@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui-css/css/bootstrap.min.css"),
-			@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui/aui-min.js"),
-			@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "liferay.js")
+			@ResourceDependency(library = "liferay-faces-crystal", name = "crystal.css"),
+			@ResourceDependency(library = "liferay-faces-crystal", name = "crystal.js"),
+			@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui-css/css/bootstrap.min.css"),
+			@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui/aui-min.js"),
+			@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "liferay.js")
 		}
 	)
 //J+

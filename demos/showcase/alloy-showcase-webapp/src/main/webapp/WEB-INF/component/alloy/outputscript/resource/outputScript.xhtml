@@ -1,4 +1,4 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:showcase="http://liferay.com/faces/showcase"
 	template="/WEB-INF/templates/component-1col-80.xhtml">
 
@@ -7,10 +7,10 @@
 		<!-- resource named example.js -->
 		<showcase:example>
 			<span id="example:text"></span>
-			<alloy:outputScript>
+			<crystal:outputScript>
 				exampleNamespace.exampleFunction('example:text');
-			</alloy:outputScript>
-			<alloy:outputScript library="js" name="example.js" target="head" />
+			</crystal:outputScript>
+			<crystal:outputScript library="js" name="example.js" target="head" />
 		</showcase:example>
 	</ui:define>
 

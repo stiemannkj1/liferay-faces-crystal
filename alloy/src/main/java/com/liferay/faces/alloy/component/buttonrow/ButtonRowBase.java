@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.buttonrow;
+package com.liferay.faces.crystal.component.buttonrow;
 //J-
 
 import javax.annotation.Generated;
@@ -24,12 +24,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class ButtonRowBase extends HtmlPanelGroup implements Styleable {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.buttonrow.ButtonRow";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.buttonrow.ButtonRowRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.buttonrow.ButtonRow";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.buttonrow.ButtonRowRenderer";
 
 	public ButtonRowBase() {
 		super();
@@ -48,7 +48,7 @@ public abstract class ButtonRowBase extends HtmlPanelGroup implements Styleable 
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(PropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-button-row", "button-holder");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-button-row", "button-holder");
 	}
 }
 //J+

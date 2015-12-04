@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.fieldset.internal;
+package com.liferay.faces.crystal.component.fieldset.internal;
 
 import java.io.IOException;
 
@@ -21,7 +21,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.fieldset.Fieldset;
+import com.liferay.faces.crystal.component.fieldset.Fieldset;
 import com.liferay.faces.util.render.RendererUtil;
 
 
@@ -29,7 +29,7 @@ import com.liferay.faces.util.render.RendererUtil;
  * @author  Kyle Stiemann
  */
 @FacesRenderer(componentFamily = Fieldset.COMPONENT_FAMILY, rendererType = Fieldset.RENDERER_TYPE)
-@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui-css/css/bootstrap.min.css")
+@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui-css/css/bootstrap.min.css")
 public class FieldsetRenderer extends FieldsetRendererBase {
 
 	// Protected Constants

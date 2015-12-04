@@ -11,11 +11,11 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.audio;
+package com.liferay.faces.crystal.component.audio;
 //J-
 
 import javax.annotation.Generated;
-import com.liferay.faces.alloy.component.media.Media;
+import com.liferay.faces.crystal.component.media.Media;
 
 import com.liferay.faces.util.component.Styleable;
 
@@ -24,12 +24,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class AudioBase extends Media implements Styleable {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.audio.Audio";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.audio.AudioRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.audio.Audio";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.audio.AudioRenderer";
 
 	// Protected Enumerations
 	protected enum AudioPropertyKeys {
@@ -54,7 +54,7 @@ public abstract class AudioBase extends Media implements Styleable {
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(AudioPropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-audio");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-audio");
 	}
 
 	/**

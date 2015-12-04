@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.datatable;
+package com.liferay.faces.crystal.component.datatable;
 //J-
 
 import javax.annotation.Generated;
@@ -25,12 +25,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class DataTableBase extends HtmlDataTable implements Styleable, ClientComponent {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.datatable.DataTable";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.datatable.DataTableRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.datatable.DataTable";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.datatable.DataTableRenderer";
 
 	// Protected Enumerations
 	protected enum DataTablePropertyKeys {
@@ -131,7 +131,7 @@ public abstract class DataTableBase extends HtmlDataTable implements Styleable, 
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(PropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-data-table", "table table-bordered table-hover table-striped");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-data-table", "table table-bordered table-hover table-striped");
 	}
 }
 //J+

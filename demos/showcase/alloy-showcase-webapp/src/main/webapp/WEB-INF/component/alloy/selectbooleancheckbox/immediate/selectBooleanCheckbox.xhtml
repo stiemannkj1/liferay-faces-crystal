@@ -1,41 +1,41 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:showcase="http://liferay.com/faces/showcase"
 	template="/WEB-INF/templates/component-2col.xhtml">
 
 	<ui:define name="col1">
 		<!-- Example 1: ValueChangeListener execution when immediate is true -->
-		<alloy:form>
+		<crystal:form>
 			<showcase:example description="#{i18n['valuechangelistener-execution-when-immediate-is-true']}" number="1">
-				<alloy:outputLabel value="#{i18n['agree']}" />
-				<alloy:messages globalOnly="true" styleClass="feedback" />
-				<alloy:selectBooleanCheckbox immediate="true" value="#{selectBooleanCheckboxModelBean.agree}"
+				<crystal:outputLabel value="#{i18n['agree']}" />
+				<crystal:messages globalOnly="true" styleClass="feedback" />
+				<crystal:selectBooleanCheckbox immediate="true" value="#{selectBooleanCheckboxModelBean.agree}"
 					valueChangeListener="#{selectBooleanCheckboxBackingBean.valueChangeListener}">
-				</alloy:selectBooleanCheckbox>
+				</crystal:selectBooleanCheckbox>
 				<hr />
-				<alloy:commandButton render="@form" value="#{i18n['submit']}" />
+				<crystal:commandButton render="@form" value="#{i18n['submit']}" />
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
-				<alloy:outputText id="modelValue" value="#{selectBooleanCheckboxModelBean.agree}" />
+				<crystal:outputText id="modelValue" value="#{selectBooleanCheckboxModelBean.agree}" />
 			</showcase:results>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 	<ui:define name="col2">
 		<!-- Example 2: ValueChangeListener execution when immediate is false (the default) -->
-		<alloy:form>
+		<crystal:form>
 			<showcase:example description="#{i18n['valuechangelistener-execution-when-immediate-is-false']}" number="2">
-				<alloy:outputLabel value="#{i18n['agree']}" />
-				<alloy:messages globalOnly="true" styleClass="feedback" />
-				<alloy:selectBooleanCheckbox value="#{selectBooleanCheckboxModelBean.agree}"
+				<crystal:outputLabel value="#{i18n['agree']}" />
+				<crystal:messages globalOnly="true" styleClass="feedback" />
+				<crystal:selectBooleanCheckbox value="#{selectBooleanCheckboxModelBean.agree}"
 					valueChangeListener="#{selectBooleanCheckboxBackingBean.valueChangeListener}">
-				</alloy:selectBooleanCheckbox>
+				</crystal:selectBooleanCheckbox>
 				<hr />
-				<alloy:commandButton render="@form" value="#{i18n['submit']}" />
+				<crystal:commandButton render="@form" value="#{i18n['submit']}" />
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
-				<alloy:outputText id="modelValue" value="#{selectBooleanCheckboxModelBean.agree}" />
+				<crystal:outputText id="modelValue" value="#{selectBooleanCheckboxModelBean.agree}" />
 			</showcase:results>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 </ui:composition>

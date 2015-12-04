@@ -1,25 +1,25 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:showcase="http://liferay.com/faces/showcase" template="/WEB-INF/templates/component-1col-60.xhtml">
 
 	<ui:define name="col1">
-		<alloy:form>
+		<crystal:form>
 			<showcase:example
 				description="#{i18n['valid-date-range']}: #{inputDateModelBean.formattedMinDate} - #{inputDateModelBean.formattedMaxDate}">
-				<alloy:field>
-					<alloy:inputDate id="birthday" pattern="MM/dd/yyyy" maxDate="#{inputDateModelBean.maxDate}"
+				<crystal:field>
+					<crystal:inputDate id="birthday" pattern="MM/dd/yyyy" maxDate="#{inputDateModelBean.maxDate}"
 					minDate="#{inputDateModelBean.minDate}" showOn="button" value="#{inputDateModelBean.birthday}" />
-					<alloy:message for="birthday" />
-				</alloy:field>
+					<crystal:message for="birthday" />
+				</crystal:field>
 				<hr />
-				<alloy:commandButton render="@form" value="#{i18n['submit']}" />
+				<crystal:commandButton render="@form" value="#{i18n['submit']}" />
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
-				<alloy:outputText id="modelValue" value="#{inputDateModelBean.birthday}">
+				<crystal:outputText id="modelValue" value="#{inputDateModelBean.birthday}">
 					<f:convertDateTime pattern="MM/dd/yyyy" />
-				</alloy:outputText>
+				</crystal:outputText>
 			</showcase:results>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 </ui:composition>

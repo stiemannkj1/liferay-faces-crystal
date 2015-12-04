@@ -11,19 +11,19 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.field.internal;
+package com.liferay.faces.crystal.component.field.internal;
 //J-
 
 import javax.annotation.Generated;
 
-import com.liferay.faces.alloy.component.panelgroup.internal.PanelGroupRendererBase;
+import com.liferay.faces.crystal.component.panelgroup.internal.PanelGroupRendererBase;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class FieldRendererBase extends PanelGroupRendererBase {
 
 	// Protected Constants

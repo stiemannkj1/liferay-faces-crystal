@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.menu;
+package com.liferay.faces.crystal.component.menu;
 //J-
 
 import javax.annotation.Generated;
@@ -24,11 +24,11 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class MenuBase extends UIColumn implements Styleable {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.menu.Menu";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.menu.Menu";
 
 	// Protected Enumerations
 	protected enum MenuPropertyKeys {
@@ -92,7 +92,7 @@ public abstract class MenuBase extends UIColumn implements Styleable {
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(MenuPropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-menu");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-menu");
 	}
 
 	/**

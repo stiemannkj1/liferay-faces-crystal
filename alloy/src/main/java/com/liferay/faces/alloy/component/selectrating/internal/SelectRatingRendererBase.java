@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.selectrating.internal;
+package com.liferay.faces.crystal.component.selectrating.internal;
 //J-
 
 import java.io.IOException;
@@ -21,17 +21,17 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
-import com.liferay.faces.alloy.render.internal.DelegatingAlloyRendererBase;
+import com.liferay.faces.crystal.render.internal.DelegatingCrystalRendererBase;
 
-import com.liferay.faces.alloy.component.selectrating.SelectRating;
+import com.liferay.faces.crystal.component.selectrating.SelectRating;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
-public abstract class SelectRatingRendererBase extends DelegatingAlloyRendererBase {
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
+public abstract class SelectRatingRendererBase extends DelegatingCrystalRendererBase {
 
 	// Protected Constants
 	protected static final String CLIENT_KEY = "clientKey";
@@ -40,7 +40,7 @@ public abstract class SelectRatingRendererBase extends DelegatingAlloyRendererBa
 	protected static final String[] MODULES = { "aui-rating" };
 
 	@Override
-	public void encodeAlloyAttributes(FacesContext facesContext, ResponseWriter responseWriter, UIComponent uiComponent) throws IOException {
+	public void encodeCrystalAttributes(FacesContext facesContext, ResponseWriter responseWriter, UIComponent uiComponent) throws IOException {
 
 		SelectRating selectRating = (SelectRating) uiComponent;
 		boolean first = true;
@@ -49,7 +49,7 @@ public abstract class SelectRatingRendererBase extends DelegatingAlloyRendererBa
 	}
 
 	@Override
-	public String getAlloyClassName(FacesContext facesContext, UIComponent uiComponent) {
+	public String getCrystalClassName(FacesContext facesContext, UIComponent uiComponent) {
 		return "Rating";
 	}
 

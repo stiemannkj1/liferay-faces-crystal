@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.progressbar;
+package com.liferay.faces.crystal.component.progressbar;
 
 import javax.faces.component.UIComponent;
 import javax.faces.component.behavior.Behavior;

@@ -1,35 +1,35 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:showcase="http://liferay.com/faces/showcase"
 	template="/WEB-INF/templates/component-1col-60.xhtml">
 
 	<ui:define name="col1">
-		<alloy:form>
+		<crystal:form>
 			<showcase:example renderedCheckbox="true" requiredCheckbox="true">
-				<alloy:field label="#{i18n['hidden-field']}">
+				<crystal:field label="#{i18n['hidden-field']}">
 					<showcase:container>
-						<alloy:outputText rendered="#{showcaseModelBean.selectedComponent.rendered}"
+						<crystal:outputText rendered="#{showcaseModelBean.selectedComponent.rendered}"
 							value="#{i18n['this-is-a-div-that-contains-a-hidden-input']}" />
-						<alloy:outputText rendered="#{!showcaseModelBean.selectedComponent.rendered}"
+						<crystal:outputText rendered="#{!showcaseModelBean.selectedComponent.rendered}"
 							value="#{i18n['the-hidden-input-is-not-rendered']}" />
-						<alloy:inputHidden id="hidden" binding="#{inputHidden}"
+						<crystal:inputHidden id="hidden" binding="#{inputHidden}"
 							rendered="#{showcaseModelBean.selectedComponent.rendered}"
 							required="#{showcaseModelBean.selectedComponent.required}"
 							value="#{inputHiddenModelBean.text}" />
-						<alloy:message for="hidden" />
+						<crystal:message for="hidden" />
 					</showcase:container>
-					<alloy:button onclick="document.getElementById('#{inputHidden.clientId}').value='1234';"
+					<crystal:button onclick="document.getElementById('#{inputHidden.clientId}').value='1234';"
 						value="#{i18n['copy-1234-to-the-value-of-the-hidden-input']}" />
-					<alloy:button onclick="document.getElementById('#{inputHidden.clientId}').value='';"
+					<crystal:button onclick="document.getElementById('#{inputHidden.clientId}').value='';"
 						value="#{i18n['clear-the-value-of-the-hidden-input']}" />
-				</alloy:field>
+				</crystal:field>
 				<hr />
-				<alloy:commandButton action="#{inputHiddenBackingBean.submit}" render="@form"
+				<crystal:commandButton action="#{inputHiddenBackingBean.submit}" render="@form"
 					value="#{i18n['submit']}" />
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
-				<alloy:outputText id="modelValue" value="#{inputHiddenModelBean.text}" />
+				<crystal:outputText id="modelValue" value="#{inputHiddenModelBean.text}" />
 			</showcase:results>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 </ui:composition>

@@ -1,20 +1,20 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:showcase="http://liferay.com/faces/showcase" template="/WEB-INF/templates/component-1col-60.xhtml">
 
 	<ui:define name="col1">
 		<showcase:example>
-			<alloy:form>
-				<alloy:dataList value="#{dataListModelBean.liferayBenefits}" var="liferayBenefit" type="description">
-					<alloy:dataItem>
-						<alloy:image name="icon-#{liferayBenefit.imageName}" library="images" />
-						<alloy:outputText value="#{liferayBenefit.label}" />
-					</alloy:dataItem>
+			<crystal:form>
+				<crystal:dataList value="#{dataListModelBean.liferayBenefits}" var="liferayBenefit" type="description">
+					<crystal:dataItem>
+						<crystal:image name="icon-#{liferayBenefit.imageName}" library="images" />
+						<crystal:outputText value="#{liferayBenefit.label}" />
+					</crystal:dataItem>
 					<f:facet name="description">
-						<alloy:outputText value="#{liferayBenefit.description}" />
+						<crystal:outputText value="#{liferayBenefit.description}" />
 					</f:facet>
-				</alloy:dataList>
-			</alloy:form>
+				</crystal:dataList>
+			</crystal:form>
 		</showcase:example>
 	</ui:define>
 

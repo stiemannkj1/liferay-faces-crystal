@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.render.internal;
+package com.liferay.faces.crystal.render.internal;
 
 import com.liferay.faces.util.client.ScriptsEncoder;
 import com.liferay.faces.util.client.ScriptsEncoderFactory;
@@ -22,7 +22,7 @@ import com.liferay.faces.util.product.ProductMap;
 /**
  * @author  Kyle Stiemann
  */
-public class ScriptsEncoderFactoryAlloyImpl extends ScriptsEncoderFactory {
+public class ScriptsEncoderFactoryCrystalImpl extends ScriptsEncoderFactory {
 
 	// Private Constants
 	private static final boolean LIFERAY_FACES_BRIDGE_DETECTED = ProductMap.getInstance().get(
@@ -33,7 +33,7 @@ public class ScriptsEncoderFactoryAlloyImpl extends ScriptsEncoderFactory {
 	// Private Members;
 	ScriptsEncoderFactory wrappedScriptsEncoderFactory;
 
-	public ScriptsEncoderFactoryAlloyImpl(ScriptsEncoderFactory wrappedScriptEncoderFactory) {
+	public ScriptsEncoderFactoryCrystalImpl(ScriptsEncoderFactory wrappedScriptEncoderFactory) {
 		this.wrappedScriptsEncoderFactory = wrappedScriptEncoderFactory;
 	}
 
@@ -44,7 +44,7 @@ public class ScriptsEncoderFactoryAlloyImpl extends ScriptsEncoderFactory {
 			return wrappedScriptsEncoderFactory.getScriptsEncoder();
 		}
 		else {
-			return new ScriptsEncoderAlloyImpl();
+			return new ScriptsEncoderCrystalImpl();
 		}
 	}
 

@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.column.internal;
+package com.liferay.faces.crystal.component.column.internal;
 //J-
 
 import javax.annotation.Generated;
@@ -23,7 +23,7 @@ import javax.faces.render.Renderer;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class ColumnRendererBase extends Renderer {
 
 	// Protected Constants

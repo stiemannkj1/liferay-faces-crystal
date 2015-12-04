@@ -11,21 +11,21 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.outputstylesheet.internal;
+package com.liferay.faces.crystal.component.outputstylesheet.internal;
 //J-
 
 import javax.annotation.Generated;
 
-import com.liferay.faces.alloy.component.outputscriptstylesheet.internal.OutputScriptStylesheetRendererBase;
+import com.liferay.faces.crystal.component.outputscriptstylesheet.internal.OutputScriptStylesheetRendererBase;
 
-import com.liferay.faces.alloy.component.outputstylesheet.OutputStylesheet;
+import com.liferay.faces.crystal.component.outputstylesheet.OutputStylesheet;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class OutputStylesheetRendererBase extends OutputScriptStylesheetRendererBase {
 
 	// Protected Constants

@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputfile.internal;
+package com.liferay.faces.crystal.component.inputfile.internal;
 //J-
 
 import java.io.IOException;
@@ -21,16 +21,16 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
-import com.liferay.faces.alloy.component.inputfile.internal.InputFileRendererCompat;
+import com.liferay.faces.crystal.component.inputfile.internal.InputFileRendererCompat;
 
-import com.liferay.faces.alloy.component.inputfile.InputFile;
+import com.liferay.faces.crystal.component.inputfile.InputFile;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class InputFileRendererBase extends InputFileRendererCompat {
 
 	// Protected Constants
@@ -49,7 +49,7 @@ public abstract class InputFileRendererBase extends InputFileRendererCompat {
 	protected static final String[] MODULES = { "uploader", "aui-datatable", "datatype-xml" };
 
 	@Override
-	public void encodeAlloyAttributes(FacesContext facesContext, ResponseWriter responseWriter, UIComponent uiComponent) throws IOException {
+	public void encodeCrystalAttributes(FacesContext facesContext, ResponseWriter responseWriter, UIComponent uiComponent) throws IOException {
 
 		InputFile inputFile = (InputFile) uiComponent;
 		boolean first = true;
@@ -66,7 +66,7 @@ public abstract class InputFileRendererBase extends InputFileRendererCompat {
 	}
 
 	@Override
-	public String getAlloyClassName(FacesContext facesContext, UIComponent uiComponent) {
+	public String getCrystalClassName(FacesContext facesContext, UIComponent uiComponent) {
 		return "Uploader";
 	}
 

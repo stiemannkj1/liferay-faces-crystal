@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.datatable.internal;
+package com.liferay.faces.crystal.component.datatable.internal;
 //J-
 
 import java.io.IOException;
@@ -21,17 +21,17 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
-import com.liferay.faces.alloy.render.internal.AlloyRendererBase;
+import com.liferay.faces.crystal.render.internal.CrystalRendererBase;
 
-import com.liferay.faces.alloy.component.datatable.DataTable;
+import com.liferay.faces.crystal.component.datatable.DataTable;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
-public abstract class DataTableRendererBase extends AlloyRendererBase {
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
+public abstract class DataTableRendererBase extends CrystalRendererBase {
 
 	// Protected Constants
 	protected static final String CLIENT_KEY = "clientKey";
@@ -43,7 +43,7 @@ public abstract class DataTableRendererBase extends AlloyRendererBase {
 	protected static final String[] MODULES = { "aui-datatable", "node-event-simulate" };
 
 	@Override
-	public void encodeAlloyAttributes(FacesContext facesContext, ResponseWriter responseWriter, UIComponent uiComponent) throws IOException {
+	public void encodeCrystalAttributes(FacesContext facesContext, ResponseWriter responseWriter, UIComponent uiComponent) throws IOException {
 
 		DataTable dataTable = (DataTable) uiComponent;
 		boolean first = true;
@@ -52,7 +52,7 @@ public abstract class DataTableRendererBase extends AlloyRendererBase {
 	}
 
 	@Override
-	public String getAlloyClassName(FacesContext facesContext, UIComponent uiComponent) {
+	public String getCrystalClassName(FacesContext facesContext, UIComponent uiComponent) {
 		return "DataTable";
 	}
 

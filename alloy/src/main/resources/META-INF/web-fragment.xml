@@ -4,10 +4,10 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-fragment_3_0.xsd"
 	version="3.0">
 
-	<!-- Enable <audio> and <video> HTML5 passthrough elements by specifying the Liferay Faces AlloyTagDecorator. -->
+	<!-- Enable <audio> and <video> HTML5 passthrough elements by specifying the Liferay Faces CrystalTagDecorator. -->
 	<context-param>
 		<param-name>javax.faces.FACELETS_DECORATORS</param-name>
-		<param-value>com.liferay.faces.alloy.tagdecorator.internal.TagDecoratorAlloyImpl</param-value>
+		<param-value>com.liferay.faces.crystal.tagdecorator.internal.TagDecoratorCrystalImpl</param-value>
 	</context-param>
 
 </web-fragment>

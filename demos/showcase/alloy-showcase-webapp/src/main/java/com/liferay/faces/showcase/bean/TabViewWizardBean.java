@@ -20,7 +20,7 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
 
-import com.liferay.faces.alloy.component.tab.TabSelectEvent;
+import com.liferay.faces.crystal.component.tab.TabSelectEvent;
 
 
 /**

@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.accordion;
+package com.liferay.faces.crystal.component.accordion;
 //J-
 
 import javax.annotation.Generated;
@@ -25,12 +25,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class AccordionBase extends UIData implements Styleable, ClientComponent {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.accordion.Accordion";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.accordion.AccordionRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.accordion.Accordion";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.accordion.AccordionRenderer";
 
 	// Protected Enumerations
 	protected enum AccordionPropertyKeys {
@@ -134,7 +134,7 @@ public abstract class AccordionBase extends UIData implements Styleable, ClientC
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(AccordionPropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-accordion");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-accordion");
 	}
 
 	/**

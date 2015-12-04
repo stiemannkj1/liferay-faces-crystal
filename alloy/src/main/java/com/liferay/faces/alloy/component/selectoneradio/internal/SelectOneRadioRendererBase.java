@@ -11,21 +11,21 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.selectoneradio.internal;
+package com.liferay.faces.crystal.component.selectoneradio.internal;
 //J-
 
 import javax.annotation.Generated;
 
-import com.liferay.faces.alloy.component.select.internal.SelectDelegatingRendererBase;
+import com.liferay.faces.crystal.component.select.internal.SelectDelegatingRendererBase;
 
-import com.liferay.faces.alloy.component.selectoneradio.SelectOneRadio;
+import com.liferay.faces.crystal.component.selectoneradio.SelectOneRadio;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class SelectOneRadioRendererBase extends SelectDelegatingRendererBase {
 
 	@Override

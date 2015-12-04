@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.selectrating;
+package com.liferay.faces.crystal.component.selectrating;
 
 import javax.faces.context.FacesContext;
 
@@ -24,7 +24,7 @@ public abstract class SelectRating extends SelectRatingBase {
 	@Override
 	protected void validateValue(FacesContext context, Object value) {
 
-		// AlloyUI sets the initial value of its hidden input to -1. But -1 has been modified by this point in the
+		// CrystalUI sets the initial value of its hidden input to -1. But -1 has been modified by this point in the
 		// lifecycle to be the empty string in order to be compatible with JSF. Since the empty string it is not in the
 		// list of rating options, it is technically an invalid option. As a workaround, consider an empty string value
 		// to be null (which will enable JSF validation processing to proceed).

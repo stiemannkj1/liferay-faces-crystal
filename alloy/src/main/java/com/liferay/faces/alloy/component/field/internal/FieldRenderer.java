@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.field.internal;
+package com.liferay.faces.crystal.component.field.internal;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,8 +21,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.field.Field;
-import com.liferay.faces.alloy.component.selectbooleancheckbox.SelectBooleanCheckbox;
+import com.liferay.faces.crystal.component.field.Field;
+import com.liferay.faces.crystal.component.selectbooleancheckbox.SelectBooleanCheckbox;
 
 
 /**

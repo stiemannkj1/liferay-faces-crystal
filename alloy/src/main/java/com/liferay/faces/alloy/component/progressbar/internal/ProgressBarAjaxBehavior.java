@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.progressbar.internal;
+package com.liferay.faces.crystal.component.progressbar.internal;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.render.internal;
+package com.liferay.faces.crystal.render.internal;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -34,10 +34,10 @@ import com.liferay.faces.util.logging.LoggerFactory;
 /**
  * @author  Kyle Stiemann
  */
-public class AlloyRendererUtil {
+public class CrystalRendererUtil {
 
 	// Logger
-	private static final Logger logger = LoggerFactory.getLogger(AlloyRendererUtil.class);
+	private static final Logger logger = LoggerFactory.getLogger(CrystalRendererUtil.class);
 
 	public static void addDefaultAjaxBehavior(ClientBehaviorHolder clientBehaviorHolder, String execute, String process,
 		String defaultExecute, String render, String update, String defaultRender) {
@@ -73,7 +73,7 @@ public class AlloyRendererUtil {
 		}
 	}
 
-	public static String getAlloyBeginScript(String[] modules, String yuiConfig, BrowserSniffer browserSniffer) {
+	public static String getCrystalBeginScript(String[] modules, String yuiConfig, BrowserSniffer browserSniffer) {
 
 		Set<String> sortedModules = null;
 
@@ -86,10 +86,10 @@ public class AlloyRendererUtil {
 			}
 		}
 
-		return getAlloyBeginScript(sortedModules, yuiConfig, browserSniffer);
+		return getCrystalBeginScript(sortedModules, yuiConfig, browserSniffer);
 	}
 
-	public static String getAlloyBeginScript(Set<String> sortedModules, String yuiConfig,
+	public static String getCrystalBeginScript(Set<String> sortedModules, String yuiConfig,
 		BrowserSniffer browserSniffer) {
 
 		StringBuilder stringBuilder = new StringBuilder();

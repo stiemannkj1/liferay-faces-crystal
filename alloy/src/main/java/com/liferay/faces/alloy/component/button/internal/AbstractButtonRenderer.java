@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.button.internal;
+package com.liferay.faces.crystal.component.button.internal;
 
 import java.io.IOException;
 import java.util.List;
@@ -25,11 +25,11 @@ import javax.faces.convert.ConverterException;
 import javax.faces.render.RenderKit;
 import javax.faces.render.Renderer;
 
-import com.liferay.faces.alloy.component.button.Button;
-import com.liferay.faces.alloy.component.button.SplitButton;
-import com.liferay.faces.alloy.component.commandbutton.CommandButton;
-import com.liferay.faces.alloy.component.commandbutton.SplitCommandButton;
-import com.liferay.faces.alloy.component.menu.Menu;
+import com.liferay.faces.crystal.component.button.Button;
+import com.liferay.faces.crystal.component.button.SplitButton;
+import com.liferay.faces.crystal.component.commandbutton.CommandButton;
+import com.liferay.faces.crystal.component.commandbutton.SplitCommandButton;
+import com.liferay.faces.crystal.component.menu.Menu;
 import com.liferay.faces.util.component.Styleable;
 import com.liferay.faces.util.render.RendererUtil;
 

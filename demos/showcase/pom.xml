@@ -3,17 +3,17 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.liferay.faces.alloy.demos</groupId>
-		<artifactId>liferay-faces-alloy-demos</artifactId>
+		<groupId>com.liferay.faces.crystal.demos</groupId>
+		<artifactId>liferay-faces-crystal-demos</artifactId>
 		<version>3.0.0-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<artifactId>liferay-faces-alloy-showcase-demos</artifactId>
+	<artifactId>liferay-faces-crystal-showcase-demos</artifactId>
 	<packaging>pom</packaging>
-	<name>Liferay Faces Alloy Showcase Demos</name>
+	<name>Liferay Faces Crystal Showcase Demos</name>
 
 	<modules>
-		<module>alloy-showcase-webapp</module>
+		<module>crystal-showcase-webapp</module>
 	</modules>
 
 	<build>

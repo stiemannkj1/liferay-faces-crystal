@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.commandbutton.internal;
+package com.liferay.faces.crystal.component.commandbutton.internal;
 
 import javax.faces.application.ResourceDependency;
 import javax.faces.event.AbortProcessingException;
@@ -21,8 +21,8 @@ import javax.faces.event.ListenerFor;
 import javax.faces.event.PostAddToViewEvent;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.commandbutton.CommandButton;
-import com.liferay.faces.alloy.render.internal.AlloyRendererUtil;
+import com.liferay.faces.crystal.component.commandbutton.CommandButton;
+import com.liferay.faces.crystal.render.internal.CrystalRendererUtil;
 
 
 /**
@@ -39,7 +39,7 @@ public class CommandButtonRenderer extends CommandButtonRendererBase implements 
 		CommandButton commandButton = (CommandButton) componentSystemEvent.getComponent();
 
 		if (commandButton.isAjax()) {
-			AlloyRendererUtil.addDefaultAjaxBehavior(commandButton, commandButton.getExecute(),
+			CrystalRendererUtil.addDefaultAjaxBehavior(commandButton, commandButton.getExecute(),
 				commandButton.getProcess(), "@all", commandButton.getRender(), commandButton.getUpdate(), "@none");
 		}
 	}

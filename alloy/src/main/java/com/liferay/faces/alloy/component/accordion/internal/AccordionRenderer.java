@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.accordion.internal;
+package com.liferay.faces.crystal.component.accordion.internal;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -27,11 +27,11 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.accordion.Accordion;
-import com.liferay.faces.alloy.component.tab.Tab;
-import com.liferay.faces.alloy.component.tab.TabCollapseEvent;
-import com.liferay.faces.alloy.component.tab.TabExpandEvent;
-import com.liferay.faces.alloy.component.tab.TabUtil;
+import com.liferay.faces.crystal.component.accordion.Accordion;
+import com.liferay.faces.crystal.component.tab.Tab;
+import com.liferay.faces.crystal.component.tab.TabCollapseEvent;
+import com.liferay.faces.crystal.component.tab.TabExpandEvent;
+import com.liferay.faces.crystal.component.tab.TabUtil;
 import com.liferay.faces.util.component.Styleable;
 import com.liferay.faces.util.helper.IntegerHelper;
 import com.liferay.faces.util.logging.Logger;
@@ -46,11 +46,11 @@ import com.liferay.faces.util.render.RendererUtil;
 @FacesRenderer(componentFamily = Accordion.COMPONENT_FAMILY, rendererType = Accordion.RENDERER_TYPE)
 @ResourceDependencies(
 	{
-		@ResourceDependency(library = "liferay-faces-alloy", name = "alloy.css"),
-		@ResourceDependency(library = "liferay-faces-alloy", name = "alloy.js"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui-css/css/bootstrap.min.css"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui/aui-min.js"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "liferay.js")
+		@ResourceDependency(library = "liferay-faces-crystal", name = "crystal.css"),
+		@ResourceDependency(library = "liferay-faces-crystal", name = "crystal.js"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui-css/css/bootstrap.min.css"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui/aui-min.js"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "liferay.js")
 	}
 )
 //J+
@@ -117,7 +117,7 @@ public class AccordionRenderer extends AccordionRendererBase {
 				accordion.setRowIndex(-1);
 			}
 			else {
-				logger.warn("Unable to iterate because alloy:accordion does not have an alloy:tab child element.");
+				logger.warn("Unable to iterate because crystal:accordion does not have an crystal:tab child element.");
 			}
 		}
 
@@ -137,7 +137,7 @@ public class AccordionRenderer extends AccordionRendererBase {
 					encodeContent(facesContext, responseWriter, uiComponent, childTab, selected);
 				}
 				else {
-					logger.warn("Unable to render child element of alloy:accordion since it is not alloy:tab");
+					logger.warn("Unable to render child element of crystal:accordion since it is not crystal:tab");
 				}
 			}
 		}
@@ -164,8 +164,8 @@ public class AccordionRenderer extends AccordionRendererBase {
 	@Override
 	public void encodeJavaScriptCustom(FacesContext facesContext, UIComponent uiComponent) throws IOException {
 
-		// The outermost div was initially styled with "display:none;" in order to prevent blinking when Alloy's
-		// JavaScript attempts to hide the div. At this point in JavaScript execution, Alloy is done manipulating the
+		// The outermost div was initially styled with "display:none;" in order to prevent blinking when Crystal's
+		// JavaScript attempts to hide the div. At this point in JavaScript execution, Crystal is done manipulating the
 		// DOM and it is necessary to set the style back to "display:block;" so that the component will be visible.
 		ResponseWriter responseWriter = facesContext.getResponseWriter();
 		responseWriter.write(A_DOT_ONE);

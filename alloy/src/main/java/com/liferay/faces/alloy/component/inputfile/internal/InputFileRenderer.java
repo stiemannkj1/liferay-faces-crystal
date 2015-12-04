@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputfile.internal;
+package com.liferay.faces.crystal.component.inputfile.internal;
 
 import java.io.IOException;
 import java.util.List;
@@ -31,9 +31,9 @@ import javax.faces.context.ResponseWriter;
 import javax.faces.convert.ConverterException;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.inputfile.FileUploadEvent;
-import com.liferay.faces.alloy.component.inputfile.InputFile;
-import com.liferay.faces.alloy.render.internal.JavaScriptFragment;
+import com.liferay.faces.crystal.component.inputfile.FileUploadEvent;
+import com.liferay.faces.crystal.component.inputfile.InputFile;
+import com.liferay.faces.crystal.render.internal.JavaScriptFragment;
 import com.liferay.faces.util.context.MessageContext;
 import com.liferay.faces.util.context.MessageContextFactory;
 import com.liferay.faces.util.context.map.MultiPartFormData;
@@ -53,11 +53,11 @@ import com.liferay.faces.util.render.internal.DelegationResponseWriter;
 @FacesRenderer(componentFamily = InputFile.COMPONENT_FAMILY, rendererType = InputFile.RENDERER_TYPE)
 @ResourceDependencies(
 		{
-			@ResourceDependency(library = "liferay-faces-alloy", name = "alloy.css"),
-			@ResourceDependency(library = "liferay-faces-alloy", name = "alloy.js"),
-			@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui-css/css/bootstrap.min.css"),
-			@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui/aui-min.js"),
-			@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "liferay.js")
+			@ResourceDependency(library = "liferay-faces-crystal", name = "crystal.css"),
+			@ResourceDependency(library = "liferay-faces-crystal", name = "crystal.js"),
+			@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui-css/css/bootstrap.min.css"),
+			@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui/aui-min.js"),
+			@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "liferay.js")
 		}
 	)
 //J+
@@ -99,7 +99,7 @@ public class InputFileRenderer extends InputFileRendererBase {
 
 		ResponseWriter responseWriter = facesContext.getResponseWriter();
 		InputFile inputFile = (InputFile) uiComponent;
-		JavaScriptFragment alloyNamespace = new JavaScriptFragment("A");
+		JavaScriptFragment crystalNamespace = new JavaScriptFragment("A");
 
 		// Determine the valid content-types and maximum file size from the validator (if specified).
 		JavaScriptFragment contentTypes = new JavaScriptFragment("[]");
@@ -145,7 +145,7 @@ public class InputFileRenderer extends InputFileRendererBase {
 
 			String notStartedMessage = getMessageContext().getMessage(locale, "not-started");
 			JavaScriptFragment clientComponent = new JavaScriptFragment("Liferay.component('" + clientKey + "')");
-			encodeFunctionCall(responseWriter, "LFAI.initProgressUploader", alloyNamespace, clientComponent,
+			encodeFunctionCall(responseWriter, "LFAI.initProgressUploader", crystalNamespace, clientComponent,
 				contentTypes, clientId, formClientId, namingContainerId, inputFile.isAuto(), execute, render,
 				partialActionURL, maxFileSize, notStartedMessage);
 		}
@@ -154,7 +154,7 @@ public class InputFileRenderer extends InputFileRendererBase {
 		// template and write it to the response.
 		else if (inputFile.isShowPreview()) {
 
-			encodeFunctionCall(responseWriter, "LFAI.initPreviewUploader", alloyNamespace, contentTypes, clientId,
+			encodeFunctionCall(responseWriter, "LFAI.initPreviewUploader", crystalNamespace, contentTypes, clientId,
 				maxFileSize);
 		}
 	}
@@ -247,7 +247,7 @@ public class InputFileRenderer extends InputFileRendererBase {
 		String chooseFiles = getMessageContext().getMessage(locale, "choose-files");
 		StringBuilder selectFilesButtonScript = new StringBuilder();
 		selectFilesButtonScript.append(
-			"A.Node.create(\"<button type='button' class='alloy-button' role='button' aria-label='");
+			"A.Node.create(\"<button type='button' class='crystal-button' role='button' aria-label='");
 		selectFilesButtonScript.append(chooseFiles);
 		selectFilesButtonScript.append("' tabindex='{tabIndex}'>");
 		selectFilesButtonScript.append(chooseFiles);
@@ -331,7 +331,7 @@ public class InputFileRenderer extends InputFileRendererBase {
 			responseWriter.writeAttribute("class", "upload-files-box", null);
 			responseWriter.startElement("button", inputFile);
 			responseWriter.writeAttribute("id", clientId + "_uploadFilesButton", null);
-			responseWriter.writeAttribute("class", "alloy-button", null);
+			responseWriter.writeAttribute("class", "crystal-button", null);
 
 			String i18nUploadFiles = messageContext.getMessage(locale, "upload-files");
 			responseWriter.writeText(i18nUploadFiles, null);

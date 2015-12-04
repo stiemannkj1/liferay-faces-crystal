@@ -21,9 +21,9 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
 
-import com.liferay.faces.alloy.component.accordion.Accordion;
-import com.liferay.faces.alloy.component.tab.TabCollapseEvent;
-import com.liferay.faces.alloy.component.tab.TabExpandEvent;
+import com.liferay.faces.crystal.component.accordion.Accordion;
+import com.liferay.faces.crystal.component.tab.TabCollapseEvent;
+import com.liferay.faces.crystal.component.tab.TabExpandEvent;
 
 
 /**
@@ -88,7 +88,7 @@ public class AccordionBackingBean {
 
 	public void setAccordion(Accordion accordion) {
 
-		// Injected via alloy:accordion binding attribute
+		// Injected via crystal:accordion binding attribute
 		this.accordion = accordion;
 	}
 

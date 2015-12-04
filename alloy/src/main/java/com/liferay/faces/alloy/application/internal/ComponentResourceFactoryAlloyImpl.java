@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.application.internal;
+package com.liferay.faces.crystal.application.internal;
 
 import javax.faces.component.UIComponent;
 
@@ -22,12 +22,12 @@ import com.liferay.faces.util.application.ComponentResourceFactory;
 /**
  * @author  Neil Griffin
  */
-public class ComponentResourceFactoryAlloyImpl extends ComponentResourceFactory {
+public class ComponentResourceFactoryCrystalImpl extends ComponentResourceFactory {
 
 	// Private Data Members
 	private ComponentResourceFactory wrapppedComponentResourceFactory;
 
-	public ComponentResourceFactoryAlloyImpl(ComponentResourceFactory componentResourceFactory) {
+	public ComponentResourceFactoryCrystalImpl(ComponentResourceFactory componentResourceFactory) {
 		this.wrapppedComponentResourceFactory = componentResourceFactory;
 	}
 
@@ -36,7 +36,7 @@ public class ComponentResourceFactoryAlloyImpl extends ComponentResourceFactory 
 
 		ComponentResource wrappedComponentResource = getWrapped().getComponentResource(uiComponentResource);
 
-		return new ComponentResourceAlloyImpl(wrappedComponentResource);
+		return new ComponentResourceCrystalImpl(wrappedComponentResource);
 	}
 
 	@Override

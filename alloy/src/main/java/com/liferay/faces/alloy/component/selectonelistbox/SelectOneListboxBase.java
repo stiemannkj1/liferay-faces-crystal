@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.selectonelistbox;
+package com.liferay.faces.crystal.component.selectonelistbox;
 //J-
 
 import javax.annotation.Generated;
@@ -24,12 +24,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class SelectOneListboxBase extends HtmlSelectOneListbox implements Styleable {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.selectonelistbox.SelectOneListbox";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.selectonelistbox.SelectOneListboxRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.selectonelistbox.SelectOneListbox";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.selectonelistbox.SelectOneListboxRenderer";
 
 	public SelectOneListboxBase() {
 		super();
@@ -70,7 +70,7 @@ public abstract class SelectOneListboxBase extends HtmlSelectOneListbox implemen
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(PropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-select-one-listbox");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-select-one-listbox");
 	}
 }
 //J+

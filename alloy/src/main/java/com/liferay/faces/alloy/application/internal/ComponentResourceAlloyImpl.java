@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.application.internal;
+package com.liferay.faces.crystal.application.internal;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -23,13 +23,13 @@ import com.liferay.faces.util.product.ProductMap;
 
 
 /**
- * This class provides Liferay Faces Alloy with the opportunity to inform Liferay Faces Bridge that certain JavaScript
+ * This class provides Liferay Faces Crystal with the opportunity to inform Liferay Faces Bridge that certain JavaScript
  * resources should not be rendered when running in Liferay Portal, because they are already present by default in the
  * portal page.
  *
  * @author  Neil Griffin
  */
-public class ComponentResourceAlloyImpl extends ComponentResourceWrapper {
+public class ComponentResourceCrystalImpl extends ComponentResourceWrapper {
 
 	// Private Constants
 	private static final boolean LIFERAY_PORTAL_DETECTED = ProductMap.getInstance().get(ProductConstants.LIFERAY_PORTAL)
@@ -37,15 +37,15 @@ public class ComponentResourceAlloyImpl extends ComponentResourceWrapper {
 	private static final Set<String> PORTAL_RESOURCE_IDS = new HashSet<String>();
 
 	static {
-		PORTAL_RESOURCE_IDS.add("liferay-faces-alloy-reslib:build/aui/aui-min.js");
-		PORTAL_RESOURCE_IDS.add("liferay-faces-alloy-reslib:build/aui-css/css/bootstrap.min.css");
-		PORTAL_RESOURCE_IDS.add("liferay-faces-alloy-reslib:liferay.js");
+		PORTAL_RESOURCE_IDS.add("liferay-faces-crystal-reslib:build/aui/aui-min.js");
+		PORTAL_RESOURCE_IDS.add("liferay-faces-crystal-reslib:build/aui-css/css/bootstrap.min.css");
+		PORTAL_RESOURCE_IDS.add("liferay-faces-crystal-reslib:liferay.js");
 	}
 
 	// Private Data Members
 	private ComponentResource wrappedComponentResource;
 
-	public ComponentResourceAlloyImpl(ComponentResource componentResource) {
+	public ComponentResourceCrystalImpl(ComponentResource componentResource) {
 		this.wrappedComponentResource = componentResource;
 	}
 

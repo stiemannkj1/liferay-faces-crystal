@@ -11,11 +11,11 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputdatetime;
+package com.liferay.faces.crystal.component.inputdatetime;
 //J-
 
 import javax.annotation.Generated;
-import com.liferay.faces.alloy.component.inputtext.InputTextBase;
+import com.liferay.faces.crystal.component.inputtext.InputTextBase;
 
 import com.liferay.faces.util.component.ClientComponent;
 import com.liferay.faces.util.component.Styleable;
@@ -25,12 +25,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class InputDateTimeBase extends InputTextBase implements Styleable, ClientComponent {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.inputdatetime.InputDateTime";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.inputdatetime.InputDateTimeRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.inputdatetime.InputDateTime";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.inputdatetime.InputDateTimeRenderer";
 
 	// Protected Enumerations
 	protected enum InputDateTimePropertyKeys {
@@ -150,7 +150,7 @@ public abstract class InputDateTimeBase extends InputTextBase implements Styleab
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(PropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-input-date-time");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-input-date-time");
 	}
 
 	/**

@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.tab.internal;
+package com.liferay.faces.crystal.component.tab.internal;
 
 import java.io.IOException;
 
@@ -20,7 +20,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.tab.Tab;
+import com.liferay.faces.crystal.component.tab.Tab;
 import com.liferay.faces.util.component.Styleable;
 import com.liferay.faces.util.render.RendererUtil;
 

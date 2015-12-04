@@ -23,7 +23,7 @@ import javax.faces.component.UICommand;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
-import com.liferay.faces.alloy.component.inputfile.FileUploadEvent;
+import com.liferay.faces.crystal.component.inputfile.FileUploadEvent;
 import com.liferay.faces.util.logging.Logger;
 import com.liferay.faces.util.logging.LoggerFactory;
 import com.liferay.faces.util.model.UploadedFile;

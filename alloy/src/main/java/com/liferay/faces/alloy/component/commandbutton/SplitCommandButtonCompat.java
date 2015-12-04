@@ -11,13 +11,13 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.commandbutton;
+package com.liferay.faces.crystal.component.commandbutton;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.liferay.faces.alloy.component.commandlink.CommandLinkBase;
+import com.liferay.faces.crystal.component.commandlink.CommandLinkBase;
 import com.liferay.faces.util.logging.Logger;
 import com.liferay.faces.util.logging.LoggerFactory;
 import com.liferay.faces.util.product.Product;

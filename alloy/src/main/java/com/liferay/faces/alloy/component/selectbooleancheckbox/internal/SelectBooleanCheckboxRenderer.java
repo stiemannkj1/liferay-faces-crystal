@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.selectbooleancheckbox.internal;
+package com.liferay.faces.crystal.component.selectbooleancheckbox.internal;
 
 import java.io.IOException;
 
@@ -23,8 +23,8 @@ import javax.faces.context.ResponseWriter;
 import javax.faces.convert.ConverterException;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.field.Field;
-import com.liferay.faces.alloy.component.selectbooleancheckbox.SelectBooleanCheckbox;
+import com.liferay.faces.crystal.component.field.Field;
+import com.liferay.faces.crystal.component.selectbooleancheckbox.SelectBooleanCheckbox;
 import com.liferay.faces.util.render.internal.IdDelegationResponseWriter;
 
 
@@ -40,7 +40,7 @@ import com.liferay.faces.util.render.internal.IdDelegationResponseWriter;
 @FacesRenderer(
 	componentFamily = SelectBooleanCheckbox.COMPONENT_FAMILY, rendererType = SelectBooleanCheckbox.RENDERER_TYPE
 )
-@ResourceDependency(library = "liferay-faces-alloy", name = "alloy.css")
+@ResourceDependency(library = "liferay-faces-crystal", name = "crystal.css")
 public class SelectBooleanCheckboxRenderer extends SelectBooleanCheckboxRendererBase {
 
 	@Override

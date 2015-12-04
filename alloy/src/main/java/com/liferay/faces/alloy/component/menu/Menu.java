@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.menu;
+package com.liferay.faces.crystal.component.menu;
 
 import javax.faces.component.FacesComponent;
 

@@ -1,44 +1,44 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:showcase="http://liferay.com/faces/showcase"
 	template="/WEB-INF/templates/component-4col.xhtml">
 
 	<ui:define name="col1">
-		<alloy:form>
-			<showcase:example description="#{i18n['alloy-field-message-styling-example-1']}" number="1">
-				<alloy:field id="field" label="#{i18n['info']}">
-					<alloy:inputText id="inputText" validator="#{fieldBackingBean.infoValidator}"
+		<crystal:form>
+			<showcase:example description="#{i18n['crystal-field-message-styling-example-1']}" number="1">
+				<crystal:field id="field" label="#{i18n['info']}">
+					<crystal:inputText id="inputText" validator="#{fieldBackingBean.infoValidator}"
 						value="default text" />
-					<alloy:message for="inputText" />
-				</alloy:field>
-				<alloy:commandButton render="field" value="#{i18n['submit-and-re-render-field']}" />
+					<crystal:message for="inputText" />
+				</crystal:field>
+				<crystal:commandButton render="field" value="#{i18n['submit-and-re-render-field']}" />
 			</showcase:example>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 	<ui:define name="col2">
-		<alloy:form>
-			<showcase:example description="#{i18n['alloy-field-message-styling-example-2']}" number="2">
-				<alloy:field id="field" label="#{i18n['warning']}">
-					<alloy:inputText id="inputText" validator="#{fieldBackingBean.warningValidator}"
+		<crystal:form>
+			<showcase:example description="#{i18n['crystal-field-message-styling-example-2']}" number="2">
+				<crystal:field id="field" label="#{i18n['warning']}">
+					<crystal:inputText id="inputText" validator="#{fieldBackingBean.warningValidator}"
 						value="default text" />
-					<alloy:message for="inputText" />
-				</alloy:field>
-				<alloy:commandButton render="field" value="#{i18n['submit-and-re-render-field']}" />
+					<crystal:message for="inputText" />
+				</crystal:field>
+				<crystal:commandButton render="field" value="#{i18n['submit-and-re-render-field']}" />
 			</showcase:example>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 	<ui:define name="col3">
-		<alloy:form>
-			<showcase:example description="#{i18n['alloy-field-message-styling-example-3']}" number="3">
-				<alloy:field id="field" label="#{i18n['error']}">
-					<alloy:inputText id="inputText" validator="#{fieldBackingBean.errorValidator}"
+		<crystal:form>
+			<showcase:example description="#{i18n['crystal-field-message-styling-example-3']}" number="3">
+				<crystal:field id="field" label="#{i18n['error']}">
+					<crystal:inputText id="inputText" validator="#{fieldBackingBean.errorValidator}"
 						value="default text" />
-					<alloy:message for="inputText" />
-				</alloy:field>
-				<alloy:commandButton render="field" value="#{i18n['submit-and-re-render-field']}" />
+					<crystal:message for="inputText" />
+				</crystal:field>
+				<crystal:commandButton render="field" value="#{i18n['submit-and-re-render-field']}" />
 			</showcase:example>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 </ui:composition>

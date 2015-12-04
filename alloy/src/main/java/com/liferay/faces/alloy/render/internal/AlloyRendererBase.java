@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.render.internal;
+package com.liferay.faces.crystal.render.internal;
 
 import java.io.IOException;
 
@@ -24,11 +24,11 @@ import com.liferay.faces.util.render.RendererUtil;
 
 
 /**
- * This is an abstract class that provides base rendering functionality for AlloyUI JavaScript components.
+ * This is an abstract class that provides base rendering functionality for CrystalUI JavaScript components.
  *
  * @author  Kyle Stiemann
  */
-public abstract class AlloyRendererBase extends ClientComponentRendererBase implements AlloyRenderer {
+public abstract class CrystalRendererBase extends ClientComponentRendererBase implements CrystalRenderer {
 
 	@Override
 	public void decode(FacesContext facesContext, UIComponent uiComponent) {
@@ -44,42 +44,42 @@ public abstract class AlloyRendererBase extends ClientComponentRendererBase impl
 	@Override
 	public void encodeBoolean(ResponseWriter responseWriter, String attributeName, Boolean attributeValue,
 		boolean first) throws IOException {
-		AlloyRendererCommon.encodeBoolean(responseWriter, attributeName, attributeValue, first);
+		CrystalRendererCommon.encodeBoolean(responseWriter, attributeName, attributeValue, first);
 	}
 
 	@Override
 	public void encodeClientId(ResponseWriter responseWriter, String attributeName, String clientId, boolean first)
 		throws IOException {
-		AlloyRendererCommon.encodeClientId(responseWriter, attributeName, clientId, first);
+		CrystalRendererCommon.encodeClientId(responseWriter, attributeName, clientId, first);
 	}
 
 	@Override
 	public void encodeClientId(ResponseWriter responseWriter, String attributeName, String clientId,
 		UIComponent uiComponent, boolean first) throws IOException {
-		AlloyRendererCommon.encodeClientId(responseWriter, attributeName, clientId, uiComponent, first);
+		CrystalRendererCommon.encodeClientId(responseWriter, attributeName, clientId, uiComponent, first);
 	}
 
 	@Override
 	public void encodeEventCallback(ResponseWriter responseWriter, String varName, String methodName, String eventName,
 		String callback) throws IOException {
-		AlloyRendererCommon.encodeEventCallback(responseWriter, varName, methodName, eventName, callback);
+		CrystalRendererCommon.encodeEventCallback(responseWriter, varName, methodName, eventName, callback);
 	}
 
 	@Override
 	public void encodeFunctionCall(ResponseWriter responseWriter, String functionName, Object... parameters)
 		throws IOException {
-		AlloyRendererCommon.encodeFunctionCall(responseWriter, functionName, parameters);
+		CrystalRendererCommon.encodeFunctionCall(responseWriter, functionName, parameters);
 	}
 
 	@Override
 	public void encodeInteger(ResponseWriter responseWriter, String attributeName, Integer attributeValue,
 		boolean first) throws IOException {
-		AlloyRendererCommon.encodeInteger(responseWriter, attributeName, attributeValue, first);
+		CrystalRendererCommon.encodeInteger(responseWriter, attributeName, attributeValue, first);
 	}
 
 	@Override
 	public void encodeJavaScriptBegin(FacesContext facesContext, UIComponent uiComponent) throws IOException {
-		AlloyRendererCommon.encodeJavaScriptBegin(facesContext, uiComponent, this,
+		CrystalRendererCommon.encodeJavaScriptBegin(facesContext, uiComponent, this,
 			getModules(facesContext, uiComponent), isAjax(facesContext), isSandboxed(facesContext, uiComponent));
 	}
 
@@ -90,52 +90,52 @@ public abstract class AlloyRendererBase extends ClientComponentRendererBase impl
 
 	@Override
 	public void encodeJavaScriptEnd(FacesContext facesContext, UIComponent uiComponent) throws IOException {
-		AlloyRendererCommon.encodeJavaScriptEnd(facesContext, uiComponent, isAjax(facesContext),
+		CrystalRendererCommon.encodeJavaScriptEnd(facesContext, uiComponent, isAjax(facesContext),
 			isSandboxed(facesContext, uiComponent));
 	}
 
 	@Override
 	public void encodeJavaScriptMain(FacesContext facesContext, UIComponent uiComponent) throws IOException {
-		AlloyRendererCommon.encodeJavaScriptMain(facesContext, uiComponent,
-			getAlloyClassName(facesContext, uiComponent), this);
+		CrystalRendererCommon.encodeJavaScriptMain(facesContext, uiComponent,
+			getCrystalClassName(facesContext, uiComponent), this);
 	}
 
 	@Override
 	public void encodeLiferayComponentVar(ResponseWriter responseWriter, String clientVarName, String clientKey)
 		throws IOException {
-		AlloyRendererCommon.encodeLiferayComponentVar(responseWriter, clientVarName, clientKey);
+		CrystalRendererCommon.encodeLiferayComponentVar(responseWriter, clientVarName, clientKey);
 	}
 
 	@Override
 	public void encodeNonEscapedObject(ResponseWriter responseWriter, String attributeName, Object attributeValue,
 		boolean first) throws IOException {
-		AlloyRendererCommon.encodeNonEscapedObject(responseWriter, attributeName, attributeValue, first);
+		CrystalRendererCommon.encodeNonEscapedObject(responseWriter, attributeName, attributeValue, first);
 	}
 
 	@Override
 	public void encodeString(ResponseWriter responseWriter, String attributeName, Object attributeValue, boolean first)
 		throws IOException {
-		AlloyRendererCommon.encodeString(responseWriter, attributeName, attributeValue, first);
+		CrystalRendererCommon.encodeString(responseWriter, attributeName, attributeValue, first);
 	}
 
 	@Override
 	public void encodeWidgetRender(ResponseWriter responseWriter, boolean first) throws IOException {
-		AlloyRendererCommon.encodeWidgetRender(responseWriter, first);
+		CrystalRendererCommon.encodeWidgetRender(responseWriter, first);
 	}
 
 	@Override
 	public String escapeClientId(String clientId) {
-		return AlloyRendererCommon.escapeClientId(clientId);
+		return CrystalRendererCommon.escapeClientId(clientId);
 	}
 
 	@Override
 	public String escapeJavaScript(String javaScript) {
-		return AlloyRendererCommon.escapeJavaScript(javaScript);
+		return CrystalRendererCommon.escapeJavaScript(javaScript);
 	}
 
 	@Override
 	public String getClientVarName(FacesContext facesContext, ClientComponent clientComponent) {
-		return AlloyRendererCommon.getClientVarName(facesContext, clientComponent);
+		return CrystalRendererCommon.getClientVarName(facesContext, clientComponent);
 	}
 
 	@Override

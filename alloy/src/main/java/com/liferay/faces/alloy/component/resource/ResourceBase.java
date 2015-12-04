@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.resource;
+package com.liferay.faces.crystal.component.resource;
 //J-
 
 import javax.annotation.Generated;
@@ -22,12 +22,12 @@ import javax.faces.component.UIComponentBase;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class ResourceBase extends UIComponentBase {
 
 	// Public Constants
-	public static final String COMPONENT_FAMILY = "com.liferay.faces.alloy.component.resource";
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.resource.Resource";
+	public static final String COMPONENT_FAMILY = "com.liferay.faces.crystal.component.resource";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.resource.Resource";
 
 	// Protected Enumerations
 	protected enum ResourcePropertyKeys {

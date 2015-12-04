@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.render.internal;
+package com.liferay.faces.crystal.render.internal;
 
 import java.io.IOException;
 
@@ -29,7 +29,7 @@ import com.liferay.faces.util.factory.FactoryExtensionFinder;
 /**
  * @author  Kyle Stiemann
  */
-/* package-private */ class AlloyRendererCommon {
+/* package-private */ class CrystalRendererCommon {
 
 	// Private Constants
 	private static final String A_DOT = "A.";
@@ -122,19 +122,19 @@ import com.liferay.faces.util.factory.FactoryExtensionFinder;
 		responseWriter.write(attributeValue.toString());
 	}
 
-	/* package-private */ static void encodeJavaScriptBegin(FacesContext facesContext, UIComponent uiComponent, AlloyRenderer alloyRenderer,
+	/* package-private */ static void encodeJavaScriptBegin(FacesContext facesContext, UIComponent uiComponent, CrystalRenderer crystalRenderer,
 		String[] modules, boolean ajax, boolean sandboxed) throws IOException {
 
 		ResponseWriter responseWriter = facesContext.getResponseWriter();
 
 		if (sandboxed) {
 
-			String yuiConfig = alloyRenderer.getYUIConfig(facesContext, responseWriter, uiComponent);
+			String yuiConfig = crystalRenderer.getYUIConfig(facesContext, responseWriter, uiComponent);
 			BrowserSnifferFactory browserSnifferFactory = (BrowserSnifferFactory) FactoryExtensionFinder.getFactory(
 					BrowserSnifferFactory.class);
 			BrowserSniffer browserSniffer = browserSnifferFactory.getBrowserSniffer(facesContext.getExternalContext());
-			String alloyBeginScript = AlloyRendererUtil.getAlloyBeginScript(modules, yuiConfig, browserSniffer);
-			responseWriter.write(alloyBeginScript);
+			String crystalBeginScript = CrystalRendererUtil.getCrystalBeginScript(modules, yuiConfig, browserSniffer);
+			responseWriter.write(crystalBeginScript);
 		}
 
 		if (ajax && (uiComponent instanceof ClientComponent)) {
@@ -171,13 +171,13 @@ import com.liferay.faces.util.factory.FactoryExtensionFinder;
 	}
 
 	/**
-	 * This method renders JavaScript which creates the Alloy component and puts it into the Liferay.component map.
+	 * This method renders JavaScript which creates the Crystal component and puts it into the Liferay.component map.
 	 * Example output of this function is shown below:
 	 *
 	 * <pre>
 	    {@code
 	        Liferay.component('clientKey',
-	                new A.AlloyComponent({
+	                new A.CrystalComponent({
 	                    attribute1:value1,
 	                    attribute2:value2,
 	                    ...
@@ -189,8 +189,8 @@ import com.liferay.faces.util.factory.FactoryExtensionFinder;
 	 *
 	 * @throws  IOException
 	 */
-	/* package-private */ static void encodeJavaScriptMain(FacesContext facesContext, UIComponent uiComponent, String alloyClassName,
-		AlloyRenderer alloyRenderer) throws IOException {
+	/* package-private */ static void encodeJavaScriptMain(FacesContext facesContext, UIComponent uiComponent, String crystalClassName,
+		CrystalRenderer crystalRenderer) throws IOException {
 
 		ResponseWriter responseWriter = facesContext.getResponseWriter();
 		ClientComponent clientComponent = (ClientComponent) uiComponent;
@@ -200,21 +200,21 @@ import com.liferay.faces.util.factory.FactoryExtensionFinder;
 			clientKey = getClientVarName(facesContext, clientComponent);
 		}
 
-		// Begin encoding JavaScript to create the Alloy JavaScript component and put it in the Liferay.component map.
-		responseWriter.write(AlloyRenderer.LIFERAY_COMPONENT);
+		// Begin encoding JavaScript to create the Crystal JavaScript component and put it in the Liferay.component map.
+		responseWriter.write(CrystalRenderer.LIFERAY_COMPONENT);
 		responseWriter.write("('");
 
 		String escapedClientKey = escapeJavaScript(clientKey);
 		responseWriter.write(escapedClientKey);
 		responseWriter.write("',");
 
-		// Write Alloy JavaScript component.
+		// Write Crystal JavaScript component.
 		responseWriter.write(NEW);
 		responseWriter.write(" ");
 		responseWriter.write(A_DOT);
-		responseWriter.write(alloyClassName);
+		responseWriter.write(crystalClassName);
 		responseWriter.write("({");
-		alloyRenderer.encodeAlloyAttributes(facesContext, responseWriter, uiComponent);
+		crystalRenderer.encodeCrystalAttributes(facesContext, responseWriter, uiComponent);
 		responseWriter.write("})");
 
 		// Close Liferay.component parenthesis.
@@ -223,7 +223,7 @@ import com.liferay.faces.util.factory.FactoryExtensionFinder;
 
 	/* package-private */ static void encodeLiferayComponent(ResponseWriter responseWriter, String clientKey) throws IOException {
 
-		responseWriter.write(AlloyRenderer.LIFERAY_COMPONENT);
+		responseWriter.write(CrystalRenderer.LIFERAY_COMPONENT);
 		responseWriter.write("('");
 
 		String escapedClientKey = escapeJavaScript(clientKey);

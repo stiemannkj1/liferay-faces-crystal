@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.selectrating.internal;
+package com.liferay.faces.crystal.component.selectrating.internal;
 
 import java.io.IOException;
 
@@ -25,15 +25,15 @@ import com.liferay.faces.util.render.internal.DelegationResponseWriterBase;
 //J-
 /**
  * The purpose of this class is to decorate the JSF runtime {@link ResponseWriter} in order to:
- * 1. Remove DOM elements (table parts) from the html that Alloy JavaScript is not expecting.
- * 2. Replace those table parts with new elements that Alloy can deal with.
- * 3. Gather information from the elements as rendered by JSF before the Alloy JavaScript munges it.
+ * 1. Remove DOM elements (table parts) from the html that Crystal JavaScript is not expecting.
+ * 2. Replace those table parts with new elements that Crystal can deal with.
+ * 3. Gather information from the elements as rendered by JSF before the Crystal JavaScript munges it.
  * 4. Provide getters to retrieve the information gathered after encoding the component.
  *
- * JSF's selectOneRadio basically renders what Alloy needs, but it also renders some table elements that are not
- * needed, and puts labels where alloy would not look for them, so this ResponseWriter helps the renderer ignore
+ * JSF's selectOneRadio basically renders what Crystal needs, but it also renders some table elements that are not
+ * needed, and puts labels where crystal would not look for them, so this ResponseWriter helps the renderer ignore
  * the unnecessary table parts and put things like the labels into the title attributes of the radio inputs where
- * alloy will get them.	 Please refer to JSF vdldocs for more details:
+ * crystal will get them.	 Please refer to JSF vdldocs for more details:
  * {@link https://javaserverfaces.java.net/nonav/docs/2.2/vdldocs/facelets/h/selectOneRadio.html}
  */
 //J+

@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.outputscript;
+package com.liferay.faces.crystal.component.outputscript;
 //J-
 
 import javax.annotation.Generated;
@@ -22,12 +22,12 @@ import javax.faces.component.UIOutput;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class OutputScriptBase extends UIOutput {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.outputscript.OutputScript";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.outputscript.OutputScriptRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.outputscript.OutputScript";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.outputscript.OutputScriptRenderer";
 
 	// Protected Enumerations
 	protected enum OutputScriptPropertyKeys {
@@ -99,7 +99,7 @@ public abstract class OutputScriptBase extends UIOutput {
 	/**
 	 * <code>use</code> attribute description:
 	 * <br /><br />
-	 * A comma-delimited list of YUI or AlloyUI modules to load for this script. <strong>Note:</strong> if this attribute is specified, a YUI sandbox will be created automatically for the <code>&lt;script&gt;</code>.
+	 * A comma-delimited list of YUI or CrystalUI modules to load for this script. <strong>Note:</strong> if this attribute is specified, a YUI sandbox will be created automatically for the <code>&lt;script&gt;</code>.
 	 */
 	public String getUse() {
 		return (String) getStateHelper().eval(OutputScriptPropertyKeys.use, null);
@@ -108,7 +108,7 @@ public abstract class OutputScriptBase extends UIOutput {
 	/**
 	 * <code>use</code> attribute description:
 	 * <br /><br />
-	 * A comma-delimited list of YUI or AlloyUI modules to load for this script. <strong>Note:</strong> if this attribute is specified, a YUI sandbox will be created automatically for the <code>&lt;script&gt;</code>.
+	 * A comma-delimited list of YUI or CrystalUI modules to load for this script. <strong>Note:</strong> if this attribute is specified, a YUI sandbox will be created automatically for the <code>&lt;script&gt;</code>.
 	 */
 	public void setUse(String use) {
 		getStateHelper().put(OutputScriptPropertyKeys.use, use);

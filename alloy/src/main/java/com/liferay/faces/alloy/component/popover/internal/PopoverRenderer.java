@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.popover.internal;
+package com.liferay.faces.crystal.component.popover.internal;
 
 import java.io.IOException;
 
@@ -23,8 +23,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.button.Button;
-import com.liferay.faces.alloy.component.popover.Popover;
+import com.liferay.faces.crystal.component.button.Button;
+import com.liferay.faces.crystal.component.popover.Popover;
 import com.liferay.faces.util.component.ClientComponent;
 import com.liferay.faces.util.helper.StringHelper;
 import com.liferay.faces.util.logging.Logger;
@@ -38,10 +38,10 @@ import com.liferay.faces.util.logging.LoggerFactory;
 @FacesRenderer(componentFamily = Popover.COMPONENT_FAMILY, rendererType = Popover.RENDERER_TYPE)
 @ResourceDependencies(
 	{
-		@ResourceDependency(library = "liferay-faces-alloy", name = "alloy.css"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui-css/css/bootstrap.min.css"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "build/aui/aui-min.js"),
-		@ResourceDependency(library = "liferay-faces-alloy-reslib", name = "liferay.js")
+		@ResourceDependency(library = "liferay-faces-crystal", name = "crystal.css"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui-css/css/bootstrap.min.css"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "build/aui/aui-min.js"),
+		@ResourceDependency(library = "liferay-faces-crystal-reslib", name = "liferay.js")
 	}
 )
 //J+
@@ -70,7 +70,7 @@ public class PopoverRenderer extends PopoverRendererBase {
 
 		if (popover.isHideIconRendered()) {
 
-			// Add an "x" toolbar icon so that the popover can be hidden just like alloy:dialog can.
+			// Add an "x" toolbar icon so that the popover can be hidden just like crystal:dialog can.
 			responseWriter.write(LIFERAY_COMPONENT);
 			responseWriter.write("('");
 			responseWriter.write(clientKey);
@@ -101,7 +101,7 @@ public class PopoverRenderer extends PopoverRendererBase {
 		encodeOverlayJavaScriptCustom(responseWriter, facesContext, popover, clientKey);
 
 		if ((popover.getFor() == null) && facesContext.isProjectStage(ProjectStage.Development)) {
-			logger.error("The 'for' attribute is required for alloy:popover");
+			logger.error("The 'for' attribute is required for crystal:popover");
 		}
 	}
 
@@ -145,7 +145,7 @@ public class PopoverRenderer extends PopoverRendererBase {
 	protected void encodeHiddenAttributes(FacesContext facesContext, ResponseWriter responseWriter, Popover popover,
 		boolean first) throws IOException {
 
-		// Encode the "align" Alloy hidden attribute.
+		// Encode the "align" Crystal hidden attribute.
 		encodeAlign(responseWriter, popover, first);
 
 		first = false;

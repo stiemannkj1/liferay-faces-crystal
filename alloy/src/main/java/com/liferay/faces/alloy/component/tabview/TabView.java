@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.tabview;
+package com.liferay.faces.crystal.component.tabview;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -27,9 +27,9 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.event.FacesEvent;
 
-import com.liferay.faces.alloy.component.tab.Tab;
-import com.liferay.faces.alloy.component.tab.TabSelectEvent;
-import com.liferay.faces.alloy.component.tab.TabUtil;
+import com.liferay.faces.crystal.component.tab.Tab;
+import com.liferay.faces.crystal.component.tab.TabSelectEvent;
+import com.liferay.faces.crystal.component.tab.TabUtil;
 import com.liferay.faces.util.helper.IntegerHelper;
 
 

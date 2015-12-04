@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.commandbutton;
+package com.liferay.faces.crystal.component.commandbutton;
 //J-
 
 import javax.annotation.Generated;
@@ -24,12 +24,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class CommandButtonBase extends HtmlCommandButton implements Styleable {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.commandbutton.CommandButton";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.commandbutton.CommandButtonRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.commandbutton.CommandButton";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.commandbutton.CommandButtonRenderer";
 
 	// Protected Enumerations
 	protected enum CommandButtonPropertyKeys {
@@ -169,7 +169,7 @@ public abstract class CommandButtonBase extends HtmlCommandButton implements Sty
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(CommandButtonPropertyKeys.styleClass, "btn-default");
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-command-button");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-command-button");
 	}
 
 	/**

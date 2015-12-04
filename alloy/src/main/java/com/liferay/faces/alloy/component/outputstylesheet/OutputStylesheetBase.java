@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.outputstylesheet;
+package com.liferay.faces.crystal.component.outputstylesheet;
 //J-
 
 import javax.annotation.Generated;
@@ -22,12 +22,12 @@ import javax.faces.component.UIOutput;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class OutputStylesheetBase extends UIOutput {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.outputstylesheet.OutputStylesheet";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.outputstylesheet.OutputStylesheetRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.outputstylesheet.OutputStylesheet";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.outputstylesheet.OutputStylesheetRenderer";
 
 	// Protected Enumerations
 	protected enum OutputStylesheetPropertyKeys {

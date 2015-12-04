@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.column.internal;
+package com.liferay.faces.crystal.component.column.internal;
 
 import java.io.IOException;
 
@@ -29,9 +29,9 @@ import javax.faces.event.ListenerFor;
 import javax.faces.event.PostAddToViewEvent;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.column.Column;
-import com.liferay.faces.alloy.component.datatable.DataTable;
-import com.liferay.faces.alloy.render.internal.AlloyRendererUtil;
+import com.liferay.faces.crystal.component.column.Column;
+import com.liferay.faces.crystal.component.datatable.DataTable;
+import com.liferay.faces.crystal.render.internal.CrystalRendererUtil;
 import com.liferay.faces.util.render.RendererUtil;
 
 
@@ -44,7 +44,7 @@ import com.liferay.faces.util.render.RendererUtil;
 	{
 		@ResourceDependency(library = "javax.faces", name = "jsf.js"),
 		@ResourceDependency(
-			library = "liferay-faces-alloy-reslib", name = "build/aui-css/css/bootstrap.min.css"
+			library = "liferay-faces-crystal-reslib", name = "build/aui-css/css/bootstrap.min.css"
 		)
 	}
 )
@@ -150,7 +150,7 @@ public class ColumnRenderer extends ColumnRendererBase implements ComponentSyste
 		UIComponent parent = column.getParent();
 
 		if ((parent instanceof DataTable) && column.isAjax()) {
-			AlloyRendererUtil.addDefaultAjaxBehavior(column, column.getExecute(), column.getProcess(), "@parent",
+			CrystalRendererUtil.addDefaultAjaxBehavior(column, column.getExecute(), column.getProcess(), "@parent",
 				column.getRender(), column.getUpdate(), "@parent");
 		}
 	}

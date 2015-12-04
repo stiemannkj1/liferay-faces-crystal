@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputsourcecode;
+package com.liferay.faces.crystal.component.inputsourcecode;
 //J-
 
 import javax.annotation.Generated;
@@ -25,12 +25,12 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class InputSourceCodeBase extends HtmlInputText implements Styleable, ClientComponent {
 
 	// Public Constants
-	public static final String COMPONENT_TYPE = "com.liferay.faces.alloy.component.inputsourcecode.InputSourceCode";
-	public static final String RENDERER_TYPE = "com.liferay.faces.alloy.component.inputsourcecode.InputSourceCodeRenderer";
+	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.inputsourcecode.InputSourceCode";
+	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.inputsourcecode.InputSourceCodeRenderer";
 
 	// Protected Enumerations
 	protected enum InputSourceCodePropertyKeys {
@@ -252,7 +252,7 @@ public abstract class InputSourceCodeBase extends HtmlInputText implements Style
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(PropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "alloy-input-source-code");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-input-source-code");
 	}
 
 	/**

@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.reslib.application.internal;
+package com.liferay.faces.crystal.reslib.application.internal;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.liferay.faces.alloy.reslib.config.ResLibConfigParam;
+import com.liferay.faces.crystal.reslib.config.ResLibConfigParam;
 import com.liferay.faces.util.HttpHeaders;
 import com.liferay.faces.util.application.ResourceHandlerWrapperBase;
 import com.liferay.faces.util.config.ApplicationConfig;
@@ -41,14 +41,14 @@ import com.liferay.faces.util.product.ProductMap;
 
 /**
  * This is a resource handler that is only necessary in a non-Liferay (webapp) environment. The purpose of this class is
- * to provide Alloy/YUI/Bootstrap resources.
+ * to provide Crystal/YUI/Bootstrap resources.
  *
  * @author  Neil Griffin
  */
 public class ResLibResourceHandler extends ResourceHandlerWrapperBase {
 
 	// Public Constants
-	public static final String LIBRARY_NAME = "liferay-faces-alloy-reslib";
+	public static final String LIBRARY_NAME = "liferay-faces-crystal-reslib";
 
 	// Private Constants
 	private static final String LIFERAY_JS = "liferay.js";

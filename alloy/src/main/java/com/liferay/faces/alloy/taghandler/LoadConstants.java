@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.taghandler;
+package com.liferay.faces.crystal.taghandler;
 
 import java.io.IOException;
 import java.lang.reflect.Field;

@@ -11,21 +11,21 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.outputtext.internal;
+package com.liferay.faces.crystal.component.outputtext.internal;
 //J-
 
 import javax.annotation.Generated;
 
 import com.liferay.faces.util.render.DelegatingRendererBase;
 
-import com.liferay.faces.alloy.component.outputtext.OutputText;
+import com.liferay.faces.crystal.component.outputtext.OutputText;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
 public abstract class OutputTextRendererBase extends DelegatingRendererBase {
 
 	@Override

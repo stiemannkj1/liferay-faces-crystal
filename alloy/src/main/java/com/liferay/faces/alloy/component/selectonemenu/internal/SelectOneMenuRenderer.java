@@ -11,11 +11,11 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.selectonemenu.internal;
+package com.liferay.faces.crystal.component.selectonemenu.internal;
 
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.alloy.component.selectonemenu.SelectOneMenu;
+import com.liferay.faces.crystal.component.selectonemenu.SelectOneMenu;
 
 
 /**

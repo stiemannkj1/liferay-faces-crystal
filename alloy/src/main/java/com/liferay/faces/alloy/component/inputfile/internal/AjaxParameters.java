@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputfile.internal;
+package com.liferay.faces.crystal.component.inputfile.internal;
 
 import java.util.Collection;
 import java.util.List;
@@ -20,7 +20,7 @@ import java.util.Map;
 import javax.faces.component.behavior.AjaxBehavior;
 import javax.faces.component.behavior.ClientBehavior;
 
-import com.liferay.faces.alloy.component.inputfile.InputFile;
+import com.liferay.faces.crystal.component.inputfile.InputFile;
 
 
 /**

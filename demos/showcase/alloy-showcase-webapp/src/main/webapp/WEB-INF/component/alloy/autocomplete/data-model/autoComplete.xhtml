@@ -1,4 +1,4 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:showcase="http://liferay.com/faces/showcase" xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="/WEB-INF/templates/component-1col-60.xhtml">
@@ -6,18 +6,18 @@
 	<ui:define name="col1">
 		<h:form>
 			<showcase:example>
-				<alloy:field label="#{i18n['favorite-liferay-benefit']}">
-					<alloy:autoComplete maxItems="3" serverFilterType="phraseMatch" 
+				<crystal:field label="#{i18n['favorite-liferay-benefit']}">
+					<crystal:autoComplete maxItems="3" serverFilterType="phraseMatch" 
 						value="#{autoCompleteModelBean.text}">
 						<f:selectItems value="#{autoCompleteModelBean.liferayBenefits}" var="benefit"
 							itemValue="#{benefit.label}" />
-					</alloy:autoComplete>
-				</alloy:field>
+					</crystal:autoComplete>
+				</crystal:field>
 				<hr />
-				<alloy:commandButton render="@form" value="#{i18n['submit']}" />
+				<crystal:commandButton render="@form" value="#{i18n['submit']}" />
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
-				<alloy:outputText id="modelValue" value="#{autoCompleteModelBean.text}" />
+				<crystal:outputText id="modelValue" value="#{autoCompleteModelBean.text}" />
 			</showcase:results>
 		</h:form>
 	</ui:define>

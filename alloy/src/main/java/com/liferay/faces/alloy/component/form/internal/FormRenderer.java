@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.form.internal;
+package com.liferay.faces.crystal.component.form.internal;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -28,7 +28,7 @@ import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 import javax.faces.view.ViewMetadata;
 
-import com.liferay.faces.alloy.component.form.Form;
+import com.liferay.faces.crystal.component.form.Form;
 import com.liferay.faces.util.render.internal.DelegationResponseWriter;
 
 

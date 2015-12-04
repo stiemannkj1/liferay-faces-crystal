@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.accordion;
+package com.liferay.faces.crystal.component.accordion;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -27,10 +27,10 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.event.FacesEvent;
 
-import com.liferay.faces.alloy.component.tab.Tab;
-import com.liferay.faces.alloy.component.tab.TabCollapseEvent;
-import com.liferay.faces.alloy.component.tab.TabExpandEvent;
-import com.liferay.faces.alloy.component.tab.TabUtil;
+import com.liferay.faces.crystal.component.tab.Tab;
+import com.liferay.faces.crystal.component.tab.TabCollapseEvent;
+import com.liferay.faces.crystal.component.tab.TabExpandEvent;
+import com.liferay.faces.crystal.component.tab.TabUtil;
 import com.liferay.faces.util.helper.IntegerHelper;
 
 
@@ -116,7 +116,7 @@ public class Accordion extends AccordionBase implements ClientBehaviorHolder {
 
 		String style = super.getStyle();
 
-		// Initially style the outermost <div> with "display:none;" in order to prevent blinking when Alloy's
+		// Initially style the outermost <div> with "display:none;" in order to prevent blinking when Crystal's
 		// JavaScript attempts to hide the contentBox.
 		if (style == null) {
 			style = "display:none;";

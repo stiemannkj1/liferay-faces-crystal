@@ -11,10 +11,10 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.inputfile.internal;
+package com.liferay.faces.crystal.component.inputfile.internal;
 
-import com.liferay.faces.alloy.component.inputfile.InputFile;
-import com.liferay.faces.alloy.render.internal.DelegatingAlloyRendererBase;
+import com.liferay.faces.crystal.component.inputfile.InputFile;
+import com.liferay.faces.crystal.render.internal.DelegatingCrystalRendererBase;
 import com.liferay.faces.util.product.Product;
 import com.liferay.faces.util.product.ProductConstants;
 import com.liferay.faces.util.product.ProductMap;
@@ -25,7 +25,7 @@ import com.liferay.faces.util.product.ProductMap;
  *
  * @author  Neil Griffin
  */
-public abstract class InputFileRendererCompat extends DelegatingAlloyRendererBase {
+public abstract class InputFileRendererCompat extends DelegatingCrystalRendererBase {
 
 	// Private Constants
 	private static final Product JSF = ProductMap.getInstance().get(ProductConstants.JSF);

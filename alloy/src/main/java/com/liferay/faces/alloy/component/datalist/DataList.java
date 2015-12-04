@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.datalist;
+package com.liferay.faces.crystal.component.datalist;
 
 import javax.faces.component.FacesComponent;
 

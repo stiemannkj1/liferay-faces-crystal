@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.tagdecorator.internal;
+package com.liferay.faces.crystal.tagdecorator.internal;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,7 +29,7 @@ import javax.faces.view.facelets.TagAttributes;
 /**
  * @author  Neil Griffin
  */
-public class TagAttributesAlloyImpl extends TagAttributes {
+public class TagAttributesCrystalImpl extends TagAttributes {
 
 	// Private Constants
 	private static final String ELEMENT_NAME = "elementName"; // JSF 2.2+ Renderer.PASSTHROUGH_RENDERER_LOCALNAME_KEY
@@ -37,7 +37,7 @@ public class TagAttributesAlloyImpl extends TagAttributes {
 	// Private Data Members
 	private Map<String, TagAttribute> tagAttributeMap = new HashMap<String, TagAttribute>();
 
-	public TagAttributesAlloyImpl(TagAttributes tagAttributes) {
+	public TagAttributesCrystalImpl(TagAttributes tagAttributes) {
 
 		TagAttribute[] tagAttributesArray = tagAttributes.getAll();
 

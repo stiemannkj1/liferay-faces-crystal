@@ -1,30 +1,30 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:showcase="http://liferay.com/faces/showcase" template="/WEB-INF/templates/component-1col-60.xhtml">
 
 	<ui:define name="col1">
-		<alloy:form>
+		<crystal:form>
 			<showcase:example renderedCheckbox="true" requiredCheckbox="true">
-				<alloy:field>
+				<crystal:field>
 					<f:facet name="label">
-						<alloy:selectBooleanCheckbox id="checkbox"
+						<crystal:selectBooleanCheckbox id="checkbox"
 							rendered="#{showcaseModelBean.selectedComponent.rendered}"
 							required="#{showcaseModelBean.selectedComponent.required}"
 							value="#{selectBooleanCheckboxModelBean.agree}" />
 						#{i18n['agree']}
 					</f:facet>
-					<alloy:outputText styleClass="pad-left" value="#{i18n['i-agree-to-the-terms-of-the-license-agreement']}" />
+					<crystal:outputText styleClass="pad-left" value="#{i18n['i-agree-to-the-terms-of-the-license-agreement']}" />
 					<br />
-					<alloy:message for="checkbox" />
-				</alloy:field>
+					<crystal:message for="checkbox" />
+				</crystal:field>
 				<hr />
-				<alloy:commandButton action="#{selectBooleanCheckboxBackingBean.submit}" render="@form"
+				<crystal:commandButton action="#{selectBooleanCheckboxBackingBean.submit}" render="@form"
 					value="#{i18n['submit']}" />
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
-				<alloy:outputText id="modelValue" value="#{selectBooleanCheckboxModelBean.agree}" />
+				<crystal:outputText id="modelValue" value="#{selectBooleanCheckboxModelBean.agree}" />
 			</showcase:results>
-		</alloy:form>
+		</crystal:form>
 	</ui:define>
 
 </ui:composition>

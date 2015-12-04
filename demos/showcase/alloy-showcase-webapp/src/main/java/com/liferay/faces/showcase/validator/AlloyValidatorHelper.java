@@ -18,8 +18,8 @@ import java.util.Locale;
 import javax.faces.FacesException;
 import javax.faces.context.FacesContext;
 
-import com.liferay.faces.alloy.component.inputdate.InputDate;
-import com.liferay.faces.alloy.component.inputtime.InputTime;
+import com.liferay.faces.crystal.component.inputdate.InputDate;
+import com.liferay.faces.crystal.component.inputtime.InputTime;
 import com.liferay.faces.util.context.MessageContext;
 import com.liferay.faces.util.context.MessageContextFactory;
 import com.liferay.faces.util.factory.FactoryExtensionFinder;
@@ -28,7 +28,7 @@ import com.liferay.faces.util.factory.FactoryExtensionFinder;
 /**
  * @author  Neil Griffin
  */
-public class AlloyValidatorHelper {
+public class CrystalValidatorHelper {
 
 	public static String getMessage(FacesContext facesContext, InputDate inputDate, String messageId) {
 

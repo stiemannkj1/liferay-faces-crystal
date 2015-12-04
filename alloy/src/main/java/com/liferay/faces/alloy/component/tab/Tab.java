@@ -11,7 +11,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.alloy.component.tab;
+package com.liferay.faces.crystal.component.tab;
 
 import javax.faces.component.FacesComponent;
 import javax.faces.component.UIColumn;
@@ -20,18 +20,18 @@ import javax.faces.component.UIData;
 import javax.faces.model.DataModel;
 import javax.faces.render.Renderer;
 
-import com.liferay.faces.alloy.component.tabview.TabView;
+import com.liferay.faces.crystal.component.tabview.TabView;
 
 
 /**
- * This is the {@link UIComponent} class associated with the alloy:tab component tag. The intended usage is for the
- * developer to specify alloy:tab as a child element of alloy:tabView. For example:
+ * This is the {@link UIComponent} class associated with the crystal:tab component tag. The intended usage is for the
+ * developer to specify crystal:tab as a child element of crystal:tabView. For example:
  *
  * <pre>
     {@code
-    <alloy:tabView value="#{modelBean.items}" var="item">
-        <alloy:tab label="#{item.label}" />
-    </alloy:tabView>
+    <crystal:tabView value="#{modelBean.items}" var="item">
+        <crystal:tab label="#{item.label}" />
+    </crystal:tabView>
     }
  * </pre>
  *
