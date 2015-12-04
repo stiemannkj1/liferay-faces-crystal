@@ -10,7 +10,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.liferay.faces.crystal</groupId>
 	<artifactId>liferay-faces-crystal-parent</artifactId>
-	<version>3.0.0-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Liferay Faces Crystal Parent</name>
 	<description>Parent POM for all Liferay Faces Crystal modules</description>
