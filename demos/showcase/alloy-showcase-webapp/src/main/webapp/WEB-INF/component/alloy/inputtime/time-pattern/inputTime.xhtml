@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:alloy="http://liferay.com/faces/alloy"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:showcase="http://liferay.com/faces/showcase" template="/WEB-INF/templates/component-1col-60.xhtml">
+
+	<ui:define name="col1">
+		<alloy:form>
+			<showcase:example description="#{i18n['alloy-inputtime-time-pattern-example']}">
+				<alloy:field>
+					<alloy:inputTime id="time" value="#{inputTimeModelBean.time}" pattern="hh:mm:ss a" />
+					<alloy:message for="time" />
+				</alloy:field>
+				<hr />
+				<alloy:commandButton render="@form" value="#{i18n['submit']}" />
+			</showcase:example>
+			<showcase:results label="#{i18n['model-value']}">
+				<alloy:outputText id="modelValue" value="#{inputTimeModelBean.time}">
+					<f:convertDateTime pattern="hh:mm:ss a" />
+				</alloy:outputText>
+			</showcase:results>
+		</alloy:form>
+	</ui:define>
+
+</ui:composition>
