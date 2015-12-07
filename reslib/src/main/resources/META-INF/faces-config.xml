@@ -3,8 +3,4 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
 
 	<name>LiferayFacesCrystalResLib</name>
-	<application>
-		<resource-handler>com.liferay.faces.crystal.reslib.application.internal.ResLibResourceHandler</resource-handler>
-	</application>
-
 </faces-config>

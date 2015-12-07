@@ -82,6 +82,7 @@
 
 	<properties>
 		<crystalui.version>3.0.1</crystalui.version>
+		<bootstrap.version>3.3.6</bootstrap.version>
 		<crystalui.zip.version>${crystalui.version}</crystalui.zip.version>
 		<component.namespace>none</component.namespace>
 		<faces.group.id>com.sun.faces</faces.group.id>
