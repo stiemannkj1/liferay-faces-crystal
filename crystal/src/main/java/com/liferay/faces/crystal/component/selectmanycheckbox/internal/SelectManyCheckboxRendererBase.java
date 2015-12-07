@@ -25,7 +25,7 @@ import com.liferay.faces.crystal.component.selectmanycheckbox.SelectManyCheckbox
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
 public abstract class SelectManyCheckboxRendererBase extends SelectDelegatingRendererBase {
 
 	@Override

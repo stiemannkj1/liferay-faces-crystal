@@ -24,7 +24,7 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
 public abstract class ButtonBase extends HtmlOutcomeTargetButton implements Styleable {
 
 	// Public Constants
@@ -35,6 +35,7 @@ public abstract class ButtonBase extends HtmlOutcomeTargetButton implements Styl
 	protected enum ButtonPropertyKeys {
 		autofocus,
 		disabled,
+		styleClass,
 		type
 	}
 
@@ -87,11 +88,21 @@ public abstract class ButtonBase extends HtmlOutcomeTargetButton implements Styl
 	@Override
 	public String getStyleClass() {
 
-		// getStateHelper().eval(PropertyKeys.styleClass, null) is called because
+		// getStateHelper().eval(ButtonPropertyKeys.styleClass, null) is called because
 		// super.getStyleClass() may return the styleClass name of the super class.
-		String styleClass = (String) getStateHelper().eval(PropertyKeys.styleClass, null);
+		String styleClass = (String) getStateHelper().eval(ButtonPropertyKeys.styleClass, "btn-default");
 
 		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-button");
+	}
+
+	/**
+	 * <code>styleClass</code> attribute description:
+	 * <br /><br />
+	 * List of CSS class names (separated by spaces) that are to be rendered within the class attribute.
+	 */
+	@Override
+	public void setStyleClass(String styleClass) {
+		getStateHelper().put(ButtonPropertyKeys.styleClass, styleClass);
 	}
 
 	/**

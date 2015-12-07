@@ -25,7 +25,7 @@ import com.liferay.faces.crystal.component.message.Message;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
 public abstract class MessageRendererBase extends DelegatingRendererBase {
 
 	@Override

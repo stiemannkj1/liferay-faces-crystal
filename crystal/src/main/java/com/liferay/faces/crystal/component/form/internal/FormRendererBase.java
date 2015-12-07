@@ -25,7 +25,7 @@ import com.liferay.faces.crystal.component.form.Form;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
 public abstract class FormRendererBase extends DelegatingRendererBase {
 
 	// Protected Constants

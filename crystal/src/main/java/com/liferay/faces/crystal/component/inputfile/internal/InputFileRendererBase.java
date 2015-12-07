@@ -14,28 +14,19 @@
 package com.liferay.faces.crystal.component.inputfile.internal;
 //J-
 
-import java.io.IOException;
-
 import javax.annotation.Generated;
-import javax.faces.component.UIComponent;
-import javax.faces.context.FacesContext;
-import javax.faces.context.ResponseWriter;
 
 import com.liferay.faces.crystal.component.inputfile.internal.InputFileRendererCompat;
-
-import com.liferay.faces.crystal.component.inputfile.InputFile;
 
 
 /**
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
 public abstract class InputFileRendererBase extends InputFileRendererCompat {
 
 	// Protected Constants
-	protected static final String APPEND_NEW_FILES = "appendNewFiles";
-	protected static final String AUTO = "auto";
 	protected static final String CLIENT_KEY = "clientKey";
 	protected static final String CONTENT_TYPES = "contentTypes";
 	protected static final String FILE_UPLOAD_LISTENER = "fileUploadListener";

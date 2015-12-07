@@ -25,12 +25,13 @@ import com.liferay.faces.crystal.component.button.Button;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
 public abstract class ButtonRendererBase extends ButtonRendererCompat {
 
 	// Protected Constants
 	protected static final String AUTOFOCUS = "autofocus";
 	protected static final String DISABLED = "disabled";
+	protected static final String STYLE_CLASS = "styleClass";
 	protected static final String TYPE = "type";
 
 	@Override

@@ -24,7 +24,7 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
 public abstract class InputFileBase extends com.liferay.faces.util.component.InputFileBase implements Styleable, ClientComponent {
 
 	// Public Constants
@@ -33,8 +33,6 @@ public abstract class InputFileBase extends com.liferay.faces.util.component.Inp
 
 	// Protected Enumerations
 	protected enum InputFilePropertyKeys {
-		appendNewFiles,
-		auto,
 		clientKey,
 		contentTypes,
 		fileUploadListener,
@@ -48,42 +46,6 @@ public abstract class InputFileBase extends com.liferay.faces.util.component.Inp
 	public InputFileBase() {
 		super();
 		setRendererType(RENDERER_TYPE);
-	}
-
-	/**
-	 * <code>appendNewFiles</code> attribute description:
-	 * <br /><br />
-	 * When this flag is true, selected files are appended to the preview table. Otherwise, the preview table is cleared when new files are selected. NOTE: This feature is only available when showProgress=true.
-	 */
-	public boolean isAppendNewFiles() {
-		return (Boolean) getStateHelper().eval(InputFilePropertyKeys.appendNewFiles, false);
-	}
-
-	/**
-	 * <code>appendNewFiles</code> attribute description:
-	 * <br /><br />
-	 * When this flag is true, selected files are appended to the preview table. Otherwise, the preview table is cleared when new files are selected. NOTE: This feature is only available when showProgress=true.
-	 */
-	public void setAppendNewFiles(boolean appendNewFiles) {
-		getStateHelper().put(InputFilePropertyKeys.appendNewFiles, appendNewFiles);
-	}
-
-	/**
-	 * <code>auto</code> attribute description:
-	 * <br /><br />
-	 * When this flag is true, files are uploaded automatically as soon as they are selected.
-	 */
-	public boolean isAuto() {
-		return (Boolean) getStateHelper().eval(InputFilePropertyKeys.auto, false);
-	}
-
-	/**
-	 * <code>auto</code> attribute description:
-	 * <br /><br />
-	 * When this flag is true, files are uploaded automatically as soon as they are selected.
-	 */
-	public void setAuto(boolean auto) {
-		getStateHelper().put(InputFilePropertyKeys.auto, auto);
 	}
 
 	/**
@@ -266,7 +228,7 @@ public abstract class InputFileBase extends com.liferay.faces.util.component.Inp
 		// super.getStyleClass() may return the styleClass name of the super class.
 		String styleClass = (String) getStateHelper().eval(PropertyKeys.styleClass, null);
 
-		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-input-file", "field");
+		return com.liferay.faces.util.component.ComponentUtil.concatCssClasses(styleClass, "crystal-input-file");
 	}
 }
 //J+

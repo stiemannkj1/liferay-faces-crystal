@@ -24,7 +24,7 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Bruno Basto
  * @author	Kyle Stiemann
  */
-@Generated(value = "com.liferay.crystal.tools.builder.FacesBuilder")
+@Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
 public abstract class OutputFormatBase extends HtmlOutputFormat implements Styleable {
 
 	// Public Constants
