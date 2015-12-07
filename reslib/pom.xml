@@ -60,7 +60,7 @@
 								<configuration>
 									<url>https://github.com/twbs/bootstrap/releases/download/v${bootstrap.zip.version}/bootstrap-${bootstrap.zip.version}-dist.zip</url>
 									<unpack>true</unpack>
-									<outputDirectory>${project.build.directory}/classes/META-INF/resources/bootstrap-${bootstrap.version}</outputDirectory>
+									<outputDirectory>${project.build.directory}/classes/META-INF/resources</outputDirectory>
 									<md5>229936b042baadfc9f167244575ffe12</md5>
 								</configuration>
 							</execution>
@@ -84,30 +84,16 @@
 										<!--
 										<move file="${project.build.directory}/classes/META-INF/resources/crystal-${crystalui.version}/build" todir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib" />
 										-->
-										<move file="${project.build.directory}/classes/META-INF/resources/bootstrap-${bootstrap.version}/css" todir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css" />
-										<move file="${project.build.directory}/classes/META-INF/resources/bootstrap-${bootstrap.version}/fonts" todir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/fonts" />
+										<move file="${project.build.directory}/classes/META-INF/resources/bootstrap-${bootstrap.version}-dist/css" todir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css" />
+										<move file="${project.build.directory}/classes/META-INF/resources/bootstrap-${bootstrap.version}-dist/fonts" todir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/fonts" />
 										<!--
 										<delete dir="${project.build.directory}/classes/META-INF/resources/crystal-${crystalui.version}" />
 										-->
-										<replace token="../img/" value="#{resource['liferay-faces-crystal-reslib:img/" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css">
-											<includes name="bootstrap*.css" />
-										</replace>
-										<replace token=".png)" value=".png']})" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css">
-											<includes name="bootstrap*.css" />
-										</replace>
 										<!-- glyphicons -->
-										<replace token="../fonts/glyphicons-halflings-regular.eot" value="#{resource['liferay-faces-crystal-reslib:fonts/glyphicons-halflings-regular.eot']}" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css">
-											<includes name="bootstrap*.css" />
-										</replace>
-										<replace token="../fonts/glyphicons-halflings-regular.woff" value="#{resource['liferay-faces-crystal-reslib:fonts/glyphicons-halflings-regular.woff']}" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css">
-											<includes name="bootstrap*.css" />
-										</replace>
-										<replace token="../fonts/glyphicons-halflings-regular.ttf" value="#{resource['liferay-faces-crystal-reslib:fonts/glyphicons-halflings-regular.ttf']}" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css">
-											<includes name="bootstrap*.css" />
-										</replace>
-										<replace token="../fonts/glyphicons-halflings-regular.svg" value="#{resource['liferay-faces-crystal-reslib:fonts/glyphicons-halflings-regular.svg']}" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css">
-											<includes name="bootstrap*.css" />
-										</replace>
+										<replace token="../fonts/glyphicons-halflings-regular.eot" value="#{resource['liferay-faces-crystal-reslib:fonts/glyphicons-halflings-regular.eot']}" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css" includes="**/bootstrap*.css" />
+										<replace token="../fonts/glyphicons-halflings-regular.woff" value="#{resource['liferay-faces-crystal-reslib:fonts/glyphicons-halflings-regular.woff']}" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css" includes="**/bootstrap*.css" />
+										<replace token="../fonts/glyphicons-halflings-regular.ttf" value="#{resource['liferay-faces-crystal-reslib:fonts/glyphicons-halflings-regular.ttf']}" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css" includes="**/bootstrap*.css" />
+										<replace token="../fonts/glyphicons-halflings-regular.svg" value="#{resource['liferay-faces-crystal-reslib:fonts/glyphicons-halflings-regular.svg']}" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css" includes="**/bootstrap*.css" />
 									</target>
 								</configuration>
 							</execution>
