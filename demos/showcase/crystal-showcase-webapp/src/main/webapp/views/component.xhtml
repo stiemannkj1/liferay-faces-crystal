@@ -35,12 +35,11 @@
 		<ui:include
 			src="/WEB-INF/component/#{selectedComponentPrefix}/#{selectedComponentLowerCaseName}/#{selectedComponentUseCaseName}/#{selectedComponentCamelCaseName}.xhtml" />
 		<h4>#{i18n['source-code']}</h4>
-		<crystal:tabView value="#{showcaseModelBean.selectedComponent.useCaseCodeExamples}" var="useCaseCodeExample">
-			<crystal:tab headerText="#{useCaseCodeExample.fileName}">
-				<crystal:inputSourceCode mode="#{useCaseCodeExample.fileExtension}" readOnly="true" showPrintMargin="false"
-					useWrapMode="false" height="800" width="100%" value="#{useCaseCodeExample.rawText}" />
-			</crystal:tab>
-		</crystal:tabView>
+		<showcase:tabView value="#{showcaseModelBean.selectedComponent.useCaseCodeExamples}" var="useCaseCodeExample">
+			<showcase:tab headerText="#{useCaseCodeExample.fileName}">
+				<showcase:outputSourceCode value="#{useCaseCodeExample.rawText}" />
+			</showcase:tab>
+		</showcase:tabView>
 		<crystal:buttonRow styleClass="text-center">
 			<c:set var="showcaseComponentSuite" value="crystal" />
 			<c:set var="showcaseSourceContainer" value="webapp" />

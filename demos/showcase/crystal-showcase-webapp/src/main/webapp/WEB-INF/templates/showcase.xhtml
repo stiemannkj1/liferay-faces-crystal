@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:crystal="http://liferay.com/faces/crystal"
 	xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:showcase="http://liferay.com/faces/showcase">
 	<c:set value="#{showcaseModelBean.selectedComponent}" var="selectedComponent" />
 	<c:set value="#{selectedComponent.key}" var="selectedComponentKey" />
 	<c:set value="#{selectedComponent.useCaseName}" var="selectedComponentUseCaseName" />
@@ -11,9 +12,9 @@
 			<crystal:link outcome="home">
 				<crystal:image library="images" name="crystal-logo-nav.png" styleClass="logo" />
 			</crystal:link>
-			<crystal:accordion selectedIndex="#{selectedComponent.categoryIndex}" value="#{listModelBean.showcaseCategories}"
+			<showcase:accordion selectedIndex="#{selectedComponent.categoryIndex}" value="#{listModelBean.showcaseCategories}"
 				var="showcaseCategory">
-				<crystal:tab>
+				<showcase:tab>
 					<f:facet name="header">
 						<crystal:panelGroup layout="block">
 							<crystal:image library="images" name="icon-#{showcaseCategory}.png" />
@@ -45,8 +46,8 @@
 							</ui:fragment>
 						</crystal:dataItem>
 					</crystal:dataList>
-				</crystal:tab>
-			</crystal:accordion>
+				</showcase:tab>
+			</showcase:accordion>
 		</crystal:column>
 		<crystal:column width="#{browserSniffer.ipad ? '70' : '75'}">
 			<crystal:panelGroup layout="block" styleClass="showcase-container">

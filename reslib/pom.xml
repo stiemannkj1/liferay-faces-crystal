@@ -84,13 +84,15 @@
 										<!--
 										<move file="${project.build.directory}/classes/META-INF/resources/crystal-${crystalui.version}/build" todir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib" />
 										-->
-										<move file="${project.build.directory}/classes/META-INF/resources/bootstrap-${bootstrap.version}-dist/css" todir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css" />
-										<move file="${project.build.directory}/classes/META-INF/resources/bootstrap-${bootstrap.version}-dist/fonts" todir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/fonts" />
+										<move file="${project.build.directory}/classes/META-INF/resources/bootstrap-${bootstrap.version}-dist/css" todir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib" />
+										<move file="${project.build.directory}/classes/META-INF/resources/bootstrap-${bootstrap.version}-dist/fonts" todir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib" />
+										<delete dir="${project.build.directory}/classes/META-INF/resources/bootstrap-${bootstrap.version}-dist" />
 										<!--
 										<delete dir="${project.build.directory}/classes/META-INF/resources/crystal-${crystalui.version}" />
 										-->
 										<!-- glyphicons -->
 										<replace token="../fonts/glyphicons-halflings-regular.eot" value="#{resource['liferay-faces-crystal-reslib:fonts/glyphicons-halflings-regular.eot']}" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css" includes="**/bootstrap*.css" />
+										<replace token="../fonts/glyphicons-halflings-regular.woff2" value="#{resource['liferay-faces-crystal-reslib:fonts/glyphicons-halflings-regular.woff2']}" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css" includes="**/bootstrap*.css" />
 										<replace token="../fonts/glyphicons-halflings-regular.woff" value="#{resource['liferay-faces-crystal-reslib:fonts/glyphicons-halflings-regular.woff']}" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css" includes="**/bootstrap*.css" />
 										<replace token="../fonts/glyphicons-halflings-regular.ttf" value="#{resource['liferay-faces-crystal-reslib:fonts/glyphicons-halflings-regular.ttf']}" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css" includes="**/bootstrap*.css" />
 										<replace token="../fonts/glyphicons-halflings-regular.svg" value="#{resource['liferay-faces-crystal-reslib:fonts/glyphicons-halflings-regular.svg']}" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-crystal-reslib/css" includes="**/bootstrap*.css" />
