@@ -16,15 +16,13 @@
 				var="showcaseCategory">
 				<showcase:tab>
 					<f:facet name="header">
-						<crystal:panelGroup layout="block">
-							<crystal:image library="images" name="icon-#{showcaseCategory}.png" />
-							<crystal:outputText styleClass="category-name" value="#{i18n[showcaseCategory]}" />
-						</crystal:panelGroup>
+						<crystal:image library="images" name="icon-#{showcaseCategory}.png" />
+						<crystal:outputText styleClass="category-name" value="#{i18n[showcaseCategory]}" />
 					</f:facet>
 					<crystal:dataList styleClass="nav"
 						value="#{listModelBean.showcaseCategoryMap[showcaseCategory]}" var="showcaseComponent">
 						<crystal:dataItem styleClass="#{(selectedComponentKey == showcaseComponent.key) ? 'active' : ''}">
-							<crystal:link outcome="component" value="#{showcaseComponent}">
+							<crystal:link styleClass="showcase-link" outcome="component" value="#{showcaseComponent}">
 								<f:param name="componentPrefix" value="#{showcaseComponent.prefix}" />
 								<f:param name="componentName" value="#{showcaseComponent.lowerCaseName}" />
 								<f:param name="componentUseCase" value="general" />
@@ -35,7 +33,7 @@
 									var="useCase">
 										<crystal:dataItem styleClass="#{(selectedComponentUseCaseName == useCase.name) ? 'active' : ''}"
 											style="white-space: nowrap;">
-											<crystal:link value="#{i18n[useCase.name]}">
+											<crystal:link styleClass="showcase-link" value="#{i18n[useCase.name]}">
 												<f:param name="componentPrefix" value="#{selectedComponent.prefix}" />
 												<f:param name="componentName" value="#{selectedComponent.lowerCaseName}" />
 												<f:param name="componentUseCase" value="#{useCase.name}" />
