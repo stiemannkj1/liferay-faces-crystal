@@ -6,7 +6,7 @@
 		<crystal:form>
 			<showcase:example>
 				<crystal:outputLabel value="#{i18n['favorite-liferay-benefit']}" />
-				<crystal:selectOneRadio layout="lineDirection" value="#{selectOneModelBean.favoriteId}">
+				<crystal:selectOneRadio value="#{selectOneModelBean.favoriteId}">
 					<f:selectItems value="#{selectOneModelBean.liferayBenefits}" var="benefit" itemValue="#{benefit.id}"
 						itemLabel="#{benefit.label}" />
 				</crystal:selectOneRadio>

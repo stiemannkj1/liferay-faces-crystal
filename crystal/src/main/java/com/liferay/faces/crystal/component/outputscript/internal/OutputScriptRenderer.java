@@ -23,9 +23,6 @@ import javax.faces.event.PostAddToViewEvent;
 import javax.faces.render.FacesRenderer;
 
 import com.liferay.faces.crystal.component.outputscript.OutputScript;
-import com.liferay.faces.crystal.render.internal.CrystalRendererUtil;
-import com.liferay.faces.util.client.BrowserSniffer;
-import com.liferay.faces.util.client.BrowserSnifferFactory;
 import com.liferay.faces.util.client.Script;
 import com.liferay.faces.util.client.ScriptFactory;
 import com.liferay.faces.util.context.FacesRequestContext;
@@ -36,10 +33,7 @@ import com.liferay.faces.util.render.internal.BufferedScriptResponseWriter;
 /**
  * @author  Kyle Stiemann
  */
-//J-
 @FacesRenderer(componentFamily = OutputScript.COMPONENT_FAMILY, rendererType = OutputScript.RENDERER_TYPE)
-@ListenerFor(systemEventClass = PostAddToViewEvent.class)
-//J+
 public class OutputScriptRenderer extends OutputScriptRendererBase {
 
 	@Override
@@ -57,8 +51,6 @@ public class OutputScriptRenderer extends OutputScriptRendererBase {
 		// Otherwise, since it is not a JSF resource:
 		else {
 
-			// If target="body" and this is not an Ajax request, then
-			String use = outputScript.getUse();
 			String target = outputScript.getTarget();
 
 			if ("body".equals(target) && !facesContext.getPartialViewContext().isAjaxRequest()) {
@@ -69,43 +61,11 @@ public class OutputScriptRenderer extends OutputScriptRendererBase {
 				super.encodeChildren(facesContext, uiComponent);
 				facesContext.setResponseWriter(responseWriter);
 
-				Script script;
 				String bufferedScriptString = bufferedScriptResponseWriter.toString();
 				ScriptFactory scriptFactory = (ScriptFactory) FactoryExtensionFinder.getFactory(ScriptFactory.class);
-
-				if ((use != null) && (use.length() > 0)) {
-
-					String[] modules = use.split(",");
-					script = scriptFactory.getScript(bufferedScriptString, modules, Script.Type.ALLOY);
-				}
-				else {
-					script = scriptFactory.getScript(bufferedScriptString);
-				}
-
-				// Render the script at the bottom of the page immediately before the closing </body> tag.
+				Script script = scriptFactory.getScript(bufferedScriptString);
 				FacesRequestContext facesRequestContext = FacesRequestContext.getCurrentInstance();
 				facesRequestContext.addScript(script);
-			}
-
-			// Otherwise if the script uses YUI or CrystalUI modules then create a YUI sandbox which specifies the
-			// correct modules around the script.
-			else if ((use != null) && (use.length() > 0)) {
-
-				// Delegate to the JSF runtime Renderer, but replace the JSF runtime ResponseWriter with an
-				// OutputScriptResponseWriter which will render the YUI sandbox code around the script.
-				ResponseWriter responseWriter = facesContext.getResponseWriter();
-
-				// In order to determine the exact YUI sandbox string to write, the modules and browser information
-				// must be passed to RendererUtil.getCrystalBeginScript().
-				String[] modules = use.split(",");
-				BrowserSnifferFactory browserSnifferFactory = (BrowserSnifferFactory) FactoryExtensionFinder.getFactory(
-						BrowserSnifferFactory.class);
-				BrowserSniffer browserSniffer = browserSnifferFactory.getBrowserSniffer(
-						facesContext.getExternalContext());
-				String crystalBeginScript = CrystalRendererUtil.getCrystalBeginScript(modules, null, browserSniffer);
-				OutputScriptResponseWriter outputScriptResponseWriter = new OutputScriptResponseWriter(responseWriter,
-						crystalBeginScript);
-				super.encodeChildren(facesContext, uiComponent, outputScriptResponseWriter);
 			}
 
 			// Otherwise, simply delegate to the JSF runtime renderer since target="head" or target="form".

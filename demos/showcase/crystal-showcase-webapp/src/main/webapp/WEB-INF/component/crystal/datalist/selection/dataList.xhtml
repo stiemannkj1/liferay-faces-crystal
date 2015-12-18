@@ -5,22 +5,18 @@
 	<ui:define name="col1">
 		<showcase:example>
 			<crystal:form id="exampleForm">
+				<crystal:messages id="feedback" layout="table" globalOnly="true" />
 				<crystal:dataList styleClass="unstyled" value="#{dataListModelBean.liferayBenefits}" var="liferayBenefit">
 					<crystal:dataItem>
 						<crystal:icon name="search" />
-						<crystal:commandLink onclick="Liferay.component('dialogKey').show()"
+						<crystal:commandLink
 							render=":exampleForm:dialogContents" value="#{liferayBenefit.label}">
 							<f:setPropertyActionListener value="#{liferayBenefit}"
 								target="#{dataListModelBean.selectedLiferayBenefit}" />
+							<f:ajax render=":exampleForm:feedback" />
 						</crystal:commandLink>
 					</crystal:dataItem>
 				</crystal:dataList>
-				<crystal:dialog headerText="#{i18n['more-info']}" clientKey="dialogKey" dismissible="true">
-					<crystal:panelGroup id="dialogContents" layout="block">
-						<crystal:outputText
-							value="#{dataListModelBean.selectedLiferayBenefit.label}: #{dataListModelBean.selectedLiferayBenefit.description}" />
-					</crystal:panelGroup>
-				</crystal:dialog>
 			</crystal:form>
 		</showcase:example>
 	</ui:define>

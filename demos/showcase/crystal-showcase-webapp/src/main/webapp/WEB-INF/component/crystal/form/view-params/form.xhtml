@@ -3,11 +3,9 @@
 	template="/WEB-INF/templates/component-1col-80.xhtml">
 
 	<ui:define name="col1">
-		<crystal:outputScript use="event">
-		A.on('domready', function () {
+		<crystal:outputScript target="body">
 			document.getElementById('#{attributeValue.clientId}').innerHTML =
 				'action=' + document.getElementById('#{myForm.clientId}').action;
-		});
 		</crystal:outputScript>
 		<crystal:form binding="#{myForm}" includeViewParams="true">
 			<crystal:messages globalOnly="true" />

@@ -6,7 +6,7 @@
 		<crystal:form enctype="multipart/form-data">
 			<showcase:example>
 				<crystal:messages globalOnly="true" layout="table" />
-				<crystal:inputFile auto="true" fileUploadListener="#{inputFileBackingBean.handleFileUpload}">
+				<crystal:inputFile fileUploadListener="#{inputFileBackingBean.handleFileUpload}">
 					<f:ajax render="@form" />
 				</crystal:inputFile>
 			</showcase:example>

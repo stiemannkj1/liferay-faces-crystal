@@ -63,6 +63,39 @@ public class DataTableRenderer extends DataTableRendererBase {
 	private static final Logger logger = LoggerFactory.getLogger(DataTableRenderer.class);
 
 	@Override
+	public void encodeBegin(FacesContext facesContext, UIComponent uiComponent) throws IOException {
+
+		// If the rows attribute has changed since the last render, then reset the first row that is to be displayed
+		// back to zero. This takes care of any page number rendering difficulties.
+		DataTable dataTable = (DataTable) uiComponent;
+		Map<String, Object> dataTableAttributes = dataTable.getAttributes();
+		Integer oldRows = (Integer) dataTableAttributes.remove("oldRows");
+
+		if ((oldRows != null) && (oldRows != dataTable.getRows())) {
+			dataTable.setFirst(0);
+		}
+
+		// Encode the starting <table> element that represents the crystal:table.
+		DataTableInfo dataTableInfo = new DataTableInfo(dataTable);
+		ResponseWriter responseWriter = facesContext.getResponseWriter();
+		responseWriter.startElement("table", dataTable);
+		responseWriter.writeAttribute("id", dataTable.getClientId(facesContext), "id");
+		RendererUtil.encodeStyleable(responseWriter, dataTable);
+
+		// If present, encode the child <f:facet name="caption" ... />
+		encodeCaptionFacet(facesContext, responseWriter, dataTable);
+
+		// If present, encode the child <f:facet name="colGroups" ... />
+		encodeColGroupsFacet(facesContext, dataTable);
+
+		// Encode the table <thead> ... </thead> section.
+		encodeHeader(facesContext, responseWriter, dataTable, dataTableInfo);
+
+		// Encode the table <tfoot> ... </tfoot> section.
+		encodeFooter(facesContext, responseWriter, dataTable, dataTableInfo);
+	}
+
+	@Override
 	public void encodeChildren(FacesContext facesContext, UIComponent uiComponent) throws IOException {
 
 		DataTable dataTable = (DataTable) uiComponent;
@@ -148,39 +181,6 @@ public class DataTableRenderer extends DataTableRendererBase {
 
 			responseWriter.endElement("tbody");
 		}
-	}
-
-	@Override
-	public void encodeBegin(FacesContext facesContext, UIComponent uiComponent) throws IOException {
-
-		// If the rows attribute has changed since the last render, then reset the first row that is to be displayed
-		// back to zero. This takes care of any page number rendering difficulties.
-		DataTable dataTable = (DataTable) uiComponent;
-		Map<String, Object> dataTableAttributes = dataTable.getAttributes();
-		Integer oldRows = (Integer) dataTableAttributes.remove("oldRows");
-
-		if ((oldRows != null) && (oldRows != dataTable.getRows())) {
-			dataTable.setFirst(0);
-		}
-
-		// Encode the starting <table> element that represents the crystal:table.
-		DataTableInfo dataTableInfo = new DataTableInfo(dataTable);
-		ResponseWriter responseWriter = facesContext.getResponseWriter();
-		responseWriter.startElement("table", dataTable);
-		responseWriter.writeAttribute("id", dataTable.getClientId(facesContext), "id");
-		RendererUtil.encodeStyleable(responseWriter, dataTable);
-
-		// If present, encode the child <f:facet name="caption" ... />
-		encodeCaptionFacet(facesContext, responseWriter, dataTable);
-
-		// If present, encode the child <f:facet name="colGroups" ... />
-		encodeColGroupsFacet(facesContext, dataTable);
-
-		// Encode the table <thead> ... </thead> section.
-		encodeHeader(facesContext, responseWriter, dataTable, dataTableInfo);
-
-		// Encode the table <tfoot> ... </tfoot> section.
-		encodeFooter(facesContext, responseWriter, dataTable, dataTableInfo);
 	}
 
 	@Override
@@ -445,7 +445,8 @@ public class DataTableRenderer extends DataTableRendererBase {
 								String headerText = crystalColumn.getHeaderText();
 
 								if (headerText != null) {
-									encodeHeaderText(facesContext, responseWriter, dataTable, crystalColumn, headerText);
+									encodeHeaderText(facesContext, responseWriter, dataTable, crystalColumn,
+										headerText);
 								}
 							}
 
@@ -686,42 +687,4 @@ public class DataTableRenderer extends DataTableRendererBase {
 	public boolean getRendersChildren() {
 		return true;
 	}
-
-	protected JavaScriptFragment getRowEventClientBehaviorScript(FacesContext facesContext, DataTable dataTable,
-		String dataTableClientId, String eventName, String parameterName) {
-
-		StringBuilder scriptBuilder = new StringBuilder();
-		scriptBuilder.append("function(");
-		scriptBuilder.append(parameterName);
-		scriptBuilder.append(", event){");
-
-		Map<String, List<ClientBehavior>> clientBehaviorMap = dataTable.getClientBehaviors();
-		List<ClientBehavior> clientBehaviorsForEvent = clientBehaviorMap.get(eventName);
-
-		if (clientBehaviorsForEvent != null) {
-
-			for (ClientBehavior clientBehavior : clientBehaviorsForEvent) {
-
-				List<ClientBehaviorContext.Parameter> parameters = new ArrayList<ClientBehaviorContext.Parameter>();
-				String eventMetaKeyParamName = dataTableClientId.concat("_").concat(parameterName);
-				parameters.add(new ClientBehaviorContext.Parameter(eventMetaKeyParamName, parameterName));
-
-				ClientBehaviorContext clientBehaviorContext = ClientBehaviorContext.createClientBehaviorContext(
-						facesContext, dataTable, eventName, dataTableClientId, parameters);
-				String script = clientBehavior.getScript(clientBehaviorContext);
-
-				if (script != null) {
-					String quotedParamName = "'".concat(parameterName).concat("'");
-					script = script.replaceFirst(quotedParamName, parameterName);
-				}
-
-				scriptBuilder.append(script);
-			}
-		}
-
-		scriptBuilder.append("}");
-
-		return new JavaScriptFragment(scriptBuilder.toString());
-	}
-
 }

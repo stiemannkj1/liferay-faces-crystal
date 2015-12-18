@@ -13,28 +13,47 @@
  */
 package com.liferay.faces.crystal.component.outputscriptstylesheet.internal;
 
+import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.event.AbortProcessingException;
 import javax.faces.event.ComponentSystemEvent;
 import javax.faces.event.ComponentSystemEventListener;
+import javax.faces.event.ListenerFor;
+import javax.faces.event.PostAddToViewEvent;
 import javax.faces.render.Renderer;
 
+import com.liferay.faces.crystal.component.outputscript.OutputScript;
 import com.liferay.faces.util.render.DelegatingRendererBase;
 
 
 /**
  * @author  Kyle Stiemann
  */
+@ListenerFor(systemEventClass = PostAddToViewEvent.class)
 public abstract class OutputScriptStylesheetRendererBase extends DelegatingRendererBase
 	implements ComponentSystemEventListener {
 
 	@Override
 	public void processEvent(ComponentSystemEvent componentSystemEvent) throws AbortProcessingException {
 
+		UIComponent uiComponent = componentSystemEvent.getComponent();
+		boolean outputScriptTargetBody = false;
+
+		if (uiComponent instanceof OutputScript) {
+
+			OutputScript outputScript = (OutputScript) uiComponent;
+			String target = outputScript.getTarget();
+			outputScriptTargetBody = "body".equals(target);
+		}
+
 		FacesContext facesContext = FacesContext.getCurrentInstance();
+		boolean ajaxRequest = facesContext.getPartialViewContext().isAjaxRequest();
 		Renderer delegateRenderer = getDelegateRenderer(facesContext);
 
-		if (delegateRenderer instanceof ComponentSystemEventListener) {
+		// If this is an Ajax request or the current component is not an alloy:outputScript with target="body" AND the
+		// delegateRenderer is a ComponentSystemEventListener, then ...
+		if ((ajaxRequest || !outputScriptTargetBody) && (delegateRenderer instanceof ComponentSystemEventListener)) {
+
 			ComponentSystemEventListener delegateComponentSystemEventListener = (ComponentSystemEventListener)
 				delegateRenderer;
 			delegateComponentSystemEventListener.processEvent(componentSystemEvent);

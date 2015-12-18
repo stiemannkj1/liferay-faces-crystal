@@ -11,19 +11,23 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-package com.liferay.faces.crystal.component.outputstylesheet.internal;
+package com.liferay.faces.crystal.context.internal;
 
-import javax.faces.event.ListenerFor;
-import javax.faces.event.PostAddToViewEvent;
-import javax.faces.render.FacesRenderer;
-
-import com.liferay.faces.crystal.component.outputstylesheet.OutputStylesheet;
+import com.liferay.faces.util.context.MessageContext;
+import com.liferay.faces.util.context.MessageContextBundleBase;
 
 
 /**
- * @author  Kyle Stiemann
+ * @author  Neil Griffin
  */
-@FacesRenderer(componentFamily = OutputStylesheet.COMPONENT_FAMILY, rendererType = OutputStylesheet.RENDERER_TYPE)
-public class OutputStylesheetRenderer extends OutputStylesheetRendererBase {
-	// Initial Generation
+public class MessageContextCrystalImpl extends MessageContextBundleBase {
+
+	public MessageContextCrystalImpl(MessageContext messageContext) {
+		super(messageContext);
+	}
+
+	@Override
+	public String getBundleKey() {
+		return "i18n-crystal";
+	}
 }

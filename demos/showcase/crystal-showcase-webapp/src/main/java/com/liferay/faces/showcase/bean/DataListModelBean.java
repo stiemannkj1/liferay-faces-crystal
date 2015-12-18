@@ -15,9 +15,11 @@ package com.liferay.faces.showcase.bean;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 
 import com.liferay.faces.showcase.dto.LiferayBenefit;
 import com.liferay.faces.showcase.service.LiferayBenefitService;
@@ -48,6 +50,11 @@ public class DataListModelBean {
 	}
 
 	public void setSelectedLiferayBenefit(LiferayBenefit selectedLiferayBenefit) {
+
+		String label = selectedLiferayBenefit.getLabel();
+		FacesMessage facesMessage = new FacesMessage(label);
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		facesContext.addMessage(null, facesMessage);
 		this.selectedLiferayBenefit = selectedLiferayBenefit;
 	}
 }

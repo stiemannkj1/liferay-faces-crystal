@@ -6,7 +6,7 @@
 		<crystal:form>
 			<showcase:example>
 				<crystal:outputLabel value="#{i18n['favorite-liferay-benefit']}" />
-				<crystal:selectManyCheckbox layout="lineDirection" value="#{selectManyModelBean.favoriteIds}">
+				<crystal:selectManyCheckbox value="#{selectManyModelBean.favoriteIds}">
 					<f:selectItems value="#{selectManyModelBean.liferayBenefits}" var="benefit"
 						itemValue="#{benefit.id}"
 						itemLabel="#{benefit.label}" />

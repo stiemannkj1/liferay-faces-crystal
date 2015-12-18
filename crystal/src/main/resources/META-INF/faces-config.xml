@@ -8,6 +8,7 @@
 	<factory>
 		<factory-extension>
 			<util:component-resource-factory>com.liferay.faces.crystal.application.internal.ComponentResourceFactoryCrystalImpl</util:component-resource-factory>
+			<util:message-context-factory>com.liferay.faces.crystal.context.internal.MessageContextFactoryCrystalImpl</util:message-context-factory>
 		</factory-extension>
 	</factory>
 
