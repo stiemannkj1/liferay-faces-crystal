@@ -15,11 +15,8 @@ package com.liferay.faces.crystal.component.datatable.internal;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import javax.el.ValueExpression;
 import javax.faces.application.Application;
@@ -39,7 +36,6 @@ import com.liferay.faces.crystal.component.column.Column;
 import com.liferay.faces.crystal.component.commandlink.CommandLink;
 import com.liferay.faces.crystal.component.datatable.DataTable;
 import com.liferay.faces.crystal.component.outputtext.OutputText;
-import com.liferay.faces.crystal.render.internal.JavaScriptFragment;
 import com.liferay.faces.util.logging.Logger;
 import com.liferay.faces.util.logging.LoggerFactory;
 import com.liferay.faces.util.render.RendererUtil;

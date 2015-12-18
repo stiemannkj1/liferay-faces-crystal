@@ -14,28 +14,13 @@
 package com.liferay.faces.showcase.bean;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
-import javax.faces.component.UICommand;
-import javax.faces.component.UISelectOne;
-import javax.faces.context.FacesContext;
-import javax.faces.event.ActionEvent;
-import javax.faces.event.AjaxBehaviorEvent;
-import javax.faces.event.FacesEvent;
-import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.DataModel;
 
-import com.liferay.faces.crystal.component.datatable.DataTable;
-import com.liferay.faces.crystal.component.datatable.RowDeselectEvent;
-import com.liferay.faces.crystal.component.datatable.RowDeselectRangeEvent;
-import com.liferay.faces.crystal.component.datatable.RowSelectEvent;
-import com.liferay.faces.crystal.component.datatable.RowSelectRangeEvent;
 import com.liferay.faces.showcase.dto.Customer;
 import com.liferay.faces.showcase.model.CustomerOnDemandDataModel;
 import com.liferay.faces.showcase.service.CustomerService;

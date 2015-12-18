@@ -110,7 +110,7 @@ public class VideoRenderer extends VideoRendererBase {
 
 	@Override
 	protected String getDefaultFlashPlayerName() {
-		return "aui/video/player.swf";
+		return "video/player.swf";
 	}
 
 	@Override

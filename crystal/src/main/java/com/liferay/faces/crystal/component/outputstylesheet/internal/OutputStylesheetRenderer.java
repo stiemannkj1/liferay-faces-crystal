@@ -13,8 +13,6 @@
  */
 package com.liferay.faces.crystal.component.outputstylesheet.internal;
 
-import javax.faces.event.ListenerFor;
-import javax.faces.event.PostAddToViewEvent;
 import javax.faces.render.FacesRenderer;
 
 import com.liferay.faces.crystal.component.outputstylesheet.OutputStylesheet;

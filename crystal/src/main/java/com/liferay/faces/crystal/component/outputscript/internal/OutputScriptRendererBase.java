@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 
 import com.liferay.faces.crystal.component.outputscriptstylesheet.internal.OutputScriptStylesheetRendererBase;
 
-import com.liferay.faces.crystal.component.outputscript.OutputScript;
 
 
 /**

@@ -17,8 +17,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
 
 import javax.faces.application.Application;
 import javax.faces.component.behavior.AjaxBehavior;
@@ -26,7 +24,6 @@ import javax.faces.component.behavior.ClientBehavior;
 import javax.faces.component.behavior.ClientBehaviorHolder;
 import javax.faces.context.FacesContext;
 
-import com.liferay.faces.util.client.BrowserSniffer;
 import com.liferay.faces.util.logging.Logger;
 import com.liferay.faces.util.logging.LoggerFactory;
 
@@ -71,63 +68,6 @@ public class CrystalRendererUtil {
 			ajaxBehavior.setRender(renderIds);
 			clientBehaviorHolder.addClientBehavior(defaultEventName, ajaxBehavior);
 		}
-	}
-
-	public static String getCrystalBeginScript(String[] modules, String yuiConfig, BrowserSniffer browserSniffer) {
-
-		Set<String> sortedModules = null;
-
-		if (modules != null) {
-
-			sortedModules = new TreeSet<String>();
-
-			for (String module : modules) {
-				sortedModules.add(module.trim());
-			}
-		}
-
-		return getCrystalBeginScript(sortedModules, yuiConfig, browserSniffer);
-	}
-
-	public static String getCrystalBeginScript(Set<String> sortedModules, String yuiConfig,
-		BrowserSniffer browserSniffer) {
-
-		StringBuilder stringBuilder = new StringBuilder();
-		String loadMethod = "use";
-		boolean browserIE = browserSniffer.isIe();
-		float browserMajorVersion = browserSniffer.getMajorVersion();
-
-		if (browserIE && (browserMajorVersion < 8)) {
-			loadMethod = "ready";
-		}
-
-		// If there is config render a YUI sandbox to avoid using the preconfigured AUI sandbox in Liferay Portal.
-		if ((yuiConfig != null) && (yuiConfig.length() > 0)) {
-
-			stringBuilder.append("YUI(");
-			stringBuilder.append(yuiConfig);
-		}
-		else {
-			stringBuilder.append("AUI(");
-		}
-
-		stringBuilder.append(").");
-		stringBuilder.append(loadMethod);
-		stringBuilder.append("(");
-
-		if (sortedModules != null) {
-
-			for (String module : sortedModules) {
-
-				stringBuilder.append("'");
-				stringBuilder.append(module);
-				stringBuilder.append("',");
-			}
-		}
-
-		stringBuilder.append("function(A){");
-
-		return stringBuilder.toString();
 	}
 
 	private static Collection<String> getExecuteIds(String execute, String process, String defaultValue) {

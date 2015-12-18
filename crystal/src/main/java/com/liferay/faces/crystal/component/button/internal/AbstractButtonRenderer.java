@@ -21,13 +21,6 @@ import javax.faces.component.UIComponent;
 import javax.faces.component.html.HtmlOutcomeTargetButton;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
-import javax.faces.convert.ConverterException;
-import javax.faces.render.RenderKit;
-import javax.faces.render.Renderer;
-
-import com.liferay.faces.crystal.component.button.Button;
-import com.liferay.faces.crystal.component.commandbutton.CommandButton;
-import com.liferay.faces.crystal.component.commandbutton.SplitCommandButton;
 import com.liferay.faces.crystal.component.menu.Menu;
 import com.liferay.faces.util.component.Styleable;
 import com.liferay.faces.util.render.RendererUtil;

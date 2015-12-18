@@ -75,7 +75,7 @@ public class AudioRenderer extends AudioRendererBase {
 
 	@Override
 	protected String getDefaultFlashPlayerName() {
-		return "aui/audio/player.swf";
+		return "audio/player.swf";
 	}
 
 	@Override
