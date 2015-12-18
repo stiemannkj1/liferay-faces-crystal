@@ -16,7 +16,6 @@ package com.liferay.faces.crystal.component.inputfile;
 
 import javax.annotation.Generated;
 
-import com.liferay.faces.util.component.ClientComponent;
 import com.liferay.faces.util.component.Styleable;
 
 
@@ -25,7 +24,7 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Kyle Stiemann
  */
 @Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
-public abstract class InputFileBase extends com.liferay.faces.util.component.InputFileBase implements Styleable, ClientComponent {
+public abstract class InputFileBase extends com.liferay.faces.util.component.InputFileBase implements Styleable {
 
 	// Public Constants
 	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.inputfile.InputFile";
@@ -33,7 +32,6 @@ public abstract class InputFileBase extends com.liferay.faces.util.component.Inp
 
 	// Protected Enumerations
 	protected enum InputFilePropertyKeys {
-		clientKey,
 		contentTypes,
 		fileUploadListener,
 		location,
@@ -46,26 +44,6 @@ public abstract class InputFileBase extends com.liferay.faces.util.component.Inp
 	public InputFileBase() {
 		super();
 		setRendererType(RENDERER_TYPE);
-	}
-
-	/**
-	 * <code>clientKey</code> attribute description:
-	 * <br /><br />
-	 * The key name that can be used to reference the component on the client.
-	 */
-	@Override
-	public String getClientKey() {
-		return (String) getStateHelper().eval(InputFilePropertyKeys.clientKey, null);
-	}
-
-	/**
-	 * <code>clientKey</code> attribute description:
-	 * <br /><br />
-	 * The key name that can be used to reference the component on the client.
-	 */
-	@Override
-	public void setClientKey(String clientKey) {
-		getStateHelper().put(InputFilePropertyKeys.clientKey, clientKey);
 	}
 
 	/**

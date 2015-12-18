@@ -169,13 +169,6 @@ public class DataTableRenderer extends DataTableRendererBase {
 			}
 
 			if (totalRowsEncoded == 0) {
-
-				String selectionMode = dataTable.getSelectionMode();
-
-				if ("checkbox".equals(selectionMode)) {
-					totalRenderedColumns += 1;
-				}
-
 				encodeEmptyTableRow(responseWriter, dataTable, totalRenderedColumns);
 			}
 
@@ -292,11 +285,6 @@ public class DataTableRenderer extends DataTableRendererBase {
 
 		int totalRenderedColumns = dataTableInfo.getTotalRenderedColumns();
 		int colspan = totalRenderedColumns;
-		String selectionMode = dataTable.getSelectionMode();
-
-		if ("checkbox".equals(selectionMode) || "radio".equals(selectionMode)) {
-			colspan++;
-		}
 
 		if (footerFacet != null) {
 
@@ -336,11 +324,6 @@ public class DataTableRenderer extends DataTableRendererBase {
 
 		int totalRenderedColumns = dataTableInfo.getTotalRenderedColumns();
 		int colspan = totalRenderedColumns;
-		String selectionMode = dataTable.getSelectionMode();
-
-		if ("checkbox".equals(selectionMode) || "radio".equals(selectionMode)) {
-			colspan++;
-		}
 
 		String headerClass = dataTable.getHeaderClass();
 
@@ -369,23 +352,7 @@ public class DataTableRenderer extends DataTableRendererBase {
 		if (dataTableInfo.isHeaderFacetOrTextPresentInColumn()) {
 
 			responseWriter.startElement("tr", null);
-
 			List<UIComponent> children = dataTable.getChildren();
-
-			if ("checkbox".equals(selectionMode) || "radio".equals(selectionMode)) {
-				responseWriter.startElement("th", null);
-
-				if ("checkbox".equals(selectionMode)) {
-					responseWriter.startElement("input", null);
-
-					String checkboxClientId = dataTable.getClientId(facesContext).concat("_selectAll");
-					responseWriter.writeAttribute("id", checkboxClientId, null);
-					responseWriter.writeAttribute("type", "checkbox", null);
-					responseWriter.endElement("input");
-				}
-
-				responseWriter.endElement("th");
-			}
 
 			for (UIComponent child : children) {
 
@@ -572,39 +539,6 @@ public class DataTableRenderer extends DataTableRendererBase {
 
 		if (rowClass != null) {
 			responseWriter.writeAttribute("class", rowClass, "rowClasses");
-		}
-
-		String selectionMode = dataTable.getSelectionMode();
-
-		if ("checkbox".equals(selectionMode) || "radio".equals(selectionMode)) {
-
-			Set<String> selectedRowIndexSet = new HashSet<String>();
-			String selectedRowIndexes = dataTable.getSelectedRowIndexes();
-
-			if (selectedRowIndexes != null) {
-				String[] selectedRowIndexArray = selectedRowIndexes.split(",");
-				selectedRowIndexSet = new HashSet<String>(Arrays.asList(selectedRowIndexArray));
-			}
-
-			String rowIndexAsString = Integer.toString(rowIndex);
-
-			if (selectedRowIndexSet.contains(rowIndexAsString)) {
-				responseWriter.writeAttribute("class", "info", null);
-			}
-
-			responseWriter.startElement("td", null);
-			responseWriter.startElement("input", null);
-
-			String checkboxClientId = dataTable.getClientId(facesContext);
-			responseWriter.writeAttribute("id", checkboxClientId, null);
-			responseWriter.writeAttribute("type", selectionMode, null);
-
-			if (selectedRowIndexSet.contains(rowIndexAsString)) {
-				responseWriter.writeAttribute("checked", "checked", null);
-			}
-
-			responseWriter.endElement("input");
-			responseWriter.endElement("td");
 		}
 
 		List<UIComponent> children = dataTable.getChildren();

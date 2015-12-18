@@ -596,32 +596,14 @@
 		</attribute>
 		<attribute>
 			<attribute-extension>
-				<default-value><![CDATA[false]]></default-value>
-			</attribute-extension>
-			<description><![CDATA[When true, multiple columns can be selected by the user when the meta key is held down during a left click on a sortable column header.]]></description>
-			<name>multiColumnSort</name>
-			<type><![CDATA[boolean]]></type>
-		</attribute>
-		<attribute>
-			<attribute-extension>
 				<inherited>true</inherited>
 			</attribute-extension>
 			<description><![CDATA[The total number of rows that are to be displayed. If not set, then all rows are displayed.]]></description>
 			<name>rows</name>
 			<type><![CDATA[int]]></type>
 		</attribute>
-		<attribute>
-			<description><![CDATA[Comma-delimited list of row indexes that indicate which rows are selected.]]></description>
-			<name>selectedRowIndexes</name>
-			<type><![CDATA[java.lang.String]]></type>
-		</attribute>
-		<attribute>
-			<description><![CDATA[Indicates the type of row selection. Valid values are <code>"checkbox"</code>, <code>"radio"</code>.]]></description>
-			<name>selectionMode</name>
-			<type><![CDATA[java.lang.String]]></type>
-		</attribute>
 		<tag-extension>
-			<extends-tags>clientComponent htmlCommonEventsInherited htmlPassthroughInherited htmlTableInherited uiDataInherited</extends-tags>
+			<extends-tags>htmlCommonEventsInherited htmlPassthroughInherited htmlTableInherited uiDataInherited</extends-tags>
 			<extra-style-classes>table table-bordered table-hover table-striped</extra-style-classes>
 			<parent-class><![CDATA[javax.faces.component.html.HtmlDataTable]]></parent-class>
 		</tag-extension>
@@ -896,7 +878,7 @@ void fileUploadListener(com.liferay.faces.util.component.inputfile.FileUploadEve
 			<type><![CDATA[boolean]]></type>
 		</attribute>
 		<tag-extension>
-			<extends-tags>clientComponent inputText</extends-tags>
+			<extends-tags>inputText</extends-tags>
 			<parent-class><![CDATA[com.liferay.faces.util.component.InputFileBase]]></parent-class>
 			<renderer-parent-class><![CDATA[com.liferay.faces.crystal.component.inputfile.internal.InputFileRendererCompat]]></renderer-parent-class>
 		</tag-extension>
@@ -1322,11 +1304,6 @@ void fileUploadListener(com.liferay.faces.util.component.inputfile.FileUploadEve
 		<attribute>
 			<description><![CDATA[The position on the page where the JavaScript should be rendered. Valid values include <code>body</code>, <code>form</code>, and <code>head</code>. The default value of this attribute is an empty (null) value which causes the <code>&lt;script&gt;</code> to be rendered inline (corresponding to its position in the view). Specifying <code>body</code> for the target attribute will cause the <code>&lt;script&gt;</code> to be rendered as close to the closing body tag as possible.]]></description>
 			<name>target</name>
-			<type><![CDATA[java.lang.String]]></type>
-		</attribute>
-		<attribute>
-			<description><![CDATA[A comma-delimited list of YUI or CrystalUI modules to load for this script. <strong>Note:</strong> if this attribute is specified, a YUI sandbox will be created automatically for the <code>&lt;script&gt;</code>.]]></description>
-			<name>use</name>
 			<type><![CDATA[java.lang.String]]></type>
 		</attribute>
 		<tag-extension>

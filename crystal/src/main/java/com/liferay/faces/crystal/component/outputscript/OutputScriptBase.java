@@ -33,8 +33,7 @@ public abstract class OutputScriptBase extends UIOutput {
 	protected enum OutputScriptPropertyKeys {
 		library,
 		name,
-		target,
-		use
+		target
 	}
 
 	public OutputScriptBase() {
@@ -94,24 +93,6 @@ public abstract class OutputScriptBase extends UIOutput {
 	 */
 	public void setTarget(String target) {
 		getStateHelper().put(OutputScriptPropertyKeys.target, target);
-	}
-
-	/**
-	 * <code>use</code> attribute description:
-	 * <br /><br />
-	 * A comma-delimited list of YUI or CrystalUI modules to load for this script. <strong>Note:</strong> if this attribute is specified, a YUI sandbox will be created automatically for the <code>&lt;script&gt;</code>.
-	 */
-	public String getUse() {
-		return (String) getStateHelper().eval(OutputScriptPropertyKeys.use, null);
-	}
-
-	/**
-	 * <code>use</code> attribute description:
-	 * <br /><br />
-	 * A comma-delimited list of YUI or CrystalUI modules to load for this script. <strong>Note:</strong> if this attribute is specified, a YUI sandbox will be created automatically for the <code>&lt;script&gt;</code>.
-	 */
-	public void setUse(String use) {
-		getStateHelper().put(OutputScriptPropertyKeys.use, use);
 	}
 }
 //J+

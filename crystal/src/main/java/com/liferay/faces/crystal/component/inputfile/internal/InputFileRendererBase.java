@@ -27,7 +27,6 @@ import com.liferay.faces.crystal.component.inputfile.internal.InputFileRendererC
 public abstract class InputFileRendererBase extends InputFileRendererCompat {
 
 	// Protected Constants
-	protected static final String CLIENT_KEY = "clientKey";
 	protected static final String CONTENT_TYPES = "contentTypes";
 	protected static final String FILE_UPLOAD_LISTENER = "fileUploadListener";
 	protected static final String LOCATION = "location";

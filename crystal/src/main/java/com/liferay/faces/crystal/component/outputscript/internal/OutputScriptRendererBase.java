@@ -32,7 +32,6 @@ public abstract class OutputScriptRendererBase extends OutputScriptStylesheetRen
 	protected static final String LIBRARY = "library";
 	protected static final String NAME = "name";
 	protected static final String TARGET = "target";
-	protected static final String USE = "use";
 
 	@Override
 	public String getDelegateComponentFamily() {

@@ -17,7 +17,6 @@ package com.liferay.faces.crystal.component.datatable;
 import javax.annotation.Generated;
 import javax.faces.component.html.HtmlDataTable;
 
-import com.liferay.faces.util.component.ClientComponent;
 import com.liferay.faces.util.component.Styleable;
 
 
@@ -26,97 +25,15 @@ import com.liferay.faces.util.component.Styleable;
  * @author	Kyle Stiemann
  */
 @Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
-public abstract class DataTableBase extends HtmlDataTable implements Styleable, ClientComponent {
+public abstract class DataTableBase extends HtmlDataTable implements Styleable {
 
 	// Public Constants
 	public static final String COMPONENT_TYPE = "com.liferay.faces.crystal.component.datatable.DataTable";
 	public static final String RENDERER_TYPE = "com.liferay.faces.crystal.component.datatable.DataTableRenderer";
 
-	// Protected Enumerations
-	protected enum DataTablePropertyKeys {
-		clientKey,
-		multiColumnSort,
-		selectedRowIndexes,
-		selectionMode
-	}
-
 	public DataTableBase() {
 		super();
 		setRendererType(RENDERER_TYPE);
-	}
-
-	/**
-	 * <code>clientKey</code> attribute description:
-	 * <br /><br />
-	 * The key name that can be used to reference the component on the client.
-	 */
-	@Override
-	public String getClientKey() {
-		return (String) getStateHelper().eval(DataTablePropertyKeys.clientKey, null);
-	}
-
-	/**
-	 * <code>clientKey</code> attribute description:
-	 * <br /><br />
-	 * The key name that can be used to reference the component on the client.
-	 */
-	@Override
-	public void setClientKey(String clientKey) {
-		getStateHelper().put(DataTablePropertyKeys.clientKey, clientKey);
-	}
-
-	/**
-	 * <code>multiColumnSort</code> attribute description:
-	 * <br /><br />
-	 * When true, multiple columns can be selected by the user when the meta key is held down during a left click on a sortable column header.
-	 */
-	public boolean isMultiColumnSort() {
-		return (Boolean) getStateHelper().eval(DataTablePropertyKeys.multiColumnSort, false);
-	}
-
-	/**
-	 * <code>multiColumnSort</code> attribute description:
-	 * <br /><br />
-	 * When true, multiple columns can be selected by the user when the meta key is held down during a left click on a sortable column header.
-	 */
-	public void setMultiColumnSort(boolean multiColumnSort) {
-		getStateHelper().put(DataTablePropertyKeys.multiColumnSort, multiColumnSort);
-	}
-
-	/**
-	 * <code>selectedRowIndexes</code> attribute description:
-	 * <br /><br />
-	 * Comma-delimited list of row indexes that indicate which rows are selected.
-	 */
-	public String getSelectedRowIndexes() {
-		return (String) getStateHelper().eval(DataTablePropertyKeys.selectedRowIndexes, null);
-	}
-
-	/**
-	 * <code>selectedRowIndexes</code> attribute description:
-	 * <br /><br />
-	 * Comma-delimited list of row indexes that indicate which rows are selected.
-	 */
-	public void setSelectedRowIndexes(String selectedRowIndexes) {
-		getStateHelper().put(DataTablePropertyKeys.selectedRowIndexes, selectedRowIndexes);
-	}
-
-	/**
-	 * <code>selectionMode</code> attribute description:
-	 * <br /><br />
-	 * Indicates the type of row selection. Valid values are <code>"checkbox"</code>, <code>"radio"</code>.
-	 */
-	public String getSelectionMode() {
-		return (String) getStateHelper().eval(DataTablePropertyKeys.selectionMode, null);
-	}
-
-	/**
-	 * <code>selectionMode</code> attribute description:
-	 * <br /><br />
-	 * Indicates the type of row selection. Valid values are <code>"checkbox"</code>, <code>"radio"</code>.
-	 */
-	public void setSelectionMode(String selectionMode) {
-		getStateHelper().put(DataTablePropertyKeys.selectionMode, selectionMode);
 	}
 
 	/**

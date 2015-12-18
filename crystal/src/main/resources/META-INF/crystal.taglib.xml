@@ -1579,12 +1579,6 @@
 			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
-			<description><![CDATA[The key name that can be used to reference the component on the client.]]></description>
-			<name>clientKey</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-		</attribute>
-		<attribute>
 			<description><![CDATA[List of CSS class names (separated by commas) that are to be rendered within the class attribute of the table's <code>&lt;td&gt;</code> elements.]]></description>
 			<name>columnClasses</name>
 			<required>false</required>
@@ -1631,12 +1625,6 @@
 			<name>lang</name>
 			<required>false</required>
 			<type>java.lang.String</type>
-		</attribute>
-		<attribute>
-			<description><![CDATA[When true, multiple columns can be selected by the user when the meta key is held down during a left click on a sortable column header. The default value is <code>false</code>.]]></description>
-			<name>multiColumnSort</name>
-			<required>false</required>
-			<type>boolean</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Javascript to execute when this component is clicked.]]></description>
@@ -1725,18 +1713,6 @@
 		<attribute>
 			<description><![CDATA[HTML passthrough attribute specifying the rules for the <code>&lt;table&gt;</code> element. Valid values: none, groups, rows, cols, all.]]></description>
 			<name>rules</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-		</attribute>
-		<attribute>
-			<description><![CDATA[Comma-delimited list of row indexes that indicate which rows are selected.]]></description>
-			<name>selectedRowIndexes</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-		</attribute>
-		<attribute>
-			<description><![CDATA[Indicates the type of row selection. Valid values are <code>"checkbox"</code>, <code>"radio"</code>.]]></description>
-			<name>selectionMode</name>
 			<required>false</required>
 			<type>java.lang.String</type>
 		</attribute>
@@ -2490,12 +2466,6 @@
 			<name>binding</name>
 			<required>false</required>
 			<type>javax.faces.component.UIComponent</type>
-		</attribute>
-		<attribute>
-			<description><![CDATA[The key name that can be used to reference the component on the client.]]></description>
-			<name>clientKey</name>
-			<required>false</required>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Comma-delimited list of uploaded file MIME types that are valid. If not specified, then all MIME types are assumed to be valid.]]></description>
@@ -4745,12 +4715,6 @@ java.lang.Object)</method-signature>
 		<attribute>
 			<description><![CDATA[The position on the page where the JavaScript should be rendered. Valid values include <code>body</code>, <code>form</code>, and <code>head</code>. The default value of this attribute is an empty (null) value which causes the <code>&lt;script&gt;</code> to be rendered inline (corresponding to its position in the view). Specifying <code>body</code> for the target attribute will cause the <code>&lt;script&gt;</code> to be rendered as close to the closing body tag as possible.]]></description>
 			<name>target</name>
-			<required>false</required>
-			<type>java.lang.String</type>
-		</attribute>
-		<attribute>
-			<description><![CDATA[A comma-delimited list of YUI or CrystalUI modules to load for this script. <strong>Note:</strong> if this attribute is specified, a YUI sandbox will be created automatically for the <code>&lt;script&gt;</code>.]]></description>
-			<name>use</name>
 			<required>false</required>
 			<type>java.lang.String</type>
 		</attribute>

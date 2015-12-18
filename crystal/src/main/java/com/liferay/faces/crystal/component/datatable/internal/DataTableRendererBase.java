@@ -25,11 +25,5 @@ import javax.faces.render.Renderer;
  */
 @Generated(value = "com.liferay.alloy.tools.builder.FacesBuilder")
 public abstract class DataTableRendererBase extends Renderer {
-
-	// Protected Constants
-	protected static final String CLIENT_KEY = "clientKey";
-	protected static final String MULTI_COLUMN_SORT = "multiColumnSort";
-	protected static final String SELECTED_ROW_INDEXES = "selectedRowIndexes";
-	protected static final String SELECTION_MODE = "selectionMode";
 }
 //J+
