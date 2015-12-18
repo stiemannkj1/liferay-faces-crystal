@@ -14,10 +14,8 @@
 						<crystal:message for="hidden1" />
 					</crystal:field>
 				</showcase:container>
-				<crystal:button onclick="document.getElementById('#{inputHidden1.clientId}').value=this.value;"
-					value="#{inputHiddenModelBean.testDate1}">
-					<crystal:outputText value="#{i18n['copy-a-date-to-the-value-of-the-hidden-input']}" />
-				</crystal:button>
+				<crystal:button onclick="document.getElementById('#{inputHidden1.clientId}').value='#{inputHiddenModelBean.testDate1}';"
+					value="#{i18n['copy-a-date-to-the-value-of-the-hidden-input']}" />
 				<crystal:button onclick="document.getElementById('#{inputHidden1.clientId}').value='';"
 					value="#{i18n['clear-the-value-of-the-hidden-input']}" />
 				<hr />
@@ -46,10 +44,8 @@
 						<crystal:message for="hidden2" />
 					</crystal:field>
 				</showcase:container>
-				<crystal:button onclick="document.getElementById('#{inputHidden2.clientId}').value=this.value;"
-					value="#{inputHiddenModelBean.testDate2}">
-					<crystal:outputText value="#{i18n['copy-a-date-to-the-value-of-the-hidden-input']}" />
-				</crystal:button>
+				<crystal:button onclick="document.getElementById('#{inputHidden2.clientId}').value='#{inputHiddenModelBean.testDate2}';"
+					value="#{i18n['copy-a-date-to-the-value-of-the-hidden-input']}" />
 				<crystal:button onclick="document.getElementById('#{inputHidden2.clientId}').value='';"
 					value="#{i18n['clear-the-value-of-the-hidden-input']}" />
 				<hr />

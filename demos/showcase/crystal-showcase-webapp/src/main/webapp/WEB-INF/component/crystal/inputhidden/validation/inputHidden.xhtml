@@ -16,14 +16,10 @@
 						<crystal:message for="hidden1" />
 					</showcase:container>
 				</crystal:field>
-				<crystal:button onclick="document.getElementById('#{inputHidden1.clientId}').value=this.value;"
-					value="test@liferay.com">
-					<crystal:outputText value="#{i18n['copy-a-valid-email-address-to-the-hidden-input']}" />
-				</crystal:button>
-				<crystal:button onclick="document.getElementById('#{inputHidden1.clientId}').value=this.value;"
-					value="testliferay.com">
-					<crystal:outputText value="#{i18n['copy-an-invalid-email-address-to-the-hidden-input']}" />
-				</crystal:button>
+				<crystal:button onclick="document.getElementById('#{inputHidden1.clientId}').value='test@liferay.com';"
+					value="#{i18n['copy-a-valid-email-address-to-the-hidden-input']}" />
+				<crystal:button onclick="document.getElementById('#{inputHidden1.clientId}').value='testliferay.com';"
+					value="#{i18n['copy-an-invalid-email-address-to-the-hidden-input']}" />
 				<crystal:button onclick="document.getElementById('#{inputHidden1.clientId}').value='';"
 					value="#{i18n['clear-the-value-of-the-hidden-input']}" />
 				<hr />
@@ -51,14 +47,10 @@
 						<crystal:message for="hidden2" />
 					</showcase:container>
 				</crystal:field>
-				<crystal:button onclick="document.getElementById('#{inputHidden2.clientId}').value=this.value;"
-					value="test@liferay.com">
-					<crystal:outputText value="#{i18n['copy-a-valid-email-address-to-the-hidden-input']}" />
-				</crystal:button>
-				<crystal:button onclick="document.getElementById('#{inputHidden2.clientId}').value=this.value;"
-					value="testliferay.com">
-					<crystal:outputText value="#{i18n['copy-an-invalid-email-address-to-the-hidden-input']}" />
-				</crystal:button>
+				<crystal:button onclick="document.getElementById('#{inputHidden2.clientId}').value='test@liferay.com';"
+					value="#{i18n['copy-a-valid-email-address-to-the-hidden-input']}" />
+				<crystal:button onclick="document.getElementById('#{inputHidden2.clientId}').value='testliferay.com';"
+					value="#{i18n['copy-an-invalid-email-address-to-the-hidden-input']}" />
 				<crystal:button onclick="document.getElementById('#{inputHidden2.clientId}').value='';"
 					value="#{i18n['clear-the-value-of-the-hidden-input']}" />
 				<hr />
