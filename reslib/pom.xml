@@ -6,20 +6,23 @@
 		<groupId>com.liferay.faces.metal</groupId>
 		<artifactId>liferay-faces-metal-parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<artifactId>liferay-faces-metal-reslib</artifactId>
 	<name>Liferay Faces Metal Resource Library</name>
 
 	<dependencies>
 		<dependency>
+			<groupId>com.liferay.faces.util</groupId>
+			<artifactId>liferay-faces-util</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>javax.faces</groupId>
 			<artifactId>javax.faces-api</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 
@@ -36,7 +39,6 @@
 						<artifactId>download-maven-plugin</artifactId>
 						<version>1.2.1</version>
 						<executions>
-							<!--
 							<execution>
 								<id>unpack-metal</id>
 								<phase>generate-sources</phase>
@@ -44,13 +46,12 @@
 									<goal>wget</goal>
 								</goals>
 								<configuration>
-									<url>${metal.zip.version}</url>
+									<url>https://repository.liferay.com/nexus/content/groups/public/com/liferay/webjars/com.liferay.webjars.metal-components/${metaljs.zip.version}/com.liferay.webjars.metal-components-${metaljs.zip.version}.jar</url>
 									<unpack>true</unpack>
-									<outputDirectory>${project.build.directory}/classes/META-INF/resources/metal-${metal.version}</outputDirectory>
-									<md5>48ff228d4d81df54ec79191265870ba3</md5>
+									<outputDirectory>${project.build.directory}/classes/META-INF/resources/metal-${metaljs.version}</outputDirectory>
+									<md5>1b7c6c42a8b24892da1c6f7327b5bcdf</md5>
 								</configuration>
 							</execution>
-							-->
 							<execution>
 								<id>unpack-bootstrap</id>
 								<phase>generate-sources</phase>
@@ -78,18 +79,16 @@
 								<configuration>
 									<target>
 										<echo message="Running with reslib profile ..." />
-										<!--
-										<move file="${project.build.directory}/classes/META-INF/resources/metal-${metalui.version}/LICENSE.md" tofile="${project.build.directory}/classes/META-INF/metalui-bsd-license.md" />
-										-->
-										<!--
-										<move file="${project.build.directory}/classes/META-INF/resources/metal-${metalui.version}/build" todir="${project.build.directory}/classes/META-INF/resources/liferay-faces-metal-reslib" />
-										-->
+
+										<!-- metaljs -->
+										<move file="${project.build.directory}/classes/META-INF/resources/metal-${metaljs.version}/META-INF/resources/webjars/metal-components/${metaljs.version}/LICENSE.md" tofile="${project.build.directory}/classes/META-INF/metaljs-bsd-license.md" />
+										<move file="${project.build.directory}/classes/META-INF/resources/metal-${metaljs.version}/META-INF/resources/webjars/metal-components/${metaljs.version}" tofile="${project.build.directory}/classes/META-INF/resources/liferay-faces-metal-reslib/metaljs" />
+										<delete dir="${project.build.directory}/classes/META-INF/resources/metal-${metaljs.version}" />
+
+										<!-- bootstrap -->
 										<move file="${project.build.directory}/classes/META-INF/resources/bootstrap-${bootstrap.version}-dist/css" todir="${project.build.directory}/classes/META-INF/resources/liferay-faces-metal-reslib" />
 										<move file="${project.build.directory}/classes/META-INF/resources/bootstrap-${bootstrap.version}-dist/fonts" todir="${project.build.directory}/classes/META-INF/resources/liferay-faces-metal-reslib" />
 										<delete dir="${project.build.directory}/classes/META-INF/resources/bootstrap-${bootstrap.version}-dist" />
-										<!--
-										<delete dir="${project.build.directory}/classes/META-INF/resources/metal-${metalui.version}" />
-										-->
 										<!-- glyphicons -->
 										<replace token="../fonts/glyphicons-halflings-regular.eot" value="#{resource['liferay-faces-metal-reslib:fonts/glyphicons-halflings-regular.eot']}" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-metal-reslib/css" includes="**/bootstrap*.css" />
 										<replace token="../fonts/glyphicons-halflings-regular.woff2" value="#{resource['liferay-faces-metal-reslib:fonts/glyphicons-halflings-regular.woff2']}" dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-metal-reslib/css" includes="**/bootstrap*.css" />
