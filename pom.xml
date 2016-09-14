@@ -83,7 +83,7 @@
 	<properties>
 		<bootstrap.version>3.3.6</bootstrap.version>
 		<bootstrap.zip.version>3.3.6</bootstrap.zip.version>
-		<metaljs.version>3.0.1</metaljs.version>
+		<metaljs.version>1.0.0-rc.28</metaljs.version>
 		<metaljs.zip.version>${metaljs.version}</metaljs.zip.version>
 		<component.namespace>none</component.namespace>
 		<faces.group.id>com.sun.faces</faces.group.id>

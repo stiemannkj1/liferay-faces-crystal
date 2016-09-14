@@ -9,6 +9,7 @@
 		<factory-extension>
 			<util:i18n-factory>com.liferay.faces.metal.i18n.internal.I18nFactoryMetalImpl</util:i18n-factory>
 			<util:resource-verifier-factory>com.liferay.faces.metal.application.internal.ResourceVerifierFactoryMetalImpl</util:resource-verifier-factory>
+			<util:scripts-encoder-factory>com.liferay.faces.metal.render.internal.ScriptsEncoderFactoryMetalImpl</util:scripts-encoder-factory>
 		</factory-extension>
 	</factory>
 

@@ -3,4 +3,8 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 
 	<name>LiferayFacesMetalResLib</name>
+	<application>
+		<resource-handler>com.liferay.faces.metal.reslib.application.internal.ResLibResourceHandler</resource-handler>
+	</application>
+
 </faces-config>

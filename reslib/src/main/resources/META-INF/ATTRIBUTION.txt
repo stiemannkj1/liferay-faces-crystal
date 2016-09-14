@@ -1,2 +1,7 @@
-The Bootstrap 3.3.6 project is packaged with the liferay-faces-metal-reslib.jar dependency
+The Bootstrap 3.3.6 project packaged with the liferay-faces-metal-reslib.jar dependency
 is subject to the license terms found in the bootstrap-apache-2.0.txt file.
+
+---
+
+The RequireJS 2.3.1 project packaged with the liferay-faces-metal-reslib.jar dependency
+is subject to the license terms found in the requireJS-LICENSE file.
