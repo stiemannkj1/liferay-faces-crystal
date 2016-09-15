@@ -23,8 +23,62 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>com.googlecode.maven-download-plugin</groupId>
+				<artifactId>download-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<id>unpack-metal</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>wget</goal>
+						</goals>
+						<configuration>
+							<url>https://repository.liferay.com/nexus/content/groups/public/com/liferay/webjars/com.liferay.webjars.metal-components/${metaljs.zip.version}/com.liferay.webjars.metal-components-${metaljs.zip.version}.jar</url>
+							<unpack>true</unpack>
+							<outputDirectory>${project.build.directory}/classes/META-INF/resources/metal-${metaljs.version}</outputDirectory>
+							<md5>e0cfcfb7c62b8b00c94f5aa286442cad</md5>
+						</configuration>
+					</execution>
+					<execution>
+						<id>unpack-bootstrap</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>wget</goal>
+						</goals>
+						<configuration>
+							<url>https://github.com/twbs/bootstrap/releases/download/v${bootstrap.zip.version}/bootstrap-${bootstrap.zip.version}-dist.zip</url>
+							<unpack>true</unpack>
+							<outputDirectory>${project.build.directory}/classes/META-INF/resources</outputDirectory>
+							<md5>229936b042baadfc9f167244575ffe12</md5>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>move-and-edit-files-in-place</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target>
+								<!-- metaljs -->
+								<move file="${project.build.directory}/classes/META-INF/resources/metal-${metaljs.version}/META-INF/resources/webjars/metal-components/${metaljs.version}/LICENSE.md" tofile="${project.build.directory}/classes/META-INF/metaljs-bsd-license.md" />
+								<move file="${project.build.directory}/classes/META-INF/resources/metal-${metaljs.version}/META-INF/resources/webjars/metal-components/${metaljs.version}/build/soy" tofile="${project.build.directory}/classes/metaljs/build/soy" />
+								<delete dir="${project.build.directory}/classes/META-INF/resources/metal-${metaljs.version}" />
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
+
 	<dependencies>
 		<!-- BEGIN: Only required for file upload -->
 		<dependency>
@@ -67,6 +121,14 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.template</groupId>
+			<artifactId>soy</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jodd</groupId>
+			<artifactId>jodd-json</artifactId>
 		</dependency>
 	</dependencies>
 

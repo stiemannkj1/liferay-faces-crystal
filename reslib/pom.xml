@@ -87,6 +87,7 @@
 										<move file="${project.build.directory}/classes/META-INF/resources/metal-${metaljs.version}/META-INF/resources/webjars/metal-components/${metaljs.version}" tofile="${project.build.directory}/classes/META-INF/resources/liferay-faces-metal-reslib/metaljs" />
 										<delete dir="${project.build.directory}/classes/META-INF/resources/metal-${metaljs.version}" />
 
+										<delete dir="${project.build.directory}/classes/META-INF/resources/liferay-faces-metal-reslib/metaljs/build/soy" />
 										<!-- bootstrap -->
 										<move file="${project.build.directory}/classes/META-INF/resources/bootstrap-${bootstrap.version}-dist/css" todir="${project.build.directory}/classes/META-INF/resources/liferay-faces-metal-reslib" />
 										<move file="${project.build.directory}/classes/META-INF/resources/bootstrap-${bootstrap.version}-dist/fonts" todir="${project.build.directory}/classes/META-INF/resources/liferay-faces-metal-reslib" />

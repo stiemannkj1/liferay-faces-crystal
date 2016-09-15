@@ -13,9 +13,10 @@
  */
 package com.liferay.faces.metal.component.popover.internal;
 
+import com.google.template.soy.SoyFileSet;
+import com.google.template.soy.tofu.SoyTofu;
 import java.io.IOException;
 
-import javax.faces.application.ProjectStage;
 import javax.faces.application.ResourceDependencies;
 import javax.faces.application.ResourceDependency;
 import javax.faces.component.UIComponent;
@@ -23,12 +24,15 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
-import com.liferay.faces.metal.component.button.Button;
 import com.liferay.faces.metal.component.popover.Popover;
-import com.liferay.faces.util.component.ClientComponent;
-import com.liferay.faces.util.component.ComponentUtil;
+import com.liferay.faces.metal.render.internal.DelegatingMetalRendererBase;
+import com.liferay.faces.metal.render.internal.StringResponseWriter;
 import com.liferay.faces.util.logging.Logger;
 import com.liferay.faces.util.logging.LoggerFactory;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import jodd.json.JsonSerializer;
 
 
 /**
@@ -41,122 +45,92 @@ import com.liferay.faces.util.logging.LoggerFactory;
 	{
 		@ResourceDependency(library = "liferay-faces-metal-reslib", name = "css/bootstrap.min.css"),
 		@ResourceDependency(library = "liferay-faces-metal-reslib", name = "require.js"),
-//		@ResourceDependency(library = "liferay-faces-metal-reslib", name = "metaljs/build/amd/metal/src/metal.js"),
-		@ResourceDependency(library = "liferay-faces-metal-reslib", name = "liferay.js"),
-		@ResourceDependency(library = "liferay-faces-metal-reslib", name = "metaljs/build/amd/metal-popover/src/Popover-min.js")
+		@ResourceDependency(library = "liferay-faces-metal-reslib", name = "liferay.js")
 	}
 )
 //J+
-public class PopoverRenderer extends PopoverRendererBase {
+public class PopoverRenderer extends DelegatingMetalRendererBase {
 
 	// Logger
 	private static final Logger logger = LoggerFactory.getLogger(PopoverRenderer.class);
 
 	// Private Constants
-	private static final String ALIGN = "align";
-	private static final String NODE = "node";
+	private static final String JSON_CONFIG_KEY_PREFIX = PopoverRenderer.class.getName() + "_JSON_CONFIG_KEY_";
 
 	@Override
-	public void encodeJavaScriptCustom(FacesContext facesContext, UIComponent uiComponent) throws IOException {
+	public String getDelegateComponentFamily() {
+		return Popover.COMPONENT_FAMILY;
+	}
 
-		ResponseWriter responseWriter = facesContext.getResponseWriter();
+	@Override
+	public String getDelegateRendererType() {
+		return "javax.faces.Group";
+	}
 
-		Popover popover = (Popover) uiComponent;
-		ClientComponent clientComponent = (ClientComponent) uiComponent;
-		String clientVarName = getClientVarName(facesContext, clientComponent);
-		String clientKey = clientComponent.getClientKey();
+	@Override
+	public void encodeMetalAttributes(FacesContext facesContext, ResponseWriter respoonseWriter, UIComponent uiComponent) throws IOException {
 
-		if (clientKey == null) {
-			clientKey = clientVarName;
-		}
+		String jsonConfig = (String) facesContext.getAttributes().remove(JSON_CONFIG_KEY_PREFIX + uiComponent.hashCode());
 
-		if (popover.isHideIconRendered()) {
-
-			// Add an "x" toolbar icon so that the popover can be hidden just like metal:dialog can.
-			responseWriter.write("Liferay.component('");
-			responseWriter.write(clientKey);
-			responseWriter.write(
-				"').addToolbar([{cssClass:'close',label:'\u00D7',on:{click:function(event){Liferay.component('");
-			responseWriter.write(clientKey);
-			responseWriter.write("').hide();}},render:true}],'header');");
-		}
-
-		// Move the overlayBody div into the popover-content div.
-		String clientId = popover.getClientId(facesContext);
-		String overlayBodyClientId = clientId.concat(OVERLAY_BODY_SUFFIX);
-		String escapedOverlayBodyClientId = ComponentUtil.escapeClientId(overlayBodyClientId);
-
-		String contentBoxClientId = clientId.concat(CONTENT_BOX_SUFFIX);
-		String escapedContentBoxClientId = ComponentUtil.escapeClientId(contentBoxClientId);
-
-		responseWriter.write("A.one('#");
-		responseWriter.write(escapedOverlayBodyClientId);
-		responseWriter.write("').appendTo(A.one('div#");
-		responseWriter.write(escapedContentBoxClientId);
-		responseWriter.write(">div.popover-content'));");
-
-		if (popover.isDismissible()) {
-			encodeOverlayDismissible(responseWriter, popover, clientKey);
-		}
-
-		encodeOverlayJavaScriptCustom(responseWriter, facesContext, popover, clientKey);
-
-		if ((popover.getFor() == null) && facesContext.isProjectStage(ProjectStage.Development)) {
-			logger.error("The 'for' attribute is required for metal:popover");
+		if (jsonConfig != null) {
+			respoonseWriter.write(jsonConfig);
 		}
 	}
 
 	@Override
+	public String getMetalClassName(FacesContext facesContext, UIComponent uiComponent) {
+		return "Popover";
+	}
+
+	@Override
+	public String[] getModules(FacesContext facesContext, UIComponent uiComponent) {
+		return new String[] { "metal-popover/src/Popover" };
+	}
+
+	
+	@Override
 	public void encodeMarkupBegin(FacesContext facesContext, UIComponent uiComponent) throws IOException {
-		encodeOverlayMarkupBegin(facesContext, uiComponent);
+
+		ResponseWriter responseWriter = facesContext.getResponseWriter();
+		ResponseWriter stringResponseWriter = new StringResponseWriter(responseWriter);
+		facesContext.setResponseWriter(stringResponseWriter);
 	}
 
 	@Override
 	public void encodeMarkupEnd(FacesContext facesContext, UIComponent uiComponent) throws IOException {
-		encodeOverlayMarkupEnd(facesContext, uiComponent);
-	}
 
-	protected void encodeAlign(ResponseWriter responseWriter, Popover popover, boolean first) throws IOException {
+		if (uiComponent.isRendered()) {
 
-		encodeNonEscapedObject(responseWriter, ALIGN, "", first);
-		responseWriter.write("{");
+			StringResponseWriter stringResponseWriter = (StringResponseWriter) facesContext.getResponseWriter();
+			ResponseWriter originalResponseWriter = stringResponseWriter.getWrapped();
+			originalResponseWriter.startElement("div", uiComponent);
+			originalResponseWriter.writeAttribute("id", uiComponent.getClientId(facesContext), "id");
+			SoyFileSet.Builder builder = SoyFileSet.builder();
+			URL url = PopoverRenderer.class.getResource("/metaljs/build/soy/metal-popover/src/Popover.soy");
+			builder.add(url);
 
-		String for_ = popover.getFor();
-		encodeClientId(responseWriter, NODE, for_, popover, true);
-		responseWriter.write("}");
+			SoyFileSet soyFileSet = builder.build();
+			SoyTofu tofu = soyFileSet.compileToTofu();
+			SoyTofu.Renderer soyRenderer = tofu.newRenderer("Popover.render");
+			Map<String, String> config = new HashMap<String, String>();
+			config.put("content", stringResponseWriter.toString());
+			stringResponseWriter = new StringResponseWriter(originalResponseWriter);
+			facesContext.setResponseWriter(stringResponseWriter);
+			UIComponent headerFacet = uiComponent.getFacet("header");
 
-		UIComponent forComponent = popover.findComponent(for_);
+			if (headerFacet != null) {
 
-		if (forComponent != null) {
-
-			if (forComponent instanceof Button) {
-				Button button = (Button) forComponent;
-
-				if ((button.getOnclick() == null) && (button.getOnmouseover() == null)) {
-					logger.warn(
-						"Popover [{0}] is *for* button [{1}] but the button does not have an onclick or onmouseover attribute.",
-						popover.getClientKey(), for_);
-				}
+				headerFacet.encodeAll(facesContext);
+				config.put("title", stringResponseWriter.toString());
 			}
 
+			soyRenderer.setData(config);
+			facesContext.setResponseWriter(originalResponseWriter);
+			originalResponseWriter.write(soyRenderer.render());
+			JsonSerializer jsonSerializer = new JsonSerializer();
+			String jsonConfig = jsonSerializer.serialize(config);
+			facesContext.getAttributes().put(JSON_CONFIG_KEY_PREFIX + uiComponent.hashCode(), jsonConfig);
+			originalResponseWriter.endElement("div");
 		}
-	}
-
-	@Override
-	protected void encodeHiddenAttributes(FacesContext facesContext, ResponseWriter responseWriter, Popover popover,
-		boolean first) throws IOException {
-
-		// Encode the "align" Metal hidden attribute.
-		encodeAlign(responseWriter, popover, first);
-
-		first = false;
-
-		encodeOverlayHiddenAttributes(facesContext, responseWriter, popover, first);
-	}
-
-	@Override
-	protected void encodeZIndex(ResponseWriter responseWriter, Popover popover, Integer zIndex, boolean first)
-		throws IOException {
-		encodeOverlayZIndex(responseWriter, popover, zIndex, LIFERAY_Z_INDEX_OVERLAY, first);
 	}
 }

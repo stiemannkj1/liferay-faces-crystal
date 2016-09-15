@@ -125,11 +125,11 @@ import com.liferay.faces.util.render.RendererUtil;
 		responseWriter.write("',");
 
 		// Write Metal JavaScript component.
-		responseWriter.write("new metal.");
+		responseWriter.write("new ");
 		responseWriter.write(metalClassName);
-		responseWriter.write("({");
+		responseWriter.write(".default(");
 		metalRenderer.encodeMetalAttributes(facesContext, responseWriter, uiComponent);
-		responseWriter.write("})");
+		responseWriter.write(")");
 
 		// Close Liferay.component parenthesis.
 		responseWriter.write(");");

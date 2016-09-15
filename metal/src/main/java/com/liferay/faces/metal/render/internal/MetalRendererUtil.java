@@ -71,6 +71,7 @@ public class MetalRendererUtil {
 			String moduleVariable = generateVariableName(module, Collections.unmodifiableSet(variableNames));
 			variableNames.add(moduleVariable);
 			stringBuilder.append(moduleVariable);
+			first = false;
 		}
 
 		stringBuilder.append("){");
@@ -81,11 +82,14 @@ public class MetalRendererUtil {
 	private static String generateVariableName(String module, Set<String> variableNames) {
 
 		String variableName = module;
+		String safeName = variableName;
 
-		if ("metal/src/metal".equals(module)) {
-			variableName = "metal";
+		if (module.startsWith("metal") && module.contains("/src/")) {
+
+			int lastIndexOfSlash = module.lastIndexOf("/");
+			variableName = module.substring(lastIndexOfSlash + 1);
 		}
-		else {	
+		else {
 			StringBuilder sb = new StringBuilder(module.length());
 
 			char c = module.charAt(0);
@@ -137,22 +141,19 @@ public class MetalRendererUtil {
 				}
 			}
 
-			String safeName = module;
-
 			if (modified) {
 				safeName = sb.toString();
 
 				variableName = safeName;
 			}
-
-			int i = 1;
-
-			while (variableNames.contains(variableName)) {
-				variableName = safeName.concat(String.valueOf(i++));
-			}
-
 		}
-		
+
+		int i = 1;
+
+		while (variableNames.contains(variableName)) {
+			variableName = safeName.concat(String.valueOf(i++));
+		}
+
 		return variableName;
 	}
 }
