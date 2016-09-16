@@ -171,6 +171,20 @@ public class DialogRenderer extends MetalRendererBase {
 
 		String clientId = uiComponent.getClientId(facesContext);
 		String escapedClientId = ComponentUtil.escapeClientId(clientId);
+		// TODO this fails since the javaScript component overwrites it. We could redo this after JS component overwrites, but then we have the same blinking problem we wanted to avoid.
+		// TODO consider generating renderer methods from templates.
+		// TODO
+		// file:///Users/kylestiemann/Projects/liferay.com/metal/metal-popover/demos/index.html
+		// file:///Users/kylestiemann/Projects/Workspaces/NetBeans/Test/src/html/test.html
+		// http://localhost:8181/com.liferay.faces.demo.metal.showcase.webapp/web/guest/showcase/-/component/metal/popover/general
+		// http://stackoverflow.com/questions/20910147/how-to-move-all-html-element-children-to-another-parent-using-javascript
+		// http://metaljs.com/docs/rendering-components.html
+		// http://metaljs.com/docs/state.html
+		// http://metaljs.com/docs/inline-events.html
+		// https://liferayeng.slack.com/archives/frontend-dev/p1474047017000078a
+		// https://github.com/mairatma/metal-component/blob/master/src/Component.js
+		// https://github.com/metal/metal-tooltip/blob/master/src/TooltipBase.js
+		// https://github.com/metal/metal-popover/blob/master/demos/index.html
 		responseWriter.write("var newParent = document.querySelector('#" + escapedClientId +
 			" > div.modal > div.modal-dialog > div.modal-content > .modal-body');\n" +
 			"var oldParent = document.querySelector('#" + escapedClientId + "_children');\n" +
