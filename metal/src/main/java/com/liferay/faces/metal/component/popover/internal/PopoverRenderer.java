@@ -14,6 +14,8 @@
 package com.liferay.faces.metal.component.popover.internal;
 
 import com.google.template.soy.SoyFileSet;
+import com.google.template.soy.data.SanitizedContent;
+import com.google.template.soy.data.UnsafeSanitizedContentOrdainer;
 import com.google.template.soy.tofu.SoyTofu;
 import java.io.IOException;
 
@@ -25,8 +27,10 @@ import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
 import com.liferay.faces.metal.component.popover.Popover;
-import com.liferay.faces.metal.render.internal.DelegatingMetalRendererBase;
+import com.liferay.faces.metal.render.internal.MetalRendererBase;
 import com.liferay.faces.metal.render.internal.StringResponseWriter;
+import com.liferay.faces.util.component.ClientComponent;
+import com.liferay.faces.util.component.ComponentUtil;
 import com.liferay.faces.util.logging.Logger;
 import com.liferay.faces.util.logging.LoggerFactory;
 import java.net.URL;
@@ -49,30 +53,58 @@ import jodd.json.JsonSerializer;
 	}
 )
 //J+
-public class PopoverRenderer extends DelegatingMetalRendererBase {
+public class PopoverRenderer extends MetalRendererBase {
 
 	// Logger
 	private static final Logger logger = LoggerFactory.getLogger(PopoverRenderer.class);
 
 	// Private Constants
-	private static final String JSON_CONFIG_KEY_PREFIX = PopoverRenderer.class.getName() + "_JSON_CONFIG_KEY_";
+	private static final String CONFIG_KEY = PopoverRenderer.class.getName() + "_JSON_CONFIG_KEY";
 
 	@Override
-	public String getDelegateComponentFamily() {
-		return Popover.COMPONENT_FAMILY;
-	}
+	public void encodeJavaScriptCustom(FacesContext facesContext, UIComponent uiComponent) throws IOException {
 
-	@Override
-	public String getDelegateRendererType() {
-		return "javax.faces.Group";
+		ResponseWriter responseWriter = facesContext.getResponseWriter();
+		String clientId = uiComponent.getClientId(facesContext);
+		String escapedClientId = ComponentUtil.escapeClientId(clientId);
+		
+		ClientComponent clientComponent = (ClientComponent) uiComponent;
+		String clientVarName = getClientVarName(facesContext, clientComponent);
+		String clientKey = clientComponent.getClientKey();
+
+		if (clientKey == null) {
+			clientKey = clientVarName;
+		}
+
+		encodeLiferayComponentVar(responseWriter, clientVarName, clientKey);
+		responseWriter.write(clientVarName + ".on('visibleChanged', function(event) { if (event.newVal) { document.querySelector('#" + escapedClientId + "').style.display = null; }});");
 	}
 
 	@Override
 	public void encodeMetalAttributes(FacesContext facesContext, ResponseWriter respoonseWriter, UIComponent uiComponent) throws IOException {
 
-		String jsonConfig = (String) facesContext.getAttributes().remove(JSON_CONFIG_KEY_PREFIX + uiComponent.hashCode());
+		Map<String, Object> config = (Map<String, Object>) uiComponent.getAttributes().remove(CONFIG_KEY);
 
-		if (jsonConfig != null) {
+		if (config != null) {
+
+			String clientId = uiComponent.getClientId();
+			String escapedClientId = escapeClientId(clientId);
+			config.put("element", "#" + escapedClientId + " > div.popover");
+			Popover popover = (Popover) uiComponent;
+			String for_ = popover.getFor();
+			UIComponent forComponent = popover.findComponent(for_);
+			String escapedForClientId = for_;
+
+			if (forComponent != null) {
+
+				String forComponentClientId = forComponent.getClientId();
+				escapedForClientId = escapeClientId(forComponentClientId);
+			}
+
+			config.put("selector", "#" + escapedForClientId);
+			config.put("visible", false);
+			JsonSerializer jsonSerializer = new JsonSerializer();
+			String jsonConfig = jsonSerializer.serialize(config);
 			respoonseWriter.write(jsonConfig);
 		}
 	}
@@ -92,8 +124,9 @@ public class PopoverRenderer extends DelegatingMetalRendererBase {
 	public void encodeMarkupBegin(FacesContext facesContext, UIComponent uiComponent) throws IOException {
 
 		ResponseWriter responseWriter = facesContext.getResponseWriter();
-		ResponseWriter stringResponseWriter = new StringResponseWriter(responseWriter);
-		facesContext.setResponseWriter(stringResponseWriter);
+		responseWriter.startElement("div", uiComponent);
+		responseWriter.writeAttribute("id", uiComponent.getClientId(facesContext), "id");
+		responseWriter.writeAttribute("style", "display: none;", "style");
 	}
 
 	@Override
@@ -101,10 +134,7 @@ public class PopoverRenderer extends DelegatingMetalRendererBase {
 
 		if (uiComponent.isRendered()) {
 
-			StringResponseWriter stringResponseWriter = (StringResponseWriter) facesContext.getResponseWriter();
-			ResponseWriter originalResponseWriter = stringResponseWriter.getWrapped();
-			originalResponseWriter.startElement("div", uiComponent);
-			originalResponseWriter.writeAttribute("id", uiComponent.getClientId(facesContext), "id");
+			ResponseWriter responseWriter = facesContext.getResponseWriter();
 			SoyFileSet.Builder builder = SoyFileSet.builder();
 			URL url = PopoverRenderer.class.getResource("/metaljs/build/soy/metal-popover/src/Popover.soy");
 			builder.add(url);
@@ -112,25 +142,48 @@ public class PopoverRenderer extends DelegatingMetalRendererBase {
 			SoyFileSet soyFileSet = builder.build();
 			SoyTofu tofu = soyFileSet.compileToTofu();
 			SoyTofu.Renderer soyRenderer = tofu.newRenderer("Popover.render");
-			Map<String, String> config = new HashMap<String, String>();
-			config.put("content", stringResponseWriter.toString());
-			stringResponseWriter = new StringResponseWriter(originalResponseWriter);
-			facesContext.setResponseWriter(stringResponseWriter);
-			UIComponent headerFacet = uiComponent.getFacet("header");
+			Map<String, Object> config = new HashMap<String, Object>();
+			Popover popover = (Popover) uiComponent;
+			String content = (String) popover.getAttributes().get("content");
+			SanitizedContent soyContent = UnsafeSanitizedContentOrdainer.ordainAsSafe(content, SanitizedContent.ContentKind.HTML);
+			config.put("content", soyContent);
+			String title = (String) popover.getAttributes().get("headerText");
 
-			if (headerFacet != null) {
+			if (title != null) {
 
-				headerFacet.encodeAll(facesContext);
-				config.put("title", stringResponseWriter.toString());
+				SanitizedContent soyTitle = UnsafeSanitizedContentOrdainer.ordainAsSafe(title, SanitizedContent.ContentKind.HTML);
+				config.put("title", soyTitle);
 			}
 
+			config.put("elementClasses", popover.getStyleClass());
 			soyRenderer.setData(config);
-			facesContext.setResponseWriter(originalResponseWriter);
-			originalResponseWriter.write(soyRenderer.render());
-			JsonSerializer jsonSerializer = new JsonSerializer();
-			String jsonConfig = jsonSerializer.serialize(config);
-			facesContext.getAttributes().put(JSON_CONFIG_KEY_PREFIX + uiComponent.hashCode(), jsonConfig);
-			originalResponseWriter.endElement("div");
+			responseWriter.write(soyRenderer.render());
+			responseWriter.endElement("div");
+			config.put("content", content);
+			String delay = (String) popover.getAttributes().get("delay");
+
+			if (delay != null) {
+				config.put("delay", delay);
+			}
+
+			if (title != null) {
+				config.put("title", title);
+			}
+
+			uiComponent.getAttributes().put(CONFIG_KEY, config);
 		}
+	}
+
+	public static String escapeClientId(String clientId) {
+		String escapedClientId = clientId;
+
+		if (escapedClientId != null) {
+
+			// JSF clientId values contain colons, which must be preceeded by double backslashes in order to have them
+			// work with JavaScript functions like AUI.one(String). http://yuilibrary.com/projects/yui3/ticket/2528057
+			escapedClientId = escapedClientId.replaceAll("[:]", "\\\\:");
+		}
+
+		return escapedClientId;
 	}
 }

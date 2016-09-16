@@ -3,46 +3,21 @@
 	template="/WEB-INF/templates/component-2col.xhtml">
 
 	<ui:define name="col1">
-		<!-- Example 1: Default usage with dismissible="true" -->
 		<metal:form>
-			<showcase:example description="#{i18n['metal-popover-general-example-1']}" number="1">
-				<metal:button id="myButton1" onclick="Liferay.component('popover1').toggle();"
+			<showcase:example number="1">
+				<metal:button id="myButton1"
 					value="#{i18n['click-here-to-toggle-the-popover-and-click-outside-the-popover-to-hide']}" />
-				<metal:popover clientKey="popover1" for="myButton1" headerText="#{i18n['header-text']}">
-					<metal:field label="#{i18n['text-field']}">
-						<metal:inputText value="#{popoverModelBean.text1}" />
-					</metal:field>
-					<metal:commandButton action="#{popoverBackingBean.submit}"
-						onclick="Liferay.component('popover1').hide();"
-						render="@form" value="#{i18n['submit']}" />
-					<metal:button onclick="Liferay.component('popover1').hide();" value="#{i18n['cancel']}" />
-				</metal:popover>
+				<metal:popover
+					clientKey="popover1"
+					for="myButton1" 
+					headerText="#{i18n['header-text']}"
+					content="PopoverContent"
+					styleClass="someClass"
+					delay="[0, 0]"
+				/>
 			</showcase:example>
 			<showcase:results label="#{i18n['model-value']}">
 				<metal:outputText id="modelValue" value="#{popoverModelBean.text1}" />
-			</showcase:results>
-		</metal:form>
-	</ui:define>
-
-	<ui:define name="col2">
-		<!-- Example 2: Alternate usage with dismissible="false" -->
-		<metal:form>
-			<showcase:example description="#{i18n['metal-popover-general-example-2']}" number="2">
-				<metal:button id="myButton2" onclick="Liferay.component('popover2').show();"
-					value="#{i18n['click-here-to-show-the-popover']}" />
-				<metal:popover autoShow="false" clientKey="popover2" dismissible="false" for="myButton2"
-					headerText="#{i18n['header-text']}">
-					<metal:field label="#{i18n['text-field']}">
-						<metal:inputText value="#{popoverModelBean.text2}" />
-					</metal:field>
-					<metal:commandButton action="#{popoverBackingBean.submit}"
-						onclick="Liferay.component('popover2').hide();"
-						render="@form" value="#{i18n['submit']}" />
-					<metal:button onclick="Liferay.component('popover2').hide();" value="#{i18n['cancel']}" />
-				</metal:popover>
-			</showcase:example>
-			<showcase:results label="#{i18n['model-value']}">
-				<metal:outputText id="modelValue" value="#{popoverModelBean.text2}" />
 			</showcase:results>
 		</metal:form>
 	</ui:define>
