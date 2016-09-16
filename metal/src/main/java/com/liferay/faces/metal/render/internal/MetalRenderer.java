@@ -37,9 +37,6 @@ public interface MetalRenderer extends ClientComponentRenderer {
 
 	public void decodeClientBehaviors(FacesContext facesContext, UIComponent uiComponent);
 
-	public void encodeMetalAttributes(FacesContext facesContext, ResponseWriter respoonseWriter,
-		UIComponent uiComponent) throws IOException;
-
 	public void encodeBoolean(ResponseWriter responseWriter, String attributeName, Boolean attributeValue,
 		boolean first) throws IOException;
 
@@ -66,6 +63,9 @@ public interface MetalRenderer extends ClientComponentRenderer {
 	public void encodeLiferayComponentVar(ResponseWriter responseWriter, String clientVarName, String clientKey)
 		throws IOException;
 
+	public void encodeMetalAttributes(FacesContext facesContext, ResponseWriter respoonseWriter,
+		UIComponent uiComponent) throws IOException;
+
 	public void encodeNonEscapedObject(ResponseWriter responseWriter, String attributeName, Object attributeValue,
 		boolean first) throws IOException;
 
@@ -74,9 +74,9 @@ public interface MetalRenderer extends ClientComponentRenderer {
 
 	public void encodeWidgetRender(ResponseWriter responseWriter, boolean first) throws IOException;
 
-	public String getMetalClassName(FacesContext facesContext, UIComponent uiComponent);
-
 	public String getClientVarName(FacesContext facesContext, ClientComponent clientComponent);
+
+	public String getMetalClassName(FacesContext facesContext, UIComponent uiComponent);
 
 	public String[] getModules(FacesContext facesContext, UIComponent uiComponent);
 

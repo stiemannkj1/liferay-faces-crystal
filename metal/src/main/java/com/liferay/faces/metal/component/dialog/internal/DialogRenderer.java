@@ -13,11 +13,10 @@
  */
 package com.liferay.faces.metal.component.dialog.internal;
 
-import com.google.template.soy.SoyFileSet;
-import com.google.template.soy.data.SanitizedContent;
-import com.google.template.soy.data.UnsafeSanitizedContentOrdainer;
-import com.google.template.soy.tofu.SoyTofu;
 import java.io.IOException;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.faces.application.ResourceDependencies;
 import javax.faces.application.ResourceDependency;
@@ -26,15 +25,18 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 
+import com.google.template.soy.SoyFileSet;
+import com.google.template.soy.data.SanitizedContent;
+import com.google.template.soy.data.UnsafeSanitizedContentOrdainer;
+import com.google.template.soy.tofu.SoyTofu;
+
 import com.liferay.faces.metal.component.dialog.Dialog;
 import com.liferay.faces.metal.render.internal.MetalRendererBase;
 import com.liferay.faces.util.component.ClientComponent;
 import com.liferay.faces.util.component.ComponentUtil;
 import com.liferay.faces.util.logging.Logger;
 import com.liferay.faces.util.logging.LoggerFactory;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
+
 import jodd.json.JsonSerializer;
 
 
@@ -60,10 +62,23 @@ public class DialogRenderer extends MetalRendererBase {
 	// Private Constants
 	private static final String CONFIG_KEY_PREFIX = DialogRenderer.class.getName() + "_JSON_CONFIG_KEY_";
 
+	public static String escapeClientId(String clientId) {
+		String escapedClientId = clientId;
+
+		if (escapedClientId != null) {
+
+			// JSF clientId values contain colons, which must be preceeded by double backslashes in order to have them
+			// work with JavaScript functions like AUI.one(String). http://yuilibrary.com/projects/yui3/ticket/2528057
+			escapedClientId = escapedClientId.replaceAll("[:]", "\\\\:");
+		}
+
+		return escapedClientId;
+	}
+
 	@Override
 	public void encodeJavaScriptCustom(FacesContext facesContext, UIComponent uiComponent) throws IOException {
 
-		Dialog dialog = (Dialog) uiComponent;		
+		Dialog dialog = (Dialog) uiComponent;
 		ResponseWriter responseWriter = facesContext.getResponseWriter();
 		String clientId = uiComponent.getClientId(facesContext);
 		String escapedClientId = ComponentUtil.escapeClientId(clientId);
@@ -80,42 +95,13 @@ public class DialogRenderer extends MetalRendererBase {
 
 			encodeLiferayComponentVar(responseWriter, clientVarName, clientKey);
 			responseWriter.write(clientVarName);
-			responseWriter.write(".on('visibleChanged', function(event) { if (event.newVal) { document.querySelector('#");
+			responseWriter.write(
+				".on('visibleChanged', function(event) { if (event.newVal) { document.querySelector('#");
 			responseWriter.write(escapedClientId);
 			responseWriter.write("').style = null; }});");
 		}
 	}
 
-	@Override
-	public void encodeMetalAttributes(FacesContext facesContext, ResponseWriter respoonseWriter, UIComponent uiComponent) throws IOException {
-
-		Map<String, Object> config = (Map<String, Object>) facesContext.getAttributes().remove(CONFIG_KEY_PREFIX + uiComponent.hashCode());
-
-		if (config != null) {
-
-			String clientId = uiComponent.getClientId();
-			String escapedClientId = escapeClientId(clientId);
-			config.put("element", "#" + escapedClientId + " > div.modal");
-			
-			Dialog dialog = (Dialog) uiComponent;
-			config.put("visible", dialog.isAutoShow());
-			JsonSerializer jsonSerializer = new JsonSerializer();
-			String jsonConfig = jsonSerializer.serialize(config);
-			respoonseWriter.write(jsonConfig);
-		}
-	}
-
-	@Override
-	public String getMetalClassName(FacesContext facesContext, UIComponent uiComponent) {
-		return "Modal";
-	}
-
-	@Override
-	public String[] getModules(FacesContext facesContext, UIComponent uiComponent) {
-		return new String[] { "metal-modal/src/Modal" };
-	}
-
-	
 	@Override
 	public void encodeMarkupBegin(FacesContext facesContext, UIComponent uiComponent) throws IOException {
 
@@ -132,6 +118,7 @@ public class DialogRenderer extends MetalRendererBase {
 
 		ResponseWriter responseWriter = facesContext.getResponseWriter();
 		responseWriter.endElement("div");
+
 		SoyFileSet.Builder builder = SoyFileSet.builder();
 		URL url = DialogRenderer.class.getResource("/metaljs/build/soy/metal-modal/src/Modal.soy");
 		builder.add(url);
@@ -143,6 +130,7 @@ public class DialogRenderer extends MetalRendererBase {
 		String body = "temp";
 		SanitizedContent soyBody = UnsafeSanitizedContentOrdainer.ordainAsSafe(body, SanitizedContent.ContentKind.HTML);
 		config.put("body", soyBody);
+
 		UIComponent headerFacet = uiComponent.getFacet("header");
 		String header = null;
 
@@ -153,7 +141,9 @@ public class DialogRenderer extends MetalRendererBase {
 			headerFacet.encodeAll(facesContext);
 			responseWriter.endElement("div");
 			header = "temp";
-			SanitizedContent soyHeader = UnsafeSanitizedContentOrdainer.ordainAsSafe(header, SanitizedContent.ContentKind.HTML);
+
+			SanitizedContent soyHeader = UnsafeSanitizedContentOrdainer.ordainAsSafe(header,
+					SanitizedContent.ContentKind.HTML);
 			config.put("header", soyHeader);
 		}
 
@@ -167,7 +157,9 @@ public class DialogRenderer extends MetalRendererBase {
 			footerFacet.encodeAll(facesContext);
 			responseWriter.endElement("div");
 			footer = "temp";
-			SanitizedContent soyFooter = UnsafeSanitizedContentOrdainer.ordainAsSafe(header, SanitizedContent.ContentKind.HTML);
+
+			SanitizedContent soyFooter = UnsafeSanitizedContentOrdainer.ordainAsSafe(header,
+					SanitizedContent.ContentKind.HTML);
 			config.put("footer", soyFooter);
 		}
 
@@ -176,44 +168,36 @@ public class DialogRenderer extends MetalRendererBase {
 		config.put("body", body);
 		responseWriter.startElement("script", uiComponent);
 		responseWriter.writeAttribute("script", "text/javascript", null);
+
 		String clientId = uiComponent.getClientId(facesContext);
 		String escapedClientId = ComponentUtil.escapeClientId(clientId);
-		responseWriter.write(
-			"var newParent = document.querySelector('#" + escapedClientId + " > div.modal > div.modal-dialog > div.modal-content > .modal-body');\n" +
+		responseWriter.write("var newParent = document.querySelector('#" + escapedClientId +
+			" > div.modal > div.modal-dialog > div.modal-content > .modal-body');\n" +
 			"var oldParent = document.querySelector('#" + escapedClientId + "_children');\n" +
-			"newParent.innerHTML = '';\n" +
-			"while (oldParent.childNodes.length > 0) {\n" +
-			"    newParent.appendChild(oldParent.childNodes[0]);\n" +
-			"}" +
-			"oldParent.parentNode.removeChild(oldParent);"
-		);
+			"newParent.innerHTML = '';\n" + "while (oldParent.childNodes.length > 0) {\n" +
+			"    newParent.appendChild(oldParent.childNodes[0]);\n" + "}" +
+			"oldParent.parentNode.removeChild(oldParent);");
 
 		if (header != null) {
 
 			config.put("header", header);
-			responseWriter.write(
-				"newParent = document.querySelector('#" + escapedClientId + " > div.modal > div.modal-dialog > div.modal-content > .modal-header');\n" +
+			responseWriter.write("newParent = document.querySelector('#" + escapedClientId +
+				" > div.modal > div.modal-dialog > div.modal-content > .modal-header');\n" +
 				"oldParent = document.querySelector('#" + escapedClientId + "_header');\n" +
-				"newParent.innerHTML = '';\n" +
-				"while (oldParent.childNodes.length > 0) {\n" +
-				"    newParent.appendChild(oldParent.childNodes[0]);\n" +
-				"}" +
-				"oldParent.parentNode.removeChild(oldParent);"
-			);
+				"newParent.innerHTML = '';\n" + "while (oldParent.childNodes.length > 0) {\n" +
+				"    newParent.appendChild(oldParent.childNodes[0]);\n" + "}" +
+				"oldParent.parentNode.removeChild(oldParent);");
 		}
 
 		if (footer != null) {
 
 			config.put("footer", footer);
-			responseWriter.write(
-				"newParent = document.querySelector('#" + escapedClientId + " > div.modal > div.modal-dialog > div.modal-content > .modal-footer');\n" +
+			responseWriter.write("newParent = document.querySelector('#" + escapedClientId +
+				" > div.modal > div.modal-dialog > div.modal-content > .modal-footer');\n" +
 				"oldParent = document.querySelector('#" + escapedClientId + "_footer');\n" +
-				"newParent.innerHTML = '';\n" +
-				"while (oldParent.childNodes.length > 0) {\n" +
-				"    newParent.appendChild(oldParent.childNodes[0]);\n" +
-				"}" +
-				"oldParent.parentNode.removeChild(oldParent);"
-			);
+				"newParent.innerHTML = '';\n" + "while (oldParent.childNodes.length > 0) {\n" +
+				"    newParent.appendChild(oldParent.childNodes[0]);\n" + "}" +
+				"oldParent.parentNode.removeChild(oldParent);");
 		}
 
 		responseWriter.write("document.querySelector('#" + escapedClientId + "').style = null;");
@@ -223,16 +207,35 @@ public class DialogRenderer extends MetalRendererBase {
 		facesContext.getAttributes().put(CONFIG_KEY_PREFIX + uiComponent.hashCode(), config);
 	}
 
-	public static String escapeClientId(String clientId) {
-		String escapedClientId = clientId;
+	@Override
+	public void encodeMetalAttributes(FacesContext facesContext, ResponseWriter respoonseWriter,
+		UIComponent uiComponent) throws IOException {
 
-		if (escapedClientId != null) {
+		Map<String, Object> config = (Map<String, Object>) facesContext.getAttributes().remove(CONFIG_KEY_PREFIX +
+				uiComponent.hashCode());
 
-			// JSF clientId values contain colons, which must be preceeded by double backslashes in order to have them
-			// work with JavaScript functions like AUI.one(String). http://yuilibrary.com/projects/yui3/ticket/2528057
-			escapedClientId = escapedClientId.replaceAll("[:]", "\\\\:");
+		if (config != null) {
+
+			String clientId = uiComponent.getClientId();
+			String escapedClientId = escapeClientId(clientId);
+			config.put("element", "#" + escapedClientId + " > div.modal");
+
+			Dialog dialog = (Dialog) uiComponent;
+			config.put("visible", dialog.isAutoShow());
+
+			JsonSerializer jsonSerializer = new JsonSerializer();
+			String jsonConfig = jsonSerializer.serialize(config);
+			respoonseWriter.write(jsonConfig);
 		}
+	}
 
-		return escapedClientId;
+	@Override
+	public String getMetalClassName(FacesContext facesContext, UIComponent uiComponent) {
+		return "Modal";
+	}
+
+	@Override
+	public String[] getModules(FacesContext facesContext, UIComponent uiComponent) {
+		return new String[] { "metal-modal/src/Modal" };
 	}
 }

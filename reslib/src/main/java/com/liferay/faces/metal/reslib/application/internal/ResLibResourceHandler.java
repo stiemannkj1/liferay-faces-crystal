@@ -13,7 +13,6 @@
  */
 package com.liferay.faces.metal.reslib.application.internal;
 
-import com.liferay.faces.metal.reslib.config.ResLibConfigParam;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -28,6 +27,7 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.liferay.faces.metal.reslib.config.ResLibConfigParam;
 import com.liferay.faces.util.config.ApplicationConfig;
 import com.liferay.faces.util.config.ConfiguredServletMapping;
 import com.liferay.faces.util.config.FacesConfig;

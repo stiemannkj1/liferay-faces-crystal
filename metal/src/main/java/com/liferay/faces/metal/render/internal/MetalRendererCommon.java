@@ -56,11 +56,13 @@ import com.liferay.faces.util.render.RendererUtil;
 
 		String[] modules = null;
 
-		metalRenderer.renderScript(facesContext, bufferedScriptResponseWriter.toString(), metalRenderer.getModules(facesContext, uiComponent));
+		metalRenderer.renderScript(facesContext, bufferedScriptResponseWriter.toString(),
+			metalRenderer.getModules(facesContext, uiComponent));
 		facesContext.setResponseWriter(responseWriter);
 	}
 
-	/* package-private */ static void encodeJavaScriptBegin(FacesContext facesContext, UIComponent uiComponent, MetalRenderer metalRenderer) throws IOException {
+	/* package-private */ static void encodeJavaScriptBegin(FacesContext facesContext, UIComponent uiComponent, MetalRenderer metalRenderer)
+		throws IOException {
 
 		if (facesContext.getPartialViewContext().isAjaxRequest() && (uiComponent instanceof ClientComponent)) {
 
@@ -82,8 +84,7 @@ import com.liferay.faces.util.render.RendererUtil;
 		}
 	}
 
-	/* package-private */ static void encodeJavaScriptEnd(FacesContext facesContext, UIComponent uiComponent)
-		throws IOException {
+	/* package-private */ static void encodeJavaScriptEnd(FacesContext facesContext, UIComponent uiComponent) throws IOException {
 		// no-op
 	}
 

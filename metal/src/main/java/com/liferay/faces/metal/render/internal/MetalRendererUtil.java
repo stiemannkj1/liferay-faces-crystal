@@ -13,11 +13,10 @@
  */
 package com.liferay.faces.metal.render.internal;
 
-import java.util.Set;
-import java.util.TreeSet;
-
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 
 /**
@@ -45,6 +44,7 @@ public class MetalRendererUtil {
 
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append("require(['");
+
 		boolean first = true;
 
 		for (String module : sortedModules) {
@@ -96,15 +96,14 @@ public class MetalRendererUtil {
 
 			boolean modified = true;
 
-			if (('a' <= c) && (c <= 'z') ||
-				(c == '_')) {
+			if ((('a' <= c) && (c <= 'z')) || (c == '_')) {
 
 				sb.append(c);
 
 				modified = false;
 			}
 			else if (('A' <= c) && (c <= 'Z')) {
-				sb.append((char)(c + 32));
+				sb.append((char) (c + 32));
 			}
 			else {
 				sb.append('_');
@@ -116,8 +115,9 @@ public class MetalRendererUtil {
 				c = module.charAt(i);
 
 				if (('a' <= c) && (c <= 'z')) {
+
 					if (startNewWord) {
-						sb.append((char)(c - 32));
+						sb.append((char) (c - 32));
 
 						startNewWord = false;
 					}
@@ -125,10 +125,7 @@ public class MetalRendererUtil {
 						sb.append(c);
 					}
 				}
-				else if (('A' <= c) &&
-						 (c <= 'Z') ||
-						 (('0' <= c) && (c <= '9')) ||
-						 (c == '_')) {
+				else if ((('A' <= c) && (c <= 'Z')) || (('0' <= c) && (c <= '9')) || (c == '_')) {
 
 					sb.append(c);
 

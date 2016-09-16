@@ -17,9 +17,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Map;
+
 import javax.faces.application.Resource;
 import javax.faces.application.ResourceHandler;
-
 import javax.faces.context.FacesContext;
 
 
@@ -41,6 +41,11 @@ public class BasePathResource extends Resource {
 	}
 
 	@Override
+	public InputStream getInputStream() throws IOException {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
 	public String getRequestPath() {
 
 		if (requestPath == null) {
@@ -58,11 +63,6 @@ public class BasePathResource extends Resource {
 		}
 
 		return requestPath;
-	}
-
-	@Override
-	public InputStream getInputStream() throws IOException {
-		throw new UnsupportedOperationException();
 	}
 
 	@Override

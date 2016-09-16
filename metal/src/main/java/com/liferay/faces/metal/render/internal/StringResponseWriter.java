@@ -15,8 +15,10 @@ package com.liferay.faces.metal.render.internal;
 
 import java.io.IOException;
 import java.io.StringWriter;
+
 import javax.faces.context.ResponseWriter;
 import javax.faces.context.ResponseWriterWrapper;
+
 
 /**
  * @author  Kyle Stiemann
@@ -33,8 +35,8 @@ public class StringResponseWriter extends ResponseWriterWrapper {
 	}
 
 	@Override
-	public void write(char[] cbuf, int off, int len) throws IOException {
-		stringWriter.write(cbuf, off, len);
+	public ResponseWriter getWrapped() {
+		return wrappedResponseWriter;
 	}
 
 	@Override
@@ -43,7 +45,7 @@ public class StringResponseWriter extends ResponseWriterWrapper {
 	}
 
 	@Override
-	public ResponseWriter getWrapped() {
-		return wrappedResponseWriter;
+	public void write(char[] cbuf, int off, int len) throws IOException {
+		stringWriter.write(cbuf, off, len);
 	}
 }
